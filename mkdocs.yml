@@ -1,0 +1,25 @@
+site_name: Módulo 2 - Mapas y OpenData
+site_url: /
+site_description: Mapas y OpenData, Localización, Visualización y Análisis de GeoDatos.
+site_author: geoweb
+theme:
+  name: 'boostrap4'
+  language: 'es'
+  highlightjs: true
+
+markdown_extensions:
+  - codehilite:
+      linenums: True
+  - admonition
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - footnotes
+repo_url: "https://github.com/gis-master-m2/m2-geoweb"
+
+nav:
+- Inicio: index.md
+- 1. Introducción a las tecnologías GeoWeb: 1_introduccion_a_las_tecnologias_geoweb.md
+
+
+plugins:
+    - search
