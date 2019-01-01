@@ -2,11 +2,10 @@
 
 Materiales para el curso sobre Geoservicios para Smart Cities (GSS) del Màster Tecnologies de la Informació Geografica de la UAB
 
-Temario:
+Repo:
 
 ### [https://github.com/gis-master-m2/m2-geoweb](https://github.com/gis-master-m2/m2-geoweb)
 
-* [Introducción a las tecnologías GeoWeb](1_introduccion_a_las_tecnologias_geoweb)
 * [1. Introducción a las tecnologías GeoWeb](1_introduccion_a_las_tecnologias_geoweb)
 * [2. Introducción a Leaflet](2_introduccion_a_la_leaflet)
 * [3. Recursos OpenData](3_recursos_open_data)

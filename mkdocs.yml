@@ -3,9 +3,10 @@ site_url: https://gis-master-m2.github.io/m2-geoweb/
 site_description: Mapas y OpenData, Localización, Visualización y Análisis de GeoDatos.
 site_author: geoweb
 theme:
-  name: 'bootstrap4'
+  name: 'material'
   language: 'es'
   highlightjs: true
+  suppress_nextprev: true
 
 markdown_extensions:
   - codehilite:
