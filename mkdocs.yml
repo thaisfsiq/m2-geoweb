@@ -1,9 +1,9 @@
 site_name: Módulo 2 - Mapas y OpenData
-site_url: /
+site_url: https://gis-master-m2.github.io/m2-geoweb/
 site_description: Mapas y OpenData, Localización, Visualización y Análisis de GeoDatos.
 site_author: geoweb
 theme:
-  name: 'boostrap4'
+  name: 'bootstrap4'
   language: 'es'
   highlightjs: true
 
