@@ -1,5 +1,9 @@
 
-# API servicios Open Data (CKAN y SOCRATA)
+# Recursos open data
+
+### [Ver presentación](presentacion/opendata.pptx)
+
+
 ## Ejemplo API CKAN
 
 El API de CKAN http://docs.ckan.org/en/latest/api/index.html no ofrece diferetes niveles y métodos para poder buscar y filtrar datasets.

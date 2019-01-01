@@ -1,211 +1,211 @@
 
 ## Introducción a Cesium 
    [https://cesiumjs.org]
-            <img width=100 src="https://cesiumjs.org/Cesium/Apps/Sandcastle/images/Cesium_Logo_Color_Overlay.png">
+<img src="https://cesiumjs.org/Cesium/Apps/Sandcastle/images/Cesium_Logo_Color_Overlay" width="100"> 
        
 
-    <div class="alert alert-warning">
-  ##   Recursos Cesium JS
-      > 
-        * 
-          Web<br>
-          <a target="_blank" href="https://cesiumjs.org/">https://cesiumjs.org/</a>
-        </li>
-        * 
-          API<br>
-          <a target="_blank" href="https://cesiumjs.org/refdoc/">https://cesiumjs.org/refdoc/</a>
-        </li>
-        * 
-          Ejemplos<br>
-          <a target="_blank" href="https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html">https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html</a>
-        </li>
-        * 
-          Definición<br>
-          <a target="_blank" href="https://en.wikipedia.org/wiki/Virtual_globe">https://en.wikipedia.org/wiki/Virtual_globe</a>
-        </li>
-        * 
-          Tutoriales<br>
+ 
+### Recursos Cesium JS
 
-          <a target="_blank" href="http://cesiumjs.org/tutorials.html">http://cesiumjs.org/tutorials.html</a><br>
-          <a target="_blank" href="http://cesiumjs.org/demos.html">http://cesiumjs.org/demos.html</a><br>
-          <a target="_blank" href="http://developer.digitalglobe.com/docs/maps-api/integration-examples/maps-apicesium-js/">http://developer.digitalglobe.com/docs/maps-api/integration-examples/maps-apicesium-js/</a><br>
-          <a target="_blank" href="http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html">http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html</a><br>
+* 
+Web
+[https://cesiumjs.org/](https://cesiumjs.org/)
 
-        </li>
-        * 
-          Videos<br>
-          <a target="_blank" href="https://www.youtube.com/watch?v=ELYsCn-caXY">https://www.youtube.com/watch?v=ELYsCn-caXY</a><br>
-          <a target="_blank" href="https://www.youtube.com/watch?v=YZ_2T6dgSw4">https://www.youtube.com/watch?v=YZ_2T6dgSw4</a><br>
-          <a target="_blank" href="https://www.youtube.com/watch?v=S745qetDaCc">https://www.youtube.com/watch?v=S745qetDaCc</a><br>
-          <a target="_blank" href="https://www.youtube.com/watch?v=lhzYRnNYmwo">https://www.youtube.com/watch?v=lhzYRnNYmwo</a>
-        </li>
-      </ul>
-    </div>
+* 
+API
+[https://cesiumjs.org/refdoc/](https://cesiumjs.org/refdoc/)
 
-    <div class="soft">
-  ## Descripción Cesium JS ees una libreria basada en WebGL, creada por la empresa AGI, que permite trabajar con globos virtuales 3D: Cesium destaca por haber creado de forma abierta
-      > 
-        *  Formato GLTF</li>
-        *  Especificación 3D Vector-Tiles</li>
-      </ul>
+* 
+Ejemplos
+[https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html](https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html)
 
-  ##  ¿Cómo empezar? Cesium no tiene un CDN.
-      <p>descargamos Cesium <a target="_blank" href="https://cesiumjs.org/downloads">https://cesiumjs.org/downloads</a></p>
+* 
+Definición
+[https://en.wikipedia.org/wiki/Virtual_globe](https://en.wikipedia.org/wiki/Virtual_globe)
+
+* 
+Tutoriales
+
+[http://cesiumjs.org/tutorials.html](http://cesiumjs.org/tutorials.html)
+[http://cesiumjs.org/demos.html](http://cesiumjs.org/demos.html)
+[http://developer.digitalglobe.com/docs/maps-api/integration-examples/maps-apicesium-js/](http://developer.digitalglobe.com/docs/maps-api/integration-examples/maps-apicesium-js/)
+[http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html](http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html)
+
+
+* 
+Videos
+[https://www.youtube.com/watch?v=ELYsCn-caXY](https://www.youtube.com/watch?v=ELYsCn-caXY)
+[https://www.youtube.com/watch?v=YZ_2T6dgSw4](https://www.youtube.com/watch?v=YZ_2T6dgSw4)
+[https://www.youtube.com/watch?v=S745qetDaCc](https://www.youtube.com/watch?v=S745qetDaCc)
+[https://www.youtube.com/watch?v=lhzYRnNYmwo](https://www.youtube.com/watch?v=lhzYRnNYmwo)
+
+     
+    
+
+    
+### Descripción Cesium JS ees una libreria basada en WebGL, creada por la empresa AGI, que permite trabajar con globos virtuales 3D: Cesium destaca por haber creado de forma abierta
+
+*  Formato GLTF
+*  Especificación 3D Vector-Tiles
+     
+
+###  ¿Cómo empezar? Cesium no tiene un CDN.
+      <p>descargamos Cesium [https://cesiumjs.org/downloads](https://cesiumjs.org/downloads)</p>
       <p>Descomprimir zip y extraer dentro del directorio web /build/cesium
-      > 
-        *  Creamos
-          <b>Cesium1.html</b> dentro directorio web<br> Ejemplo básico :
-          * 
 
-            <pre><code class="prettyprint">
-          &#x3C;html lang="es"&#x3E;
-          &#x3C;head&#x3E;
-          	&#x3C;title&#x3E;Ejemplo 0 Cesium básico&#x3C;/title&#x3E;
-          	&#x3C;meta charset="utf-8" /&#x3E;
-          	&#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
-          	&#x3C;meta name="author" content="autor" /&#x3E;
-          	&#x3C;meta name="description" content="descripción página"&#x3E;
-          	&#x3C;meta name="robots" content="index,follow"&#x3E;
-          	&#x3C;link rel="stylesheet" href="Cesium/Widgets/widgets.css" /&#x3E;
-          	&#x3C;script src="Cesium/Cesium.js"&#x3E;&#x3C;/script&#x3E;
-          	&#x3C;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&#x3E;&#x3C;/script&#x3E;
-          	&#x3C;style&#x3E;
-          		#map {
-          			position: absolute;
-          			top: 0;
-          			left: 0;
-          			height: 100%;
-          			width: 100%;
-          			margin: 0;
-          			overflow: hidden;
-          			padding: 0;
-          		}
+*  Creamos
+**Cesium1.html** dentro directorio web Ejemplo básico :
+* 
 
-          		body {
-          			padding: 0;
-          			margin: 0;
-          			overflow: hidden;
-          			height: 100%;
-          		}
-          	&#x3C;/style&#x3E;
+```html
+<html lang="es">
+<head>
+	<title>Ejemplo 0 Cesium básico</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="autor" />
+	<meta name="description" content="descripción página">
+	<meta name="robots" content="index,follow">
+	<link rel="stylesheet" href="Cesium/Widgets/widgets.css" />
+	<script src="Cesium/Cesium.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		#map {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+margin: 0;
+overflow: hidden;
+padding: 0;
+		}
 
-          	&#x3C;script&#x3E;
-          		$(document).ready(function() {
-          			map = new Cesium.Viewer('map');
+		body {
+padding: 0;
+margin: 0;
+overflow: hidden;
+height: 100%;
+		}
+	</style>
 
-          			//add Properties
+	<script>
+		$(document).ready(function() {
+map = new Cesium.Viewer('map');
 
-          			/*
-           map.camera.flyTo({
-              destination : Cesium.Cartesian3.fromDegrees( 2.1806,41.4003, 15000)
-          });
+//add Properties
 
-           */
-          		});
-          	&#x3C;/script&#x3E;
-          &#x3C;/head&#x3E;
-          &#x3C;body&#x3E;
-          &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-          &#x3C;/body&#x3E;
-          &#x3C;/html&#x3E;
+/*
+ map.camera.flyTo({
+    destination : Cesium.Cartesian3.fromDegrees( 2.1806,41.4003, 15000)
+});
 
-        </code></pre>
-          </li>
-          * 
-        ## Ejemplo 2 Personalizado <b>Cesium2.html</b>
-            <pre><code class="prettyprint">
-              &#x3C;html lang="es"&#x3E;
-               &#x3C;head&#x3E;
-                 &#x3C;title&#x3E;Ejemplo 2 Cesium&#x3C;/title&#x3E;
-                 &#x3C;meta charset="utf-8" /&#x3E;
-                 &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
-                 &#x3C;meta name="author" content="autor" /&#x3E;
-                 &#x3C;meta name="description" content="descripción página"&#x3E;
-                 &#x3C;meta name="robots" content="index,follow"&#x3E;
-                 &#x3C;link rel="stylesheet" href="Cesium/Widgets/widgets.css" /&#x3E;
-                 &#x3C;script src="Cesium/Cesium.js"&#x3E;&#x3C;/script&#x3E;
-                 &#x3C;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&#x3E;&#x3C;/script&#x3E;
-                 &#x3C;style&#x3E;
-                   #map {
-                     position: absolute;
-                     top: 0;
-                     left: 0;
-                     height: 100%;
-                     width: 100%;
-                     margin: 0;
-                     overflow: hidden;
-                     padding: 0;
-                     font-family: sans-serif;
-                   }
-                   html {
-                     height: 100%;
-                   }
-                   body {
-                     padding: 0;
-                     margin: 0;
-                     overflow: hidden;
-                     height: 100%;
-                   }
-                 &#x3C;/style&#x3E;
-                 &#x3C;script&#x3E;
-                   var map;
-                   $(document).ready(function() {
-                     map = new Cesium.Viewer('map', {
+ */
+		});
+	</script>
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>
 
-                       imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
-                         url: '//services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/',
-                       }),
+```
 
-                       timeline: false,
-                       navigationHelpButton: true,
-                       scene3DOnly: true,
-                       fullscreenButton: true,
-                       baseLayerPicker: false,
-                       homeButton: false,
-                       infoBox: true,
-                       sceneModePicker: false,
-                       animation: false,
-                       geocoder: false,
-                       sceneMode: Cesium.SceneMode.SCENE3D,
+* 
+### Ejemplo 2 Personalizado **Cesium2.html**
+```html
+    <html lang="es">
+     <head>
+       <title>Ejemplo 2 Cesium</title>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta name="author" content="autor" />
+       <meta name="description" content="descripción página">
+       <meta name="robots" content="index,follow">
+       <link rel="stylesheet" href="Cesium/Widgets/widgets.css" />
+       <script src="Cesium/Cesium.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <style>
+ #map {
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ margin: 0;
+ overflow: hidden;
+ padding: 0;
+ font-family: sans-serif;
+ }
+ html {
+ height: 100%;
+ }
+ body {
+ padding: 0;
+ margin: 0;
+ overflow: hidden;
+ height: 100%;
+ }
+       </style>
+       <script>
+ var map;
+ $(document).ready(function() {
+ map = new Cesium.Viewer('map', {
 
-                       terrainProvider: new Cesium.CesiumTerrainProvider({
-                         url: 'https://assets.agi.com/stk-terrain/world',
-                         requestWaterMask: false,
-                         requestVertexNormals: true
-                       })
+   imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
+     url: '//services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/',
+   }),
 
-                     });
+   timeline: false,
+   navigationHelpButton: true,
+   scene3DOnly: true,
+   fullscreenButton: true,
+   baseLayerPicker: false,
+   homeButton: false,
+   infoBox: true,
+   sceneModePicker: false,
+   animation: false,
+   geocoder: false,
+   sceneMode: Cesium.SceneMode.SCENE3D,
+
+   terrainProvider: new Cesium.CesiumTerrainProvider({
+     url: 'https://assets.agi.com/stk-terrain/world',
+     requestWaterMask: false,
+     requestVertexNormals: true
+   })
+
+ });
 
 
-                     map.camera.flyTo({
-                       destination: Cesium.Cartesian3.fromDegrees(2.1806, 41.4003, 15000)
-                     });
+ map.camera.flyTo({
+   destination: Cesium.Cartesian3.fromDegrees(2.1806, 41.4003, 15000)
+ });
 
-                   });
-                 &#x3C;/script&#x3E;
-               &#x3C;/head&#x3E;
-               &#x3C;body&#x3E;
-               &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-               &#x3C;/body&#x3E;
-               &#x3C;/html&#x3E;
-           </code></pre>
-          </li>
-          * 
-        ## Ejemplo 3 Cesium y MapBox  <b>Cesium3.html</b>
+ });
+       </script>
+     </head>
+     <body>
+     <div id="map"></div>
+     </body>
+     </html>
+``` 
 
-            <pre><code class="prettyprint">
-              &#x3C;html lang="es"&#x3E;
-&#x3C;head&#x3E;
-  &#x3C;title&#x3E;Ejemplo 3 Cesium&#x3C;/title&#x3E;
-  &#x3C;meta charset="utf-8" /&#x3E;
-  &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
-  &#x3C;meta name="author" content="autor" /&#x3E;
-  &#x3C;meta name="description" content="descripción página"&#x3E;
-  &#x3C;meta name="robots" content="index,follow"&#x3E;
-  &#x3C;link rel="stylesheet" href="Cesium/Widgets/widgets.css" /&#x3E;
-  &#x3C;script src="Cesium/Cesium.js"&#x3E;&#x3C;/script&#x3E;
-  &#x3C;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&#x3E;&#x3C;/script&#x3E;
-  &#x3C;style&#x3E;
+* 
+### Ejemplo 3 Cesium y MapBox  **Cesium3.html**
+
+```html
+    <html lang="es">
+<head>
+  <title>Ejemplo 3 Cesium</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="autor" />
+  <meta name="description" content="descripción página">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="Cesium/Widgets/widgets.css" />
+  <script src="Cesium/Cesium.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
     #map {
       position: absolute;
       top: 0;
@@ -228,351 +228,351 @@
       overflow: hidden;
       height: 100%;
     }
-  &#x3C;/style&#x3E;
-  &#x3C;script&#x3E;
+  </style>
+  <script>
     var map;
     $(document).ready(function() {
       map = new Cesium.Viewer('map', {
 
-              				imageryProvider: new Cesium.UrlTemplateImageryProvider({
-              					url: 'https://api.mapbox.com/styles/v1/gismasterm2/cjdaf9xjd90eo2spdfzlmr2vb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g'
-              				}),
+    	imageryProvider: new Cesium.UrlTemplateImageryProvider({
+    		url: 'https://api.mapbox.com/styles/v1/gismasterm2/cjdaf9xjd90eo2spdfzlmr2vb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g'
+    	}),
 
 
-        /*
-                      imageryProvider:new Cesium.MapboxImageryProvider({
-                      mapId: 'mapbox.satellite',
-                      accessToken: 'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g'
-                    }),
-                    */
+/*
+  imageryProvider:new Cesium.MapboxImageryProvider({
+  mapId: 'mapbox.satellite',
+  accessToken: 'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g'
+}),
+*/
 
 
-        timeline: false,
-        navigationHelpButton: true,
-        scene3DOnly: true,
-        fullscreenButton: true,
-        baseLayerPicker: false,
-        homeButton: false,
-        infoBox: true,
-        sceneModePicker: false,
-        animation: false,
-        geocoder: false,
-        sceneMode: Cesium.SceneMode.SCENE3D,
-        terrainProvider: new Cesium.CesiumTerrainProvider({
-          url: 'https://assets.agi.com/stk-terrain/world',
-          requestWaterMask: false,
-          requestVertexNormals: true
-        })
+timeline: false,
+navigationHelpButton: true,
+scene3DOnly: true,
+fullscreenButton: true,
+baseLayerPicker: false,
+homeButton: false,
+infoBox: true,
+sceneModePicker: false,
+animation: false,
+geocoder: false,
+sceneMode: Cesium.SceneMode.SCENE3D,
+terrainProvider: new Cesium.CesiumTerrainProvider({
+url: 'https://assets.agi.com/stk-terrain/world',
+requestWaterMask: false,
+requestVertexNormals: true
+})
 
       });
 
       map.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(2.1806, 41.4003, 15000)
+destination: Cesium.Cartesian3.fromDegrees(2.1806, 41.4003, 15000)
       });
 
       /*
 
-			var overlay= map.imageryLayers;
+var overlay= map.imageryLayers;
 
-			var mapBoxTileset=overlay.addImageryProvider(new Cesium.MapboxImageryProvider({
-			mapId: 'mapbox.mapbox-traffic-v1',
-			accessToken: 'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g'
+var mapBoxTileset=overlay.addImageryProvider(new Cesium.MapboxImageryProvider({
+mapId: 'mapbox.mapbox-traffic-v1',
+accessToken: 'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g'
 		}));
 		mapBoxTileset.alpha = 0.5;
-                          */
+      */
 
 
     });
-  &#x3C;/script&#x3E;
-  &#x3C;/head&#x3E;
-  &#x3C;body&#x3E;
-  &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-  &#x3C;/body&#x3E;
-  &#x3C;/html&#x3E;
+  </script>
+  </head>
+  <body>
+  <div id="map"></div>
+  </body>
+  </html>
 
-        </code></pre>
-
-          </li>
-          * 
-        ## Ejemplo 4 Layers  <b>Cesium4.html</b>
-            <p>Capas Raster: imageryLayers.addImageryProvider</p>
-            <pre><code class="prettyprint">
-            &#x3C;html lang="es"&#x3E;
-
-            &#x3C;head&#x3E;
-              &#x3C;title&#x3E;Ejemplo 4 Layers&#x3C;/title&#x3E;
-              &#x3C;meta charset="utf-8" /&#x3E;
-              &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
-              &#x3C;meta name="author" content="autor" /&#x3E;
-              &#x3C;meta name="description" content="descripción página"&#x3E;
-              &#x3C;meta name="robots" content="index,follow"&#x3E;
-              &#x3C;link rel="stylesheet" href="Cesium/Widgets/widgets.css" /&#x3E;
-              &#x3C;script src="Cesium/Cesium.js"&#x3E;&#x3C;/script&#x3E;
-              &#x3C;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&#x3E;&#x3C;/script&#x3E;
-              &#x3C;style&#x3E;
-                #map {
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  height: 100%;
-                  width: 100%;
-                  margin: 0;
-                  overflow: hidden;
-                  padding: 0;
-                  font-family: sans-serif;
-                }
-
-                html {
-                  height: 100%;
-                }
-
-                body {
-                  padding: 0;
-                  margin: 0;
-                  overflow: hidden;
-                  height: 100%;
-                }
-
-                #capas {
-                  position: absolute;
-                  top: 10px;
-                  left: 10px;
-                  z-index: 1000;
-                  width: auto;
-                  height: auto;
-
-                  background-color: white;
-                }
-
-                li {
-                  list-style-type: none;
-                }
-
-                ul {
-                  padding: 10px !important
-                }
-              &#x3C;/style&#x3E;
-              &#x3C;script&#x3E;
-                var map;
-                $(document).ready(function() {
-                  map = new Cesium.Viewer('map', {
-
-                    imageryProvider: new Cesium.UrlTemplateImageryProvider({
-                      url: 'https://api.mapbox.com/styles/v1/gismasterm2/cjdaf9xjd90eo2spdfzlmr2vb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g'
-                    }),
+```
 
 
-                    timeline: false,
-                    navigationHelpButton: true,
-                    scene3DOnly: true,
-                    fullscreenButton: true,
-                    baseLayerPicker: false,
-                    homeButton: false,
-                    infoBox: true,
-                    sceneModePicker: false,
-                    animation: false,
-                    geocoder: false,
-                    sceneMode: Cesium.SceneMode.SCENE3D,
-                    terrainProvider: new Cesium.CesiumTerrainProvider({
-                      url: 'https://assets.agi.com/stk-terrain/world',
-                      requestWaterMask: false,
-                      requestVertexNormals: true
-                    })
+* 
+### Ejemplo 4 Layers  **Cesium4.html**
+  <p>Capas Raster: imageryLayers.addImageryProvider</p>
+```html
+  <html lang="es">
 
-                  });
+  <head>
+    <title>Ejemplo 4 Layers</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="autor" />
+    <meta name="description" content="descripción página">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="Cesium/Widgets/widgets.css" />
+    <script src="Cesium/Cesium.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      #map {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+margin: 0;
+overflow: hidden;
+padding: 0;
+font-family: sans-serif;
+      }
 
-                  map.camera.flyTo({
-                    destination: Cesium.Cartesian3.fromDegrees(2.1806, 41.4003, 15000)
-                  });
+      html {
+height: 100%;
+      }
 
+      body {
+padding: 0;
+margin: 0;
+overflow: hidden;
+height: 100%;
+      }
 
-            /*Pas01
-                  var overlay = map.imageryLayers;
+      #capas {
+position: absolute;
+top: 10px;
+left: 10px;
+z-index: 1000;
+width: auto;
+height: auto;
 
-                  var ortoICGC = overlay.addImageryProvider(new Cesium.createOpenStreetMapImageryProvider({
-                    url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
-                    fileExtension: 'jpeg',
-                    maximumLevel: 19,
-                    credit: 'Institut Cartogràfic i Geològic de Catalunya'
-                  }));
-                  ortoICGC.show = false;
+background-color: white;
+      }
 
-                  var topoICGC = overlay.addImageryProvider(new Cesium.createOpenStreetMapImageryProvider({
-                    url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/',
-                    fileExtension: 'jpeg',
-                    maximumLevel: 19,
-                    credit: 'Institut Cartogràfic i Geològic de Catalunya'
-                  }));
-                  topoICGC.show = false;
+      li {
+list-style-type: none;
+      }
 
-                  var topo2ICGC = overlay.addImageryProvider(new Cesium.createOpenStreetMapImageryProvider({
-                    url: 'https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/',
-                    fileExtension: 'png',
-                    maximumLevel: 19,
-                    credit: 'Institut Cartogràfic i Geològic de Catalunya'
-                  }));
-                  topo2ICGC.show = false;
+      ul {
+padding: 10px !important
+      }
+    </style>
+    <script>
+      var map;
+      $(document).ready(function() {
+map = new Cesium.Viewer('map', {
 
-                  var orto46 = overlay.addImageryProvider(new Cesium.createOpenStreetMapImageryProvider({
-                    url: 'https://tilemaps.icgc.cat/mapfactory/wmts/orto46/CAT3857/',
-                    fileExtension: 'png',
-                    maximumLevel: 17,
-                    credit: 'Institut Cartogràfic i Geològic de Catalunya'
-                  }));
-                  orto46.show = false;
-            */
-
-            /*Paso2
-                  $('.chk_capes').on('click', function() {
-                    var layer = $(this).val();
-                    var estado = $(this).prop('checked');
-
-                    if (layer == 'ortoICGC') {
-                      ortoICGC.show = estado;
-                    } else if (layer == 'topoICGC') {
-                      topoICGC.show = estado;
-
-                    } else if (layer == 'topo2ICGC') {
-                    topo2ICGC.show = estado;
-
-                    } else if (layer == 'orto46') {
-                      orto46.show = estado;
-                    }
-
-                  }); //fin onclick
-            */
+imageryProvider: new Cesium.UrlTemplateImageryProvider({
+  url: 'https://api.mapbox.com/styles/v1/gismasterm2/cjdaf9xjd90eo2spdfzlmr2vb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g'
+}),
 
 
-                }); //Fin ready
-              &#x3C;/script&#x3E;
+timeline: false,
+navigationHelpButton: true,
+scene3DOnly: true,
+fullscreenButton: true,
+baseLayerPicker: false,
+homeButton: false,
+infoBox: true,
+sceneModePicker: false,
+animation: false,
+geocoder: false,
+sceneMode: Cesium.SceneMode.SCENE3D,
+terrainProvider: new Cesium.CesiumTerrainProvider({
+  url: 'https://assets.agi.com/stk-terrain/world',
+  requestWaterMask: false,
+  requestVertexNormals: true
+})
 
-            &#x3C;/head&#x3E;
+});
 
-            &#x3C;body&#x3E;
-              &#x3C;!--
-              &#x3C;div id="capas"&#x3E;
-                &#x3C;ul&#x3E;
-                  &#x3C;li&#x3E;Capas&#x3C;/li&#x3E;
-                  &#x3C;li&#x3E;
-                    &#x3C;input type="checkbox" value="ortoICGC" class="chk_capes"&#x3E; ortoICGC
-                  &#x3C;/li&#x3E;
-                  &#x3C;li&#x3E;
-                    &#x3C;input type="checkbox" value="topoICGC" class="chk_capes"&#x3E; topoICGC
-                  &#x3C;/li&#x3E;
-                  &#x3C;li&#x3E;
-                    &#x3C;input type="checkbox" value="topo2ICGC" class="chk_capes"&#x3E; topo2ICGC
-                  &#x3C;/li&#x3E;
-                  &#x3C;li&#x3E;
-                    &#x3C;input type="checkbox" value="orto46" class="chk_capes"&#x3E; orto46
-                  &#x3C;/li&#x3E;
-                &#x3C;/ul&#x3E;
-              &#x3C;/div&#x3E;
-            --&#x3E;
-              &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-            &#x3C;/body&#x3E;
-
-            &#x3C;/html&#x3E;
-  </code></pre>
-
-        ## Ejemplo 5 Vectores  <b>Cesium5.html</b>
-            <p>Capas Vector: dataSources</p>
-            <pre><code class="prettyprint">
-              &#x3C;html lang="es"&#x3E;
-              &#x3C;head&#x3E;
-              	&#x3C;title&#x3E;Ejemplo 4 Cesium&#x3C;/title&#x3E;
-              	&#x3C;meta charset="utf-8" /&#x3E;
-              	&#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0"&#x3E;
-              	&#x3C;meta name="author" content="autor" /&#x3E;
-              	&#x3C;meta name="description" content="descripción página"&#x3E;
-              	&#x3C;meta name="robots" content="index,follow"&#x3E;
-              	&#x3C;link rel="stylesheet" href="Cesium/Widgets/widgets.css" /&#x3E;
-              	&#x3C;script src="Cesium/Cesium.js"&#x3E;&#x3C;/script&#x3E;
-              	&#x3C;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&#x3E;&#x3C;/script&#x3E;
-              	&#x3C;style&#x3E;
-              		#map {
-              			position: absolute;
-              			top: 0;
-              			left: 0;
-              			height: 100%;
-              			width: 100%;
-              			margin: 0;
-              			overflow: hidden;
-              			padding: 0;
-              			font-family: sans-serif;
-              		}
-
-              		html {
-              			height: 100%;
-              		}
-
-              		body {
-              			padding: 0;
-              			margin: 0;
-              			overflow: hidden;
-              			height: 100%;
-              		}
-              	&#x3C;/style&#x3E;
-
-              	&#x3C;script&#x3E;
-              		var map, capas, GPX_lyr;
-
-              		$(document).ready(function() {
-
-              			map = new Cesium.Viewer('map', {
-
-              				imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
-              					url: '//services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/',
-
-              				}),
-
-              				timeline: false,
-              				navigationHelpButton: true,
-              				scene3DOnly: true,
-              				fullscreenButton: true,
-              				baseLayerPicker: false,
-              				homeButton: false,
-              				infoBox: true,
-              				sceneModePicker: false,
-              				animation: false,
-              				geocoder: false,
-              				shadows: false,
-              				terrainShadows: Cesium.ShadowMode.ENABLED,
-              				sceneMode: Cesium.SceneMode.SCENE3D,
-              				terrainProvider: new Cesium.CesiumTerrainProvider({
-              					url: 'https://assets.agi.com/stk-terrain/world',
-              					requestWaterMask: false,
-              					requestVertexNormals: true
-              				})
-
-              			});
-              			GPX_lyr = Cesium.GeoJsonDataSource.load('datos/ruta.geojson', {
-              				stroke: Cesium.Color.RED,
-              				strokeWidth: 3,
-              				clampToGround:true
-              			});
-
-              			GPX_lyr.then(function(dataSource) {
-              				map.dataSources.add(dataSource);
-              				map.flyTo(dataSource);
-              			});
+map.camera.flyTo({
+destination: Cesium.Cartesian3.fromDegrees(2.1806, 41.4003, 15000)
+});
 
 
+  /*Pas01
+var overlay = map.imageryLayers;
 
-              		});
-              	&#x3C;/script&#x3E;
+var ortoICGC = overlay.addImageryProvider(new Cesium.createOpenStreetMapImageryProvider({
+url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/',
+fileExtension: 'jpeg',
+maximumLevel: 19,
+credit: 'Institut Cartogràfic i Geològic de Catalunya'
+}));
+ortoICGC.show = false;
 
-              &#x3C;/head&#x3E;
-              &#x3C;body&#x3E;
-              &#x3C;div id="map"&#x3E;&#x3C;/div&#x3E;
-              &#x3C;/body&#x3E;
-              &#x3C;/html&#x3E;
+var topoICGC = overlay.addImageryProvider(new Cesium.createOpenStreetMapImageryProvider({
+url: 'https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/',
+fileExtension: 'jpeg',
+maximumLevel: 19,
+credit: 'Institut Cartogràfic i Geològic de Catalunya'
+}));
+topoICGC.show = false;
 
-        </code></pre>
-            * 
-          ## Ejemplo 6  <b>Clonamos 100 cims dentro del directorio web</b>
-              <pre class="git"><code>
-    git clone https://github.com/geostarters/100cims.git
-      </code></pre>
-            </li>
-            <!--end container -->
+var topo2ICGC = overlay.addImageryProvider(new Cesium.createOpenStreetMapImageryProvider({
+url: 'https://tilemaps.icgc.cat/mapfactory/wmts/topo_suau/CAT3857/',
+fileExtension: 'png',
+maximumLevel: 19,
+credit: 'Institut Cartogràfic i Geològic de Catalunya'
+}));
+topo2ICGC.show = false;
+
+var orto46 = overlay.addImageryProvider(new Cesium.createOpenStreetMapImageryProvider({
+url: 'https://tilemaps.icgc.cat/mapfactory/wmts/orto46/CAT3857/',
+fileExtension: 'png',
+maximumLevel: 17,
+credit: 'Institut Cartogràfic i Geològic de Catalunya'
+}));
+orto46.show = false;
+  */
+
+  /*Paso2
+$('.chk_capes').on('click', function() {
+var layer = $(this).val();
+var estado = $(this).prop('checked');
+
+if (layer == 'ortoICGC') {
+  ortoICGC.show = estado;
+} else if (layer == 'topoICGC') {
+  topoICGC.show = estado;
+
+} else if (layer == 'topo2ICGC') {
+topo2ICGC.show = estado;
+
+} else if (layer == 'orto46') {
+  orto46.show = estado;
+}
+
+}); //fin onclick
+  */
+
+
+      }); //Fin ready
+    </script>
+
+  </head>
+
+  <body>
+    <!--
+    <div id="capas">
+      <ul>
+<li>Capas</li>
+<li>
+<input type="checkbox" value="ortoICGC" class="chk_capes"> ortoICGC
+</li>
+<li>
+<input type="checkbox" value="topoICGC" class="chk_capes"> topoICGC
+</li>
+<li>
+<input type="checkbox" value="topo2ICGC" class="chk_capes"> topo2ICGC
+</li>
+<li>
+<input type="checkbox" value="orto46" class="chk_capes"> orto46
+</li>
+      
     </div>
+  -->
+    <div id="map"></div>
+  </body>
+
+  </html>
+ ``` 
+
+### Ejemplo 5 Vectores  **Cesium5.html**
+  <p>Capas Vector: dataSources</p>
+```html
+    <html lang="es">
+    <head>
+    	<title>Ejemplo 4 Cesium</title>
+    	<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="author" content="autor" />
+    	<meta name="description" content="descripción página">
+    	<meta name="robots" content="index,follow">
+    	<link rel="stylesheet" href="Cesium/Widgets/widgets.css" />
+    	<script src="Cesium/Cesium.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    	<style>
+    		#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    font-family: sans-serif;
+    		}
+
+    		html {
+    height: 100%;
+    		}
+
+    		body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+    		}
+    	</style>
+
+    	<script>
+    		var map, capas, GPX_lyr;
+
+    		$(document).ready(function() {
+
+    map = new Cesium.Viewer('map', {
+
+    	imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
+    		url: '//services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/',
+
+    	}),
+
+    	timeline: false,
+    	navigationHelpButton: true,
+    	scene3DOnly: true,
+    	fullscreenButton: true,
+    	baseLayerPicker: false,
+    	homeButton: false,
+    	infoBox: true,
+    	sceneModePicker: false,
+    	animation: false,
+    	geocoder: false,
+    	shadows: false,
+    	terrainShadows: Cesium.ShadowMode.ENABLED,
+    	sceneMode: Cesium.SceneMode.SCENE3D,
+    	terrainProvider: new Cesium.CesiumTerrainProvider({
+    		url: 'https://assets.agi.com/stk-terrain/world',
+    		requestWaterMask: false,
+    		requestVertexNormals: true
+    	})
+
+    });
+    GPX_lyr = Cesium.GeoJsonDataSource.load('datos/ruta.geojson', {
+    	stroke: Cesium.Color.RED,
+    	strokeWidth: 3,
+    	clampToGround:true
+    });
+
+    GPX_lyr.then(function(dataSource) {
+    	map.dataSources.add(dataSource);
+    	map.flyTo(dataSource);
+    });
+
+
+
+    		});
+    	</script>
+
+    </head>
+    <body>
+    <div id="map"></div>
+    </body>
+    </html>
+
+```
+  * 
+  ### Ejemplo 6  **Clonamos 100 cims dentro del directorio web**
+    <pre class="git"><code>
+    git clone https://github.com/geostarters/100cims.git
+   ```  
+  
+ 
+    

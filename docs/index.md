@@ -1,10 +1,11 @@
-## GeoServicios para Smarts Cities 2018-2019
+### Mapas y OpenData, Localización, Visualización y Análisis de GeoDatos 2018-2019
 
-Materiales para el curso sobre Geoservicios para Smart Cities (GSS) del Màster Tecnologies de la Informació Geografica de la UAB
+Materiales para el módulo 2: Mapas y OpenData, Localización, Visualización y Análisis de GeoDatos
 
-Repo:
+#### Repo:
+[https://github.com/gis-master-m2/m2-geoweb](https://github.com/gis-master-m2/m2-geoweb)
 
-### [https://github.com/gis-master-m2/m2-geoweb](https://github.com/gis-master-m2/m2-geoweb)
+#### Temario
 
 * [1. Introducción a las tecnologías GeoWeb](1_introduccion_a_las_tecnologias_geoweb)
 * [2. Introducción a Leaflet](2_introduccion_a_la_leaflet)
@@ -16,5 +17,5 @@ Repo:
 * [8. Introducción a Cesium](8_introduccion_a_cesium)
 
 
-## Autor
-* Victor Pascual Ayats [victorpascualayats@gmail.com](victorpascualayats@gmail.com)
+#### Autor
+* Victor Pascual Ayats sfggeogis@gmail.com
