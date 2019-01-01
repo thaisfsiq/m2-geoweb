@@ -19,6 +19,9 @@ repo_url: "https://github.com/gis-master-m2/m2-geoweb"
 nav:
 - Inicio: index.md
 - 1. Introducción a las tecnologías GeoWeb: 1_introduccion_a_las_tecnologias_geoweb.md
+- 2. Introducción a Leaflet: 2_introduccion_a_la_leaflet.md
+- 3. Recursos OpenData: 3_recursos_open_data.md
+- 4. Plugins Leaflet: 4_Plugins_leaflet.md
 
 
 plugins:
