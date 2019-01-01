@@ -1,30 +1,30 @@
     
 <div class="container">
-    <h5>Introducción a Leaflet </h5>
-    <a href="http://leafletjs.com/" target="_blank">
+## Introducción a Leaflet 
+   [http://leafletjs.com]
             <img width=100 src="http://leafletjs.com/docs/images/logo.png">
-        </a>
+       
 
     <div class="alert alert-warning">
-      <h5>  Recursos Leaflet JS</h5>
-  <ul>
-<li>
+  ##   Recursos Leaflet JS
+  > 
+* 
 Web<br>
 <a target="_blank" href="http://leafletjs.com/">http://leafletjs.com/</a>
 </li>
-<li>
+* 
   API<br>
   <a target="_blank" href="http://leafletjs.com/reference.html">http://leafletjs.com/reference.html</a>
 </li>
-<li>
+* 
  Plugins<br>
   <a target="_blank" href="http://leafletjs.com/plugins.html">http://leafletjs.com/plugins.html</a>
 </li>
-<li>
+* 
  Definición<br>
   <a target="_blank" href="https://en.wikipedia.org/wiki/Leaflet_(software)">https://en.wikipedia.org/wiki/Leaflet_(software)</a>
 </li>
-<li>
+* 
   Tutoriales<br>
   <a target="_blank" href="http://www.digital-geography.com/category/leaflet-js/">http://www.digital-geography.com/category/leaflet-js/</a><br>
   <a target="_blank" href="http://leafletjs.com/examples.html">http://leafletjs.com/examples.html</a><br>
@@ -32,7 +32,7 @@ Web<br>
   <a target="_blank" href="http://asmaloney.com/2014/01/code/creating-an-interactive-map-with-leaflet-andopenstreetmap/">http://asmaloney.com/2014/01/code/creating-an-interactive-map-with-leaflet-andopenstreetmap/</a><br>
   <a target="_blank" href="http://mappinggis.com/2013/06/como-crear-un-mapa-con-leaflet/">http://mappinggis.com/2013/06/como-crear-un-mapa-con-leaflet/</a>
 </li>
-<li>
+* 
 Videos<br>
   <a target="_blank" href="https://www.youtube.com/watch?v=7Tll2k57ork">https://www.youtube.com/watch?v=7Tll2k57ork</a><br>
   <a target="_blank" href="https://egghead.io/lessons/javascript-get-started-with-leafletjs-mapping">https://egghead.io/lessons/javascript-get-started-with-leafletjs-mapping</a><br>
@@ -47,19 +47,19 @@ Videos<br>
 
 
         <div class="soft">
-            <h5>Descripción</h5>
+        ## Descripción
             Leaflet es una librería JavaScript opensource utilizada por Flickr, Wikimedia, foursquare, OSM, carto, GIS Cloud, Washington
             Post, Wall Street Journal, Geocaching.com, etc. Puntos fuertes de la API de Leaflet son:
-            <ul>
-                <li> Facilidad para aprender y usar</li>
-                <li> Soporte móvil</li>
-                <li> HTML 5, CSS3 y pasarela WebGL</li>
-                <li> Funciona tanto en los modernos como en los viejos navegadores web</li>
-                <li> Muchos plugins</li>
-                <li> API bien documentada</li>
+            > 
+                *  Facilidad para aprender y usar</li>
+                *  Soporte móvil</li>
+                *  HTML 5, CSS3 y pasarela WebGL</li>
+                *  Funciona tanto en los modernos como en los viejos navegadores web</li>
+                *  Muchos plugins</li>
+                *  API bien documentada</li>
             </ul>
-            <h5> ¿Cómo empezar?</h5>
-			Descargar <a href="datos/web.zip">web.zip</a> y descomprimir dentro de
+        ##  ¿Cómo empezar?
+			Descargar[datos/web.zip">web.zip</a> y descomprimir dentro de
           nuestro directorio del servidor web
             Abrimos nuestro editor de text i creamos la página
             <b>Ejemplo0.html</b> dentro directorio web<br>
@@ -127,7 +127,7 @@ Videos<br>
              Se usa para crear y manipular el mapa. <br>
              El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.<br>
 
-  <br><h5>Ejemplo 0 Básico</h5>
+  <br><h5>Ejemplo 0 Básico
             <pre><code class="prettyprint">
             &#x3C;html lang=&#x22;es&#x22;&#x3E;
             &#x3C;head&#x3E;
@@ -173,25 +173,25 @@ Videos<br>
             &#x3C;/html&#x3E;
         </code></pre>
         <div class="footnote">
-            <h5><a target="_blank" href="ejemplo0.html" >Ver Ejemplo 0 </a></h5>
+        ## <a target="_blank" href="ejemplo0.html" >Ver Ejemplo 0
         </div>
         ¿Que acabamos de hacer? Miramos dentro del tag &#x3C;script&#x3E;
-            <ul>
-                <li>Hemos creado la variable global <b>map</b></li>
-                <li>Usamos <b>L.map()</b> para instanciar el objeto mapa, pasando el id del &#x3C;div&#x3E; dónde irá el mapa</li>
-                <li>Utilizamos las opciones center y zoom iniciar el mapa También podríamos utilizar el método<br>
+            > 
+                * Hemos creado la variable global <b>map</b></li>
+                * Usamos <b>L.map()</b> para instanciar el objeto mapa, pasando el id del &#x3C;div&#x3E; dónde irá el mapa</li>
+                * Utilizamos las opciones center y zoom iniciar el mapa También podríamos utilizar el método<br>
                    <b>setView map =L.map('map').setView([41.6863, 1.8382], 8);)</b></li>
-                <li> Usamos <b>L.tileLayer()</b> para crear una capa base en un servidor OSM de tiles. {z}/{x}/{y}. También pasamos algunas
+                *  Usamos <b>L.tileLayer()</b> para crear una capa base en un servidor OSM de tiles. {z}/{x}/{y}. También pasamos algunas
                     opciones <br>Attribution : atribución de la capa <br>maxZoom y minZoom :niveles de zoom.</li>
-                <li>Usamos método addTo() para añadir la capa al mapa</li>
-                <li>Si quisieramos añadir un punto:</br>
+                * Usamos método addTo() para añadir la capa al mapa</li>
+                * Si quisieramos añadir un punto:</br>
                     <pre><code class="prettyprint">
                       L.marker([41.3954, 2.16859]).addTo(map)
                         .bindPopup('Hola punto')
                         .openPopup();
                   </code></pre>
                   </li>
-                  <li>Si quisieramos añadir un punto con estilo al hacer clic en el mapa(Evento):</br>
+                  * Si quisieramos añadir un punto con estilo al hacer clic en el mapa(Evento):</br>
                       <pre><code class="prettyprint">
                           map.on('click',function(e){
                               new L.circleMarker(e.latlng, {
@@ -211,7 +211,7 @@ Videos<br>
             </ul>
 
 
-            <h5>Ejemplo 1 Controles</h5>
+        ## Ejemplo 1 Controles
             Añadimos controles de capas y escala.
             <pre><code class="prettyprint">
               &lt;html lang="es"&gt;
@@ -283,9 +283,9 @@ Videos<br>
         </code></pre>
 
         <div class="footnote">
-            <h5><a target="_blank" href="ejemplo1.html" >Ver Ejemplo 1 </a></h5>
+        ## <a target="_blank" href="ejemplo1.html" >Ver Ejemplo 1
         </div>
-            <h5>Ejemplo 2 Provider</h5>
+        ## Ejemplo 2 Provider
             ¿Que mapas de fondo puedo añadir?
             <a target="_blank" href="http://leaflet-extras.github.io/leaflet-providers/preview/">http://leaflet-extras.github.io/leaflet-providers/preview/</a>
 
@@ -440,7 +440,7 @@ Videos<br>
               &lt;/html&gt;
         </code></pre>
         <div class="footnote">
-            <h5><a target="_blank" href="ejemplo2.html" >Ver Ejemplo 2</a></h5>
+        ## <a target="_blank" href="ejemplo2.html" >Ver Ejemplo 2</a>
         </div>
             <!--end container -->
         </div>

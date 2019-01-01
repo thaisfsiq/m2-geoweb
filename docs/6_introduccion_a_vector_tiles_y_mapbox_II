@@ -1,41 +1,41 @@
 # Introducció a Vector Tiles y Mapbox (II)
 <div class="container">
-    <h5>Introducción a Mapbox.com </h5>
-    <a href="https://www.mapbox.com/" target="_blank">
+## Introducción a Mapbox.com 
+   [https://www.mapbox.com]
             <img width=100 src="https://c1.staticflickr.com/3/2863/33742461420_90c7cd525f_o.png">
-        </a>
+       
 
     <div class="alert alert-warning">
-      <h5> Recursos Mapbox</h5>
-      <ul>
-        <li>
+  ##  Recursos Mapbox
+      > 
+        * 
           Web<br>
           <a target="_blank" href="https://www.mapbox.com/">https://www.mapbox.com/</a>
         </li>
-        <li>
+        * 
           Productos<br>
           <a target="_blank" href="https://www.mapbox.com/products/">https://www.mapbox.com/products/</a>
         </li>
-        <li>
+        * 
           APIs<br>
           <a target="_blank" href="https://www.mapbox.com/api-documentation/">https://www.mapbox.com/api-documentation/</a>
         </li>
-        <li>
+        * 
           MapBox GL<br>
           <a target="_blank" href="https://www.mapbox.com/mapbox-gl-js/api/">https://www.mapbox.com/mapbox-gl-js/api/</a>
         </li>
-        <li>
+        * 
           GitHUB<br>
           <a target="_blank" href="https://github.com/mapbox">https://github.com/mapbox</a>
         </li>
-        <li>
+        * 
           Tutoriales<br>
           <a target="_blank" href="https://www.mapbox.com/mapbox-gl-js/example/simple-map/">https://www.mapbox.com/mapbox-gl-js/example/simple-map/</a><br>
           <a target="_blank" href="https://www.mapbox.com/help/tutorials/">https://www.mapbox.com/help/tutorials/</a><br>
           <a target="_blank" href="https://www.mapbox.com/help/studio-manual/">https://www.mapbox.com/help/studio-manual/</a><br>
           <a target="_blank" href="https://ovrdc.github.io/gis-tutorials/mapbox/">https://ovrdc.github.io/gis-tutorials/mapbox/</a><br>
         </li>
-        <li>
+        * 
           Videos<br>
           <a target="_blank" href="https://www.youtube.com/watch?v=jrnoFU5Wkdo">https://www.youtube.com/watch?v=jrnoFU5Wkdo</a><br>
           <a target="_blank" href="https://www.youtube.com/watch?v=Zn3Xx-TSrM8">https://www.youtube.com/watch?v=Zn3Xx-TSrM8</a><br>
@@ -47,35 +47,35 @@
 
 
     <div class="soft">
-      <h5>Descripción</h5> MapxBox es una empresa privada que ofrece una plataforma para la publicacón de mapas. Mapbox destaca por creado de forma abierta
-      <ul>
-        <li> MBTiles</li>
-        <li> Vector Tiles</li>
-        <li> MapBox GL</li>
+  ## Descripción MapxBox es una empresa privada que ofrece una plataforma para la publicacón de mapas. Mapbox destaca por creado de forma abierta
+      > 
+        *  MBTiles</li>
+        *  Vector Tiles</li>
+        *  MapBox GL</li>
 
       </ul>
-      <h5> ¿Cómo empezar?</h5>
+  ##  ¿Cómo empezar?
 
       <p>Vamos a realizar un ejercicio dón veremos como funciona MapBox studio, vector tiles y Mapbox GL</p>
       <p>Crearemos un mapa personalizados com los accidentes de tráfico en Barcelona 2017</p>
 
       <h6>Paso 1</h6>
-      <ul>
-        <li>Descargamos en formato CSV los accidentes en <a target="_blank" href="http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn">
+      > 
+        * Descargamos en formato CSV los accidentes en <a target="_blank" href="http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn">
               http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn</a>
         </li>
-        <li>
+        * 
           Utilizamos QGIS para visualizar y convertir a GeoJSON en EPSG:4326 -->accidentes2017.geojson
         </li>
       </ul>
       <h6>Paso 2 -Creamos nuestor estilo</h6>
-      <ul>
-        <li>Entramos en MapBox <mark>-->Studio -->Styles -->New style</mark>
+      > 
+        * Entramos en MapBox <mark>-->Studio -->Styles -->New style</mark>
         </li>
-        <li>
+        * 
           Seleccionamos un estilo como base y cambiamos colores -->Publish your style
         </li>
-        <li>
+        * 
           Share, develop, and use your style --> Copiamos Style URL y Access token
         </li>
         <pre><code class="prettyprint">
@@ -129,16 +129,16 @@
         </li>
       </ul>
       <h6>Paso 3 -Añadimos accidentes2017.geojson a Mapbox </h6>
-      <ul>
-        <li>Entramos en MapBox <mark>-->Studio -->Tilesets -->New tileset-->Arrastramos accidentes2017.geojson</mark>
+      > 
+        * Entramos en MapBox <mark>-->Studio -->Tilesets -->New tileset-->Arrastramos accidentes2017.geojson</mark>
         </li>
-        <li>
+        * 
           Copiamos nuestro Mapa Id
         </li>
-        <li>
+        * 
           Share, develop, and use your style --> Copiamos Style URL y Access token
         </li>
-        <li>
+        * 
           Creamos <b>Mapbox0.html</b> Leaflet y MapBox:
           <pre><code class="prettyprint">
             &#x3C;html lang="es"&#x3E;
@@ -415,43 +415,43 @@ function filtraDias(numdia){
 
       </code></pre>
       <h6>Paso 4 </h6>
-      <ul>
-        <li>Descargamos datos de carriles bici http://opendata-ajuntament.barcelona.cat/data/ca/dataset?q=carril+bici
+      > 
+        * Descargamos datos de carriles bici http://opendata-ajuntament.barcelona.cat/data/ca/dataset?q=carril+bici
         </li>
-        <li>
+        * 
           Convertinmos a GeoJson
         </li>
-        <li>
+        * 
           Añadimos como tileset en MapxBox
         </li>
-        <li>
+        * 
           Integramos el tileset dentro nuestro estilo creado <mark>Menu -->Add Tileset to Style</mark>
         </li>
-        <li>
+        * 
           Editamos estilo carriles bici
         </li>
-        <li>
+        * 
           Comprobamos nuestros visores, ¿Que ha pasado?
         </li>
       </ul>
 
       <h6>Práctica Cementrio </h6>
-      <ul>
-        <li>Creamos nuevo estilo
+      > 
+        * Creamos nuevo estilo
         </li>
-        <li>
+        * 
           Cargamos capas <b>/datos/constru_cementerio.geojson</b> y <b>/datos/cementerio.geojson</b>
         </li>
-        <li>
+        * 
           Añadimos como tileset en MapxBox
         </li>
-        <li>
+        * 
           Integramos el tileset dentro nuestro estilo creado <mark>Menu -->Add Tileset to Style</mark>
         </li>
-        <li>
+        * 
           Editamos capaps
         </li>
-        <li>
+        * 
           Adatamos visor ejemplo MapBox0.html
         </li>
       </ul>

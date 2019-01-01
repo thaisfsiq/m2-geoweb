@@ -1,29 +1,29 @@
- <div class="container">
-    <h5>Introducción a Cesium </h5>
-    <a href="https://cesiumjs.org/" target="_blank">
+
+## Introducción a Cesium 
+   [https://cesiumjs.org]
             <img width=100 src="https://cesiumjs.org/Cesium/Apps/Sandcastle/images/Cesium_Logo_Color_Overlay.png">
-        </a>
+       
 
     <div class="alert alert-warning">
-      <h5>  Recursos Cesium JS</h5>
-      <ul>
-        <li>
+  ##   Recursos Cesium JS
+      > 
+        * 
           Web<br>
           <a target="_blank" href="https://cesiumjs.org/">https://cesiumjs.org/</a>
         </li>
-        <li>
+        * 
           API<br>
           <a target="_blank" href="https://cesiumjs.org/refdoc/">https://cesiumjs.org/refdoc/</a>
         </li>
-        <li>
+        * 
           Ejemplos<br>
           <a target="_blank" href="https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html">https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html</a>
         </li>
-        <li>
+        * 
           Definición<br>
           <a target="_blank" href="https://en.wikipedia.org/wiki/Virtual_globe">https://en.wikipedia.org/wiki/Virtual_globe</a>
         </li>
-        <li>
+        * 
           Tutoriales<br>
 
           <a target="_blank" href="http://cesiumjs.org/tutorials.html">http://cesiumjs.org/tutorials.html</a><br>
@@ -32,7 +32,7 @@
           <a target="_blank" href="http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html">http://cesiumjs.org/Cesium/Apps/Sandcastle/index.html</a><br>
 
         </li>
-        <li>
+        * 
           Videos<br>
           <a target="_blank" href="https://www.youtube.com/watch?v=ELYsCn-caXY">https://www.youtube.com/watch?v=ELYsCn-caXY</a><br>
           <a target="_blank" href="https://www.youtube.com/watch?v=YZ_2T6dgSw4">https://www.youtube.com/watch?v=YZ_2T6dgSw4</a><br>
@@ -43,19 +43,19 @@
     </div>
 
     <div class="soft">
-      <h5>Descripción</h5> Cesium JS ees una libreria basada en WebGL, creada por la empresa AGI, que permite trabajar con globos virtuales 3D: Cesium destaca por haber creado de forma abierta
-      <ul>
-        <li> Formato GLTF</li>
-        <li> Especificación 3D Vector-Tiles</li>
+  ## Descripción Cesium JS ees una libreria basada en WebGL, creada por la empresa AGI, que permite trabajar con globos virtuales 3D: Cesium destaca por haber creado de forma abierta
+      > 
+        *  Formato GLTF</li>
+        *  Especificación 3D Vector-Tiles</li>
       </ul>
 
-      <h5> ¿Cómo empezar?</h5> Cesium no tiene un CDN.
+  ##  ¿Cómo empezar? Cesium no tiene un CDN.
       <p>descargamos Cesium <a target="_blank" href="https://cesiumjs.org/downloads">https://cesiumjs.org/downloads</a></p>
       <p>Descomprimir zip y extraer dentro del directorio web /build/cesium
-      <ul>
-        <li> Creamos
+      > 
+        *  Creamos
           <b>Cesium1.html</b> dentro directorio web<br> Ejemplo básico :
-          <li>
+          * 
 
             <pre><code class="prettyprint">
           &#x3C;html lang="es"&#x3E;
@@ -111,8 +111,8 @@
 
         </code></pre>
           </li>
-          <li>
-            <h5>Ejemplo 2 Personalizado <b>Cesium2.html</b></h5>
+          * 
+        ## Ejemplo 2 Personalizado <b>Cesium2.html</b>
             <pre><code class="prettyprint">
               &#x3C;html lang="es"&#x3E;
                &#x3C;head&#x3E;
@@ -190,8 +190,8 @@
                &#x3C;/html&#x3E;
            </code></pre>
           </li>
-          <li>
-            <h5>Ejemplo 3 Cesium y MapBox  <b>Cesium3.html</b></h5>
+          * 
+        ## Ejemplo 3 Cesium y MapBox  <b>Cesium3.html</b>
 
             <pre><code class="prettyprint">
               &#x3C;html lang="es"&#x3E;
@@ -293,8 +293,8 @@
         </code></pre>
 
           </li>
-          <li>
-            <h5>Ejemplo 4 Layers  <b>Cesium4.html</b></h5>
+          * 
+        ## Ejemplo 4 Layers  <b>Cesium4.html</b>
             <p>Capas Raster: imageryLayers.addImageryProvider</p>
             <pre><code class="prettyprint">
             &#x3C;html lang="es"&#x3E;
@@ -474,7 +474,7 @@
             &#x3C;/html&#x3E;
   </code></pre>
 
-            <h5>Ejemplo 5 Vectores  <b>Cesium5.html</b></h5>
+        ## Ejemplo 5 Vectores  <b>Cesium5.html</b>
             <p>Capas Vector: dataSources</p>
             <pre><code class="prettyprint">
               &#x3C;html lang="es"&#x3E;
@@ -568,8 +568,8 @@
               &#x3C;/html&#x3E;
 
         </code></pre>
-            <li>
-              <h5>Ejemplo 6  <b>Clonamos 100 cims dentro del directorio web</b></h5>
+            * 
+          ## Ejemplo 6  <b>Clonamos 100 cims dentro del directorio web</b>
               <pre class="git"><code>
     git clone https://github.com/geostarters/100cims.git
       </code></pre>

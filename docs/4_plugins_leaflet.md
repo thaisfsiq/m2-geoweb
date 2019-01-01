@@ -1,25 +1,25 @@
- <div class="container">
-    <h5>Introducción a Leaflet </h5>
-    <a href="http://leafletjs.com/" target="_blank">
+
+## Introducción a Leaflet 
+   [http://leafletjs.com]
             <img width=100 src="http://leafletjs.com/docs/images/logo.png">
-        </a>
+       
 
     <div class="alert alert-warning">
-      <h5>Lealfet Plugins</h5>
-  <ul>
-<li>
+  ## Lealfet Plugins
+  > 
+* 
  Plugins<br>
   <a target="_blank" href="http://leafletjs.com/plugins.html">http://leafletjs.com/plugins.html</a>
 </li>
 </ul>
 </div>
         <div class="soft">
-            <h5>Buscador de Farmacias</h5>
-            <ul>
-                <li> Creamos archivos <a>farmacias.html</a></li>
-                <li> Visualizamos geojson en /web/datos/farmacias.geojson</li>
-                <li> Utilizaremos directaments pluguin GeoJSON AJAX <a target="_blank" href="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js">https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js</a> </li>
-                <li> Descargaremos plugin <a target="_blank" href="https://github.com/stefanocudini/leaflet-search">leaflet-Search</a> </li>
+        ## Buscador de Farmacias
+            > 
+                *  Creamos archivos <a>farmacias.html</a></li>
+                *  Visualizamos geojson en /web/datos/farmacias.geojson</li>
+                *  Utilizaremos directaments pluguin GeoJSON AJAX <a target="_blank" href="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js">https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js</a> </li>
+                *  Descargaremos plugin <a target="_blank" href="https://github.com/stefanocudini/leaflet-search">leaflet-Search</a> </li>
             </ul>
 
             <pre><code class="prettyprint">
@@ -135,10 +135,10 @@
              Se usa para crear y manipular el mapa. <br>
              El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.<br>
 
-  <br><h5>Callejero</h5>
-  <ul>
-      <li> Creamos archivo <a>calles.html</a></li>
-      <li> Descargaremos plugin <a target="_blank" href="https://github.com/MuellerMatthew/L.GeoSearch">GeoSearch</a> </li>
+  <br><h5>Callejero
+  > 
+      *  Creamos archivo <a>calles.html</a></li>
+      *  Descargaremos plugin <a target="_blank" href="https://github.com/MuellerMatthew/L.GeoSearch">GeoSearch</a> </li>
   </ul>
 
             <pre><code class="prettyprint">
@@ -228,10 +228,10 @@
     &#x3C;/html&#x3E;
         </code></pre>
         <div class="footnote">
-            <h5>Leaflet + GeoNames</h5>
+        ## Leaflet + GeoNames
         </div>
-            <ul>
-                <li>Crearemos el archivo <b>geonames.html</b></li>
+            > 
+                * Crearemos el archivo <b>geonames.html</b></li>
 
             </ul>
 
