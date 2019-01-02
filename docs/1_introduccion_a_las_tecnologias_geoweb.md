@@ -7,9 +7,9 @@
 Temario
 
 * Introducción a las tecnologías GeoWeb
-    * Conceptos Smart Cities
+    * Conceptos geoweb
     * Conceptos Open Data
-    * Conceptos sensores
-    * Tecnologías OpenData
+    * Conceptos linked Data
+    * Tecnologías geoweb
 
 ### [Ver presentación](presentacion/1_introduccion-geoweb.pptx)

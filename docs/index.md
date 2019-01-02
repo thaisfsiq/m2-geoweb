@@ -12,10 +12,24 @@ Materiales para el módulo 2: Mapas y OpenData, Localización, Visualización y 
 * [3. Recursos OpenData](3_recursos_open_data)
 * [4. Plugins Leaflet](4_plugins_leaflet)
 * [5. Taller GitHub](5_taller_github)
-* [6. Introducción a Vector Tiles y MapBox](6_introduccion_a_vector_tiles_y_mapbox)
-* [7. Visualización con Kepler GL](7_visualizacion_con_kepler_gl)
-* [8. Introducción a Cesium](8_introduccion_a_cesium)
+* [6. Introducción a Vector Tiles](6_introduccion_a_vector_tiles)
+* [7. Introducción a MapBox](7_introduccion_a_mapbox)
+* [8. Visualización con Kepler GL](8_visualizacion_con_kepler_gl)
+* [9. Introducción a Cesium](9_introduccion_a_cesium)
 
 
-#### Autor
+#### Recursos
+
+* Editor de código. Recomendado [https://code.visualstudio.com/](https://code.visualstudio.com/)
+* Servidor web. Recomendado [https://nginx.org/en/download.html](https://nginx.org/en/download.html)
+* Cliente GIT [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+#### Crear usuario
+
+* GitHub [https://github.com/](https://github.com/)
+* GeoNames [https://www.geonames.org/](https://www.geonames.org/)
+* MapBox [https://www.mapbox.com/](https://www.mapbox.com/)
+
+
+##### Autor
 * Victor Pascual Ayats sfggeogis@gmail.com

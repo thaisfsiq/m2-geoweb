@@ -1,4 +1,4 @@
-# Visualización con Kepler.gl
+### Visualización con Kepler.gl
 
 Kepler.gl desrrollada por Uber, en u  principio para uso interno, para analizar y visualizar sus propios datos.
 
@@ -7,7 +7,7 @@ Es una aplicación basada en web GL de alto rendimiento y agnóstica de datos pa
 ![alt text](img/kepler.png "Kepler GL")
 
 
-## Ejercicio de visualización con Kepler.gl
+### Ejercicio de visualización con Kepler.gl
 
 !!! tip 
     Queremos ver dónde hay más accidentes

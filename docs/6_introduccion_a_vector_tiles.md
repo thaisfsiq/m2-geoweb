@@ -1,4 +1,4 @@
-# Introducció a Vector Tiles y Mapbox (I)
+### Introducción a Vector Tiles y Mapbox (I)
 
 Vector Tiles es un formato para almacenar datos geográficos en formato binario (Google Protobuf) y pensados para la visualización en navegadores web modernos que soporten webGL.
 
@@ -6,7 +6,7 @@ Una tesela vectorial (vector tiles) contiene datos vectoriales georreferenciados
 
  Cada conjunto de teselas vectoriales tiene su propio esquema. Un esquema consiste en nombres de capas, atributos, selección de elementos.
 
-## Contexto
+#### Contexto
 
  En 2005 GoogleMaps introdujo una "nueva" forma de mostrar datos geográficos por la web, pregenerando el mapa por niveles de zoom y tiles (teselas) de 256x256 pixeles.
 
@@ -18,7 +18,7 @@ También creó una nueva proyección basada en mercator, llamada pseude-mercator
 
  Después de GoogleMaps, otros proveedores o plataformas cómo OpenStreetMap siguen esta misma forma de organizar la geoinformación.
 
-## Protocolos
+#### HTTP
 
  Para cargar la imágenes se ulitza una llamada HTTP rest dónde se especifica;
  
@@ -40,7 +40,7 @@ También creó una nueva proyección basada en mercator, llamada pseude-mercator
 
 ![alt text](img/request.png "XyZ")
 
-## Protocolos
+#### Protocolos
 
 Existen tres especificaciones para servir tiles
 
@@ -53,7 +53,7 @@ Existen tres especificaciones para servir tiles
 ![alt text](img/tms.png "XyZ")
 ![alt text](img/xyz.png "XyZ")
 
-### Caracteristicas
+#### Caracteristicas
 
 Las teselas vectoriales han sido utilizadas por el cliente Android de Google Maps desde diciembre de 2010 y en el cliente de escritorio desde 2013. Las teselas vectoriales para renderizar los datos de OpenStreetMap se propusieron por primera vez en marzo de 2013 y están soportadas por Mapnik, el renderizador de datos de OpenStreetMap más utilizado. 
 Mapbox, proveedor comercial de herramientas de cartografía personalizada y de hosting, es el máxini impulsor de esta tecnologia y ha centrado su herramienta de cartografía, Mapbox Studio, en torno a las teselas vectoriales.
@@ -67,13 +67,13 @@ Mapbox, proveedor comercial de herramientas de cartografía personalizada y de h
 
 
 
-## Herramientas y recursos
+### Herramientas y recursos
 
 Fuente:
 [https://github.com/mapbox/awesome-vector-tiles](https://github.com/mapbox/awesome-vector-tiles)
 
 
-### Parsers & Generators
+#### Parsers & Generators
 
 - [vector-tile-js](https://github.com/mapbox/vector-tile-js) - Parses vector tiles with JavaScript.
 - [mapnik-vector-tile](https://github.com/mapbox/mapnik-vector-tile) - C++ vector tile read/write implementation on top of Mapnik.
@@ -93,7 +93,7 @@ Fuente:
 - [SwiftVectorTiles](https://github.com/manimaul/SwiftVectorTiles) - A Swift encoder for vector tiles according to the Mapbox vector tile spec.
 - [orb](https://github.com/paulmach/orb) - A Go geometry library with mvt <-> geojson support.
 
-## Clients
+#### Clients
 
 - [Mapbox GL Native](https://github.com/mapbox/mapbox-gl-native) - C++/OpenGL vector maps library with native SDKs for Android, iOS, Node.js, macOS, and Qt
 - [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) - JavaScript/WebGL vector maps library.
@@ -112,7 +112,7 @@ Fuente:
 * [Unofficial Mapbox GL Native bindings for Qt QML](https://github.com/rinigus/mapbox-gl-qml) - Qt QML bindings for Qt 5.6 and higher.
 * [Mapbox-vector-tiles-basic-js-renderer](https://github.com/landtechnologies/Mapbox-vector-tiles-basic-js-renderer) - A fork of mapbox-gl-js giving you full control over rendering of specific tiles, also provides vector tile overlay for google maps.
 
-### Applications / Command line tools
+#### Applications / Command line tools
 
 - [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) - Web design studio for creating and styling vector tiles.
 - [Mapbox Studio Classic](https://github.com/mapbox/mapbox-studio) - Desktop design studio for both creating vector tiles from raw geodata and for rendering them on-the-fly into image tiles. Internally uses `tilelive.js` modules to handle vector tiles (see `tilelive-bridge` and `tilelive-vector`) :warning: use [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) instead.
@@ -123,7 +123,7 @@ Fuente:
 - [QGIS Vector Tiles Reader](https://github.com/geometalab/Vector-Tiles-Reader-QGIS-Plugin) - QGIS Python plugin which reads Mapbox Vector Tiles from local MBTiles file or remote
 - [mapbox-gl-inspect](https://github.com/lukasmartinelli/mapbox-gl-inspect) - Plugin for Mapbox GL JS to view the view and inspect VT features.
 
-## CLI Utilities
+#### CLI Utilities
 
 - [mbview](https://github.com/mapbox/mbview) - Watch MBTiles in your localhost. View tiles in a basic Mapbox GL JS webapp locally
 - [tippecanoe](https://github.com/mapbox/tippecanoe) - Build vector tilesets from large collections of GeoJSON features.
@@ -140,11 +140,11 @@ Fuente:
 - [MBUtil](https://github.com/mapbox/mbutil) - Import and export MBTiles to disk :warning: no longer maintained
 - [Datamaps](https://github.com/ericfischer/datamaps) C application that can be used to create vector tiles and store them in an mbtiles. See the `render-vector` command. :warning: no longer maintained, use tippecanoe instead
 
-## Mapbox GL JS Plugins
+#### Mapbox GL JS Plugins
 
 - [gl-draw](https://github.com/mapbox/gl-draw) - Adds support for drawing and editing features on Mapbox GL JS maps
 
-## Servers
+#### Servers
 
 - [tessera](https://github.com/mojodna/tessera) - Supports serving and rendering vector tiles. Uses the same core libraries as Mapbox Studio.
 - [tessella](https://github.com/urbica/tessella) - lightweight Node.js Mapbox Vector Tiles server. Inspired by tessera.
@@ -166,7 +166,7 @@ Fuente:
 - [Hastile](https://github.com/sitewisely/hastile) - Haskell web server using PostGIS to deliver vector tiles.
 - [MapServer](http://mapserver.org/) - Open Source platform for publishing spatial data and interactive mapping applications to the web. MVT output available in 7.2
 
-## Low-level utilities
+#### Low-level utilities
 
 - [vt-pbf](https://github.com/anandthakker/vt-pbf) serialize JavaScript objects representing vector tiles into binary Protocol Buffer encodings of vector tiles
 - [vtzero](https://github.com/mapbox/vtzero) - minimalist vector tile decoder and encoder in C++
@@ -175,12 +175,12 @@ Fuente:
 - [mapbox-gl-function](https://github.com/mapbox/mapbox-gl-function) - Mapbox GL style function evaluator :warning: now maintained as party of mapbox-gl-js
 - [mapbox-gl-filter-simplify](https://github.com/mapbox/mapbox-gl-filter-simplify) - Simplifies and complexifies filters in Mapbox GL Styles :warning: removed
 
-## Articles
+#### Articles
 
 - [Vector tiles remixed](http://gdunlop.github.io/Vector-tiles-remixed/) - guide to using [tilemaker](https://github.com/systemed/tilemaker) to generating vector tiles
 - [Build Your Own Static Vector Tile Pipeline](https://geovation.github.io/build-your-own-static-vector-tile-pipeline) - guide transforming, encoding and hosting tiles in the cloud; using ogr2ogr + tippecanoe + Mapbox GL JS
 - [Using the new MVT function in PostGIS](https://medium.com/nycplanninglabs/using-the-new-mvt-function-in-postgis-75f8addc1d68) - Building a vector tile service with PostGIS, express, and pg-promise.
 
-## License
+#### License
 
 [![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)

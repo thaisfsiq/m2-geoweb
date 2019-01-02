@@ -1,7 +1,5 @@
 
-  ### Taller GuitHub 
-   [https://github.com]
-<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo" width="100"> 
+<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png" width="100"> 
        
 
  
@@ -26,74 +24,81 @@
 
 
     
-### Descripción GitHub es un reporsitorio de código dónde podremos subir nuestros proyectos y también hosting de una pàgina web.
+### Descripción 
+>GitHub es un reporsitorio de código dónde podremos subir nuestros proyectos y también hosting de una pàgina web.
+
 ### Ejemplo crear web site
 
 * Requisitos Instalar cliente GIT para windows [https://git-scm.com/download/win](https://git-scm.com/download/win)
-
-     
-    ### Paso 1
+ 
+#### Paso 1
 
 * Crear usuario en: [https://github.com/](https://github.com/)
 
+#### Paso 2
+
+* Creamos nuevo repo llamado **geoweb**
+
+![alt text](img/github-pas2.png "github")
+
+
+#### Paso 3
+* Crearemos repo des de nuestro pc [Tutorial](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
+
+* Nos situamos dentro del directori **geoweb** de nuestro servidor y abrimos termial git (botón derecho mouse y Git Bash here)
+
+```sh
+git init
+git add .
+git commit -m "proyecto geoweb"
+git remote add origin https://github.com/{tu usuario git}/geoweb.git
+git remote -v
+git push -u origin master
+
+```
+Atentificamos con usuario y password  
+
+#### Paso 4
+
+* Verificamos en github.com que se ha subido toda la documentación y creamos arcihivo readme **add Readme**
+
+#### Paso 5
+
+* Vamos a la terminal de git y escribimos
+
+```sh 
+
+git pull
+``` 
+ 
      
-    ### Paso 2
+#### Paso 6
 
-* Crear nuevo proyecto: ** Start a project ** o ** Repositories <i class="fa fa-arrow-right" aria-hidden="true"></i>New Repo **
-* Nombre del proyecto: **{nuestro id de usuario}.github.io**
-* Público
-* Con README y licencia MIT
-     
-    ### Paso 3
+ * Abrimos archivo readme con editor VSCode y añadimos text descriptivo de nuestro proyecto
+ * Guardamos y desde la terminal git
 
-* Clonamos proyecto en nuestra máquina (mejor dentro espacio web): ** Clone or download **<i class="fa fa-arrow-right" aria-hidden="true"></i> ** Copy to clipboard **
-* Ejemplo: **https://github.com/gis-master-m2/gis-master-m2.github.io.git**
-     
-    ### Paso 4
+```sh
 
-* No situamos en nuestro directorio web, por exemplo **/nginx/html/**
-* Boton derecho mouse **Git bash here**
-``` 
-    git clone  https://github.com/gis-master-m2/gis-master-m2.github.io.git
-   ```  
-     
-    ### Paso 5
+git add .
+git commit -m "change readme"
+git push -u origin master
 
-* Copiamos nuestro codigo dentro de **/nginx/html/gis-master-m2.github.io/**
-* Boton derecho mouse **Git Gui here**
-* **Stage Changed**
-* Escribimos dentro Commit Message**"first commit"**
-* **Commit**
-* **Push**
-     
+```
 
-    ### Lo mismo pero via consola, sería:
+!!! note
+    Cada vez que editamos debemos hacer esta operación para subir código
 
-* Copiamos nuestro codigo dentro de **/nginx/html/gis-master-m2.github.io/**
-* Boton derecho mouse ****Git Bash here****
-		``` 
-	git add .
-	git commit -m "first commit"
-	git push https://{id-git}:{passwrod}@github.com/gis-master-m2/gis-master-m2.github.io.git
-   ```  
-     
 
-	### Para inicializar un repositorio localmente
-	  > 
-	   * Boton derecho mouse ****Git Bash here****
-	   
-	```  
-	mkdir mirepositori
-	cd mirepositorio
-	git init
-	touch README
-	git add README
-	git commit -m 'first commit'
-	git remote add origin https://{id-git}:{passwrod}@github.com/gis-master-m2/mirepositorio.git
-	git push -u origin master
-	  
-	 
-	  
-	  
-    
-  
+#### Paso 7
+
+* Para convertir el repo en una página web, vamos al proyecto en github.com
+* Seleccionamos optión Settings
+* GitHub Pages  opción **master branch**
+
+
+#### Para recuperar nuestro trabajo en casa, por ejemplo
+
+```sh
+git clone  https://github.com/{tu usuario git}/geoweb.git
+
+```

@@ -11,9 +11,9 @@
   [http://leafletjs.com/plugins.html](http://leafletjs.com/plugins.html)
 
 
+### Plugin Leaflet-search: Ejemplo buscador de Farmacias
 
-
-### Práctica: Buscador de Farmacias
+>Plugin que permite buscar dentro los atributios de un GeoJson
       
  *  Creamos archivo **farmacias.html**
  *  Visualizamos geojson en **/web/datos/farmacias.geojson**
@@ -22,62 +22,63 @@
  
 
 ```html
-    <html lang="es">
-    <head>
-      <title>Farmacias</title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="author" content="autor" />
-      <meta name="description" content="descripción página">
-      <meta name="robots" content="index,follow">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script>
-L_PREFER_CANVAS = true;
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-      <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+  <html lang="es">
+
+<head>
+    <title>Farmacias</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="autor" />
+    <meta name="description" content="descripción página">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        L_PREFER_CANVAS = true;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
     <!--
       <script src="js/leaflet-search.src.js"></script>
       <link rel="stylesheet" href="css/leaflet-search.min.css" />
     -->
-      <style>
-body {
-margin: 0;
-padding: 0;
-overflow: hidden;
-}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-#map {
-height: 100%;
-width: 100%;
-}
-      </style>
-      <script>
-var map, osm, esri;
-var geojson, farmacias;
-var controlCapas;
-var controlEscala;
-$(document).ready(function() {
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <script>
+        var map, osm, esri;
+        var geojson, farmacias;
+        var controlCapas;
+        var controlEscala;
+        $(document).ready(function () {
 
-map = L.map('map', {
-  center: [41.3954, 2.16859],
-  zoom: 14
-});
-esri = L.tileLayer(
-  'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 17,
-    minZoom: 1,
-    attribution: 'Tiles © Esri',
-  }).addTo(map);
+            map = L.map('map', {
+                center: [41.3954, 2.16859],
+                zoom: 14
+            });
+            esri = L.tileLayer(
+                'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    maxZoom: 17,
+                    minZoom: 1,
+                    attribution: 'Tiles © Esri',
+                }).addTo(map);
 
-osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  minZoom: 1,
-  attribution: 'OSM'
-});
+            osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                minZoom: 1,
+                attribution: 'OSM'
+            });
 
-    /*
+            /*
 farmacias = new L.GeoJSON.AJAX('datos/farmacias.geojson', {
   maxZoom: 19,
   minZoom: 14,
@@ -97,21 +98,21 @@ farmacias = new L.GeoJSON.AJAX('datos/farmacias.geojson', {
   }
 }).addTo(map);
     */
-var baseMaps = {
-  "Orto_esri": esri,
-  "Mapa_osm": osm
-};
-/*
-      		var overlayMaps = {
-      "locales": locales
-      		};
-      */
-controlCapas = L.control.layers(baseMaps, null);
-controlCapas.addTo(map);
-controlEscala = L.control.scale();
-controlEscala.addTo(map);
+            var baseMaps = {
+                "Orto_esri": esri,
+                "Mapa_osm": osm
+            };
+            /*
+                  		var overlayMaps = {
+                  "locales": locales
+                  		};
+                  */
+            controlCapas = L.control.layers(baseMaps, null);
+            controlCapas.addTo(map);
+            controlEscala = L.control.scale();
+            controlEscala.addTo(map);
 
-    /*
+            /*
 
 var searchControl = new L.Control.Search({
   layer: farmacias,
@@ -122,27 +123,31 @@ var searchControl = new L.Control.Search({
 map.addControl(searchControl);
     */
 
-});
-      </script>
-    </head>
-    <body>
-      <div id="map"></div>
-    </body>
-    </html>
+        });
+    </script>
+</head>
 
-```  
+<body>
+    <div id="map"></div>
+</body>
+
+</html>
+
+``` 
+ 
    Se usa para crear y manipular el mapa. 
    El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.
 
-### Callejero
-  > 
+### Plugin Geosearch: Ejemplo buscador de Callejero
+  > Plugin que permite connectar con servicios de Geocodificación
  *  Creamos archivo **calles.html**
  *  Descargaremos plugin [https://github.com/MuellerMatthew/L.GeoSearch](GeoSearch) 
  
 
 ```html
-    <html lang="es">
-  <head>
+   <html lang="es">
+
+<head>
     <title>Calles</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,199 +157,204 @@ map.addControl(searchControl);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-      L_PREFER_CANVAS = true;
+        L_PREFER_CANVAS = true;
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
 
     <!--
 
-    <script src="js/l.control.geosearch.js"></script>
-    <script src="js/l.geosearch.provider.openstreetmap.js"></script>
-    <link rel="stylesheet" href="css/l.geosearch.css" />
-  -->
+      <script src="js/l.control.geosearch.js"></script>
+      <script src="js/l.geosearch.provider.openstreetmap.js"></script>
+      <link rel="stylesheet" href="css/l.geosearch.css" />
+    -->
 
     <style>
-      body {
-margin: 0;
-padding: 0;
-overflow: hidden;
-      }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-      #map {
-height: 100%;
-width: 100%;
-      }
+        #map {
+            height: 100%;
+            width: 100%;
+        }
     </style>
     <script>
-      var map, osm, esri;
-      var geojson, farmacias;
-      var controlCapas;
-      var controlEscala;
+        var map, osm, esri;
+        var geojson, farmacias;
+        var controlCapas;
+        var controlEscala;
 
 
-      $(document).ready(function() {
+        $(document).ready(function () {
 
-map = L.map('map', {
-center: [41.3954, 2.16859],
-zoom: 14
-});
-
-
-esri = L.tileLayer(
-'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  maxZoom: 17,
-  minZoom: 1,
-  attribution: 'Tiles © Esri',
-}).addTo(map);
-
-osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-maxZoom: 19,
-minZoom: 1,
-attribution: 'OSM'
-});
+            map = L.map('map', {
+                center: [41.3954, 2.16859],
+                zoom: 14
+            });
 
 
-var baseMaps = {
-"Orto_esri": esri,
-"Mapa_osm": osm
-};
+            esri = L.tileLayer(
+                'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    maxZoom: 17,
+                    minZoom: 1,
+                    attribution: 'Tiles © Esri',
+                }).addTo(map);
 
-controlCapas = L.control.layers(baseMaps, null);
-controlCapas.addTo(map);
+            osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                minZoom: 1,
+                attribution: 'OSM'
+            });
 
-/*
-      new L.Control.GeoSearch({
-provider: new L.GeoSearch.Provider.OpenStreetMap()
-      }).addTo(map);
-*/
 
-      });
-      </script>
-      </head>
-      <body>
+            var baseMaps = {
+                "Orto_esri": esri,
+                "Mapa_osm": osm
+            };
+
+            controlCapas = L.control.layers(baseMaps, null);
+            controlCapas.addTo(map);
+
+            /*
+                  new L.Control.GeoSearch({
+            provider: new L.GeoSearch.Provider.OpenStreetMap()
+                  }).addTo(map);
+            */
+
+        });
+    </script>
+</head>
+
+<body>
     <div id="map"></div>
-    </body>
-    </html>
+</body>
+
+</html>
 ```
        
-### Leaflet + GeoNames
-
+### Servicio GeoNames y Leaflet
+>[Geonames.org](https://www.geonames.org/) es una web que nos ofrece hasta 34 servicios geográficos 
       
  * Crearemos el archivo **geonames.html**
 
  
 
 ```html
-    <html>
-  <head lang="es">
+   <html>
+
+<head lang="es">
     <title>GeoNames</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
     <style>
-      body {
-margin: 0;
-padding: 0;
-overflow: hidden;
-      }
-      #map {
-height: 100%;
-width: 100%;
-      }
-      #ventana {
-position: absolute;
-top: 100px;
-left: 10px;
-z-index: 1000;
-      }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        #ventana {
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            z-index: 1000;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="map"></div>
     <script>
-    var terremotoPunto = null;
-    var map;
-    $(document).ready(function() {
+        var terremotoPunto = null;
+        var map;
+        $(document).ready(function () {
 
- map = L.map("map", {
-attributionControl: false,
-zoom:8,
-center:[42, 2]
-});
+            map = L.map("map", {
+                attributionControl: false,
+                zoom: 8,
+                center: [42, 2]
+            });
 
-L.tileLayer('//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
-attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> — Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-subdomains: 'abcd',
-maxZoom: 17,
-minZoom: 2
-}).addTo(map);
-
-
-function peticionTerremotos() {
-var peticion = 'http://api.geonames.org/earthquakesJSON?' +
-  'north=' + map.getBounds()._northEast.lat + '&' +
-  'south=' + map.getBounds()._southWest.lat + '&' +
-  'east=' + map.getBounds()._northEast.lng + '&' +
-  'west=' + map.getBounds()._southWest.lng + '&' +
-  'maxRows=50&' +
-  'username=masterupc&';
-$.ajax({
-    url: peticion,
-    method: "GET",
-    dataType: "jsonp",
-    success: function(respuesta) {
-      respuestaTerremotos(respuesta);
-
-    }
-  }); //fin ajax
-
-}//fin peticion
-
-function respuestaTerremotos(respuesta) {
-if (respuesta == null) {
-  return;
-} else {
-
-  if (terremotoPunto) {
-    map.eachLayer(function(layer) {
-      if (layer._radius) {
-map.removeLayer(layer);
-      }
-    });
-  }
-  var total_terremotos = respuesta.earthquakes;
-for (var i = 0; i < total_terremotos.length; i++) {
-  var terremoto = total_terremotos[i];
-  terremotoPunto = new L.circleMarker([terremoto.lat, terremoto.lng],
-    {
-      radius: parseInt(terremoto.magnitude * 2),
-      fillColor: "#aa0808",
-      color: "#ffffff",
-      weight: 2,
-      opacity: 1,
-      fillOpacity: 0.8
-    }
-  );
-  terremotoPunto.bindPopup("Mg:" + terremoto.magnitude);
-  terremotoPunto.addTo(map);
-
-}
-}
-      } //Fin respuesta terremotos
+            L.tileLayer('//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+                attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> — Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                subdomains: 'abcd',
+                maxZoom: 17,
+                minZoom: 2
+            }).addTo(map);
 
 
-peticionTerremotos() ;
+            function peticionTerremotos() {
+                var peticion = 'http://api.geonames.org/earthquakesJSON?' +
+                    'north=' + map.getBounds()._northEast.lat + '&' +
+                    'south=' + map.getBounds()._southWest.lat + '&' +
+                    'east=' + map.getBounds()._northEast.lng + '&' +
+                    'west=' + map.getBounds()._southWest.lng + '&' +
+                    'maxRows=50&' +
+                    'username=masterupc&';
+                $.ajax({
+                    url: peticion,
+                    method: "GET",
+                    dataType: "jsonp",
+                    success: function (respuesta) {
+                        respuestaTerremotos(respuesta);
 
-map.on('moveend',function(){
-  peticionTerremotos() ;
-});
+                    }
+                }); //fin ajax
 
-      }); //fin document ready
+            } //fin peticion
+
+            function respuestaTerremotos(respuesta) {
+                if (respuesta == null) {
+                    return;
+                } else {
+
+                    if (terremotoPunto) {
+                        map.eachLayer(function (layer) {
+                            if (layer._radius) {
+                                map.removeLayer(layer);
+                            }
+                        });
+                    }
+                    var total_terremotos = respuesta.earthquakes;
+                    for (var i = 0; i < total_terremotos.length; i++) {
+                        var terremoto = total_terremotos[i];
+                        terremotoPunto = new L.circleMarker([terremoto.lat, terremoto.lng], {
+                            radius: parseInt(terremoto.magnitude * 2),
+                            fillColor: "#aa0808",
+                            color: "#ffffff",
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 0.8
+                        });
+                        terremotoPunto.bindPopup("Mg:" + terremoto.magnitude);
+                        terremotoPunto.addTo(map);
+
+                    }
+                }
+            } //Fin respuesta terremotos
+
+
+            peticionTerremotos();
+
+            map.on('moveend', function () {
+                peticionTerremotos();
+            });
+
+        }); //fin document ready
     </script>
-  </body>
-  </html>
+</body>
+
+</html>
 
 
 ```

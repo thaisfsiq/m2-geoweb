@@ -1,10 +1,10 @@
 
 # Recursos open data
 
-### [Ver presentación](presentacion/opendata.pptx)
+### [Ver presentación OpenData](presentacion/opendata.pptx)
 
 
-## Ejemplo API CKAN
+### Ejemplo API CKAN
 
 El API de CKAN http://docs.ckan.org/en/latest/api/index.html no ofrece diferetes niveles y métodos para poder buscar y filtrar datasets.
 
@@ -18,15 +18,12 @@ Para buscar en portales CKAN necesitamos saber la URL del portal , exemplo http:
  
 http://demo.ckan.org/api/3/action/resource_search?
 
-  
-
-
-[Ver ejemplos online](ejemplos/utilizacion-servicio-opendata/index.html)   
+ 
  
 #### Creación de un buscador
 
   
-* Dentro de nuestor espacio de trabaj creamos un archivo con el nombre de *ckan.html*.
+* Dentro de nuestor espacio de trabajo creamos un archivo con el nombre de *ckan.html*.
 
 * Abrimos el archivo *ckan.html* con un editor de texto y copiamos el siguiente código.
 
@@ -181,9 +178,8 @@ error: function (xhr) {
     **Ejercicio 3**: Descargamos CSV accidentes
   
 
-## Ejemplos API SOCRATA
+### Ejemplos API SOCRATA
 
-  
 
 El API de Socrata https://dev.socrata.com no ofrece diferetes niveles y métodos para poder buscar y filtra datasets.
 
@@ -193,7 +189,7 @@ En este primer ejemplo utilizaremos la **Discovery API** https://socratadiscover
 
 
 
-Creación de un buscador
+#### Creación de un buscador
   
 
 * Creamos un archivo con el nombre de **socrata.html**.
@@ -360,7 +356,7 @@ $(document).ready(function() {
   
   
 
-# Creación de un mapa para ver resultados de Socrata
+#### Socrata y Leaflet: Mapificación de resultados
 
 
 * Creamos un archivo con el nombre de **socrata_mapa.html**.

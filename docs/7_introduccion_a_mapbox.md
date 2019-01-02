@@ -1,53 +1,36 @@
-# Introducció a Vector Tiles y Mapbox (II)
 
-## Introducción a Mapbox.com 
-   [https://www.mapbox.com]
-<img src="https://c1.staticflickr.com/3/2863/33742461420_90c7cd525f_o" width="100"> 
+<img src="https://c1.staticflickr.com/3/2863/33742461420_90c7cd525f_o.png" width="250"> 
        
+#### Web
+* [https://www.mapbox.com/](https://www.mapbox.com/)
 
- 
-###  Recursos Mapbox
+#### Productos
+* [https://www.mapbox.com/products/](https://www.mapbox.com/products/)
 
-* 
-Web
-[https://www.mapbox.com/](https://www.mapbox.com/)
+#### APIs
+* [https://www.mapbox.com/api-documentation/](https://www.mapbox.com/api-documentation/)
 
-* 
-Productos
-[https://www.mapbox.com/products/](https://www.mapbox.com/products/)
+#### MapBox GL
+* [https://www.mapbox.com/mapbox-gl-js/api/](https://www.mapbox.com/mapbox-gl-js/api/)
 
-* 
-APIs
-[https://www.mapbox.com/api-documentation/](https://www.mapbox.com/api-documentation/)
+#### GitHUB
+* [https://github.com/mapbox](https://github.com/mapbox)
 
-* 
-MapBox GL
-[https://www.mapbox.com/mapbox-gl-js/api/](https://www.mapbox.com/mapbox-gl-js/api/)
+#### Tutoriales
+* [https://www.mapbox.com/mapbox-gl-js/example/simple-map/](https://www.mapbox.com/mapbox-gl-js/example/simple-map/)
+* [https://www.mapbox.com/help/tutorials/](https://www.mapbox.com/help/tutorials/)
+* [https://www.mapbox.com/help/studio-manual/](https://www.mapbox.com/help/studio-manual/)
+* [https://ovrdc.github.io/gis-tutorials/mapbox/](https://ovrdc.github.io/gis-tutorials/mapbox/)
 
-* 
-GitHUB
-[https://github.com/mapbox](https://github.com/mapbox)
+#### Videos
+* [https://www.youtube.com/watch?v=jrnoFU5Wkdo](https://www.youtube.com/watch?v=jrnoFU5Wkdo)
+* [https://www.youtube.com/watch?v=Zn3Xx-TSrM8](https://www.youtube.com/watch?v=Zn3Xx-TSrM8)
+* [https://www.youtube.com/watch?v=r6Ij_34xTD0](https://www.youtube.com/watch?v=r6Ij_34xTD0)
+* [https://www.youtube.com/watch?v=YhynsA9_fPc](https://www.youtube.com/watch?v=YhynsA9_fPc)
 
-* 
-Tutoriales
-[https://www.mapbox.com/mapbox-gl-js/example/simple-map/](https://www.mapbox.com/mapbox-gl-js/example/simple-map/)
-[https://www.mapbox.com/help/tutorials/](https://www.mapbox.com/help/tutorials/)
-[https://www.mapbox.com/help/studio-manual/](https://www.mapbox.com/help/studio-manual/)
-[https://ovrdc.github.io/gis-tutorials/mapbox/](https://ovrdc.github.io/gis-tutorials/mapbox/)
-
-* 
-Videos
-[https://www.youtube.com/watch?v=jrnoFU5Wkdo](https://www.youtube.com/watch?v=jrnoFU5Wkdo)
-[https://www.youtube.com/watch?v=Zn3Xx-TSrM8](https://www.youtube.com/watch?v=Zn3Xx-TSrM8)
-[https://www.youtube.com/watch?v=r6Ij_34xTD0](https://www.youtube.com/watch?v=r6Ij_34xTD0)
-[https://www.youtube.com/watch?v=YhynsA9_fPc](https://www.youtube.com/watch?v=YhynsA9_fPc)
-
-     
-    
-
-
-    
-### Descripción MapxBox es una empresa privada que ofrece una plataforma para la publicacón de mapas. Mapbox destaca por creado de forma abierta
+  
+### Descripción 
+> MapxBox es una empresa privada que ofrece una plataforma para la publicacón de mapas. Mapbox destaca por creado de forma abierta
 
 *  MBTiles
 *  Vector Tiles
@@ -56,91 +39,106 @@ Videos
      
 ###  ¿Cómo empezar?
 
-      <p>Vamos a realizar un ejercicio dón veremos como funciona MapBox studio, vector tiles y Mapbox GL</p>
-      <p>Crearemos un mapa personalizados com los accidentes de tráfico en Barcelona 2017</p>
+> Vamos a realizar un ejercicio dóne veremos como funciona MapBox Studio, Vector Tiles y Mapbox GL
+> Crearemos un mapa personalizado
+> Nos damos de alta en [MapBox](https://www.mapbox.com/signup/)
 
-    ### Paso 1
+### Mapa personalizado
+
+#### Creamos nuestor propio estilo
+
+* Entramos en MapBox `Studio` --`Styles` -- `New style`
+
+* Seleccionamos un estilo como base y cambiamos colores `Publish your style`
+
+* Share, develop, and use your style -- Copiamos `Style URL` y `Access token`  
+
+
+
+
+
+#### Paso 1
 
 * Descargamos en formato CSV los accidentes en [http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn">
     http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn)
 
 * 
-Utilizamos QGIS para visualizar y convertir a GeoJSON en EPSG:4326 -->accidentes2017.geojson
+Utilizamos QGIS para visualizar y convertir a GeoJSON en EPSG:4326 --accidentes2017.geojson
 
      
-    ### Paso 2 -Creamos nuestor estilo
 
-* Entramos en MapBox **-->Studio -->Styles -->New style**
 
-* 
-Seleccionamos un estilo como base y cambiamos colores -->Publish your style
+#### 
 
-* 
-Share, develop, and use your style --> Copiamos Style URL y Access token
+```html
+  <html lang="es">
 
-<pre><code class="prettyprint">
-   <html lang="es">
-   <head>
-     <title>Leaflet y Mapox</title>
-     <meta charset="utf-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="author" content="autor" />
-     <meta name="description" content="descripción página">
-     <meta name="robots" content="index,follow">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css" />
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js"></script>
-     <style>
-       body {
- margin: 0;
- padding: 0;
- overflow: hidden;
-       }
-       #map {
- height: 100%;
- width: 100%;
-       }
-     </style>
-     <script>
-       var map;
-       var capa1;
+<head>
+    <title>Leaflet y Mapox</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="autor" />
+    <meta name="description" content="descripción página">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.0/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-       function init() {
- map = L.map('map', {
- center: [41.6863, 1.8382],
- zoom: 8,
- attributionControl: false
- });
- capa1 = L.tileLayer('https://api.mapbox.com/styles/v1/gismasterm2/cjcumodeg0i4p2rpaihqxx96w/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g', {
- maxZoom: 19,
- minZoom: 1,
- attribution: 'Mapbox'
- });
- capa1.addTo(map);
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <script>
+        var map;
+        var capa1;
 
-       }
-     </script>
-   </head>
-   <body onload="init()">
-     <div id="map"></div>
-   </body>
-   </html>
+        function init() {
+            map = L.map('map', {
+                center: [41.6863, 1.8382],
+                zoom: 8,
+                attributionControl: false
+            });
+            // subtituir por vuestra layer
+            capa1 = L.tileLayer(
+                'https://api.mapbox.com/styles/v1/gismasterm2/cjcumodeg0i4p2rpaihqxx96w/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g', {
+                    maxZoom: 19,
+                    minZoom: 1,
+                    attribution: 'Mapbox'
+                });
+            capa1.addTo(map);
+
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div id="map"></div>
+</body>
+
+</html>
 
 ```
 
      
-    ### Paso 3 -Añadimos accidentes2017.geojson a Mapbox 
+#### Paso 3 -Añadimos accidentes2017.geojson a Mapbox 
 
-* Entramos en MapBox **-->Studio -->Tilesets -->New tileset-->Arrastramos accidentes2017.geojson**
+* Entramos en MapBox `Studio`  `Tilesets` `New tileset` Arrastramos **accidentes2017.geojson**
 
 * 
 Copiamos nuestro Mapa Id
 
 * 
-Share, develop, and use your style --> Copiamos Style URL y Access token
+`Share, develop, and use your style` -- Copiamos `Style URL` y `Access token`
 
-* 
 Creamos **Mapbox0.html** Leaflet y MapBox:
-<pre><code class="prettyprint">
+
+```html
   <html lang="es">
   <head>
     <title>Leaflet y Mapox</title>
@@ -188,12 +186,10 @@ capa1.addTo(map);
   </html>
 ``` 
 
-     
+**Mapbox1.html** MapBox GL :
 
 
-
-      **Mapbox1.html** MapBox GL :
-      <pre><code class="prettyprint">
+```html
       <html>
       <head>
 <meta charset='utf-8' />
@@ -230,9 +226,9 @@ capa1.addTo(map);
 
 ```
 
+ **Mapbox2.html** Ejemplo Accidentes Barcelona :
 
-      **Mapbox2.html** Ejemplo Accidentes Barcelona :
-      <pre><code class="prettyprint">
+```html
     <html>
     <head>
     <meta charset='utf-8' />
@@ -397,7 +393,7 @@ function filtraDias(numdia){
   <div id='legend' class='legend'>
   ### Accidentes
   </div>
--->
+--
 
 <!-- Pas 2
   <div class='map-overlay top'>
@@ -407,14 +403,15 @@ function filtraDias(numdia){
 <input id='slider' type='range' min='0' max='6' step='1' value='0' />
       </div>
   </div>
--->
+--
 <div id='map'></div>
 
 </body>
 </html>
 
-   ```  
-    ### Paso 4 
+``` 
+ 
+### Paso 4 
 
 * Descargamos datos de carriles bici http://opendata-ajuntament.barcelona.cat/data/ca/dataset?q=carril+bici
 
@@ -425,7 +422,7 @@ Convertinmos a GeoJson
 Añadimos como tileset en MapxBox
 
 * 
-Integramos el tileset dentro nuestro estilo creado **Menu -->Add Tileset to Style**
+Integramos el tileset dentro nuestro estilo creado **Menu --Add Tileset to Style**
 
 * 
 Editamos estilo carriles bici
@@ -435,7 +432,7 @@ Comprobamos nuestros visores, ¿Que ha pasado?
 
      
 
-    ### Práctica Cementrio 
+### Práctica Cementrio 
 
 * Creamos nuevo estilo
 
@@ -446,14 +443,11 @@ Cargamos capas **/datos/constru_cementerio.geojson** y **/datos/cementerio.geojs
 Añadimos como tileset en MapxBox
 
 * 
-Integramos el tileset dentro nuestro estilo creado **Menu -->Add Tileset to Style**
+Integramos el tileset dentro nuestro estilo creado **Menu --Add Tileset to Style**
 
 * 
 Editamos capaps
 
 * 
-Adatamos visor ejemplo MapBox0.html
+Adaptamos visor ejemplo MapBox0.html
 
-     
-     
-    
