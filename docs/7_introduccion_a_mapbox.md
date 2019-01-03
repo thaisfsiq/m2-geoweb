@@ -10,7 +10,7 @@
 #### APIs
 * [https://www.mapbox.com/api-documentation/](https://www.mapbox.com/api-documentation/)
 
-#### MapBox GL
+#### **Página referéncia MapBox GL!!**
 * [https://www.mapbox.com/mapbox-gl-js/api/](https://www.mapbox.com/mapbox-gl-js/api/)
 
 #### GitHUB
@@ -53,6 +53,8 @@
 
 * Share, develop, and use your style -- Copiamos `Style URL` y `Access token`  
 
+![alt text](img/mapbox1.png "mapbox")
+
 #### Visualizar estilo propio con Mapbox gl
 
 Creamos **Mapbox-estilo.html**
@@ -84,13 +86,15 @@ Creamos **Mapbox-estilo.html**
         //Añadir vuestor token y vuestro estilo
         function init() {
             mapboxgl.accessToken =
-                'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g';
+                'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2plZHhubTQxMTNoYzMza3Rqa3kxYTdrOCJ9.53B1E6mKD_EQOVb2Y0-SsA';
             var map = new mapboxgl.Map({
                 container: 'map',
-                style: 'mapbox://styles/gismasterm2/cjcumodeg0i4p2rpaihqxx96w',
+                style: 'mapbox://styles/gismasterm2/cjqg9p2lm00442rqm4vlk89rt',
                 center: [2.16859, 41.3954],
-                zoom: 13
-            });
+                zoom: 13,
+                attributionControl: false
+                });
+            map.addControl(new mapboxgl.AttributionControl({compact: true}));
             map.addControl(new mapboxgl.NavigationControl());
         }
     </script>
@@ -108,8 +112,9 @@ Creamos **Mapbox-estilo.html**
 
 #### Paso 1
 
-* Descargamos en formato CSV los accidentes en [http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn">
+* Descargamos en formato **CSV** los [accidentes](datos/accidentes2017.geojson) en [http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn">
     http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn)
+  
 
 * Utilizamos QGIS para visualizar y convertir a formato GeoJSON en EPSG:4326 --accidentes2017.geojson
 
@@ -121,6 +126,8 @@ Creamos **Mapbox-estilo.html**
 * Copiamos nuestro Mapa Id
 
 * `Share, develop, and use your style` -- Copiamos `Style URL` y `Access token`
+
+![alt text](img/mapbox2.png "mapbox")
 
 #### Visualizar nuestor propio Tileset
 
@@ -135,7 +142,7 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
     <style>
         body {
             margin: 0;
@@ -219,16 +226,18 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
             var diasSemana = ["Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte", "Diumenge"];
             var colorDia = ['#e26131', '#d0d378', '#78d3b0', '#78bcd3', '#9e78d3', '#d378cd', '#d37878'];
             */
-            mapboxgl.accessToken =
-                'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g';
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/gismasterm2/cjcumodeg0i4p2rpaihqxx96w',
-                center: [2.16859, 41.3954],
-                zoom: 13,
-                hash: true,
-                pitch: 45
-            });
+           mapboxgl.accessToken =
+                    'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2plZHhubTQxMTNoYzMza3Rqa3kxYTdrOCJ9.53B1E6mKD_EQOVb2Y0-SsA';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/gismasterm2/cjqg9p2lm00442rqm4vlk89rt',
+                    center: [2.16859, 41.3954],
+                    zoom: 13,
+                    hash: true,
+                    pitch: 45,
+                    attributionControl: false
+                });
+            map.addControl(new mapboxgl.AttributionControl({compact: true}));
             map.addControl(new mapboxgl.NavigationControl());
             /* Paso 1
             creaLeyenda();
@@ -236,19 +245,19 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
             map.on('load', function () {
                 map.addSource("accidentes_source", {
                     type: "vector",
-                    url: "mapbox://gismasterm2.5sruyo1q"
+                    url: "mapbox://gismasterm2.8n6i6qou"
                 }); //fin map source
 
                 map.addLayer({
                     id: "accidentes",
                     type: "circle",
                     source: "accidentes_source",
-                    'source-layer': "accidentes2017-8f5d0i",
+                    'source-layer': "accidentes2017-9wsoma",
                     /* pas0 1
           paint: {
       'circle-radius': 4,
       'circle-color': {
-        property: "Descripció dia setmana",
+        property: "Descripcio_dia_setmana",
         type: 'categorical',
         stops: [
         [diasSemana[0], colorDia[0]],
@@ -264,7 +273,7 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
     }
     */
                     /* Paso 2
-                    ,filter:['==', 'Descripció dia setmana', diasSemana[0]]
+                    ,filter:['==', 'Descripcio_dia_setmana', diasSemana[0]]
                     */
 
                 }); //fin add layers
@@ -295,7 +304,7 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
             */
             /* Paso 2
             function filtraDias(numdia){
-                  var filters = ['==', 'Descripció dia setmana', diasSemana[numdia]];
+                  var filters = ['==', 'Descripcio_dia_setmana', diasSemana[numdia]];
                   map.setFilter('accidentes', filters);
                   document.getElementById('diasemanaid').textContent = diasSemana[numdia];
             }
@@ -328,29 +337,115 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
 </html>
 
 ``` 
- 
+!!! note
+    **Probamos**:Añadir opción para ver todos los accidentes
 
 ### 3.Añadir estilos (ICGC) y capas externas (GeoJSON)
 
+>Podemos trabajar con la libreria JS de Mapbox sin utilizar sus estilos , servicios ni app Tokens
+
+#### OpenICGC
+
+> Presenta estilos y bases Vector Tiles mundiales dónde fusiona datos OSM y del ICGC en un esquema de OpenMapTiles
+
+>[https://openicgc.github.io/](https://openicgc.github.io/)
+
+![alt text](img/openicgc1.png "OpenIcgc")
+
+#### Mapa de carriles bici con estilo Hibrid
+
+* Seleccionaremos el estilo Hibrid de OpenICGC
+* Copiaremos el archivo [carriles bici](datos/carrils-bici.geojson) dentro de **geoweb**
+* Creamos archivo **mapbox-icgc.html**
+
+```html
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Carriles bici BCN</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%
+        }
+    </style>
+    <script>
+        function Init() {
+
+            mapboxgl.accessToken = '';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'https://geoserveis.icgc.cat/contextmaps/hibrid.json',
+                center: [2.16859, 41.3954],
+                zoom: 13,
+                hash: true,
+                pitch: 45,
+                attributionControl: false
+            });
+            map.addControl(new mapboxgl.AttributionControl({
+                compact: true
+            }));
+            map.addControl(new mapboxgl.NavigationControl());
+
+            map.on('load', function () {
+                map.addSource("carrils-bici", {
+                    type: "geojson",
+                    data: "datos/carrils-bici.geojson"
+                }); //fin map source
+
+                map.addLayer({
+                    id: "carrils-bici-layer",
+                    type: "line",
+                    source: "carrils-bici",
+                    layout: {
+                        "line-join": "round",
+                        "line-cap": "round"
+                    },
+                    paint: {
+                        "line-color": "#FF0000",
+                        "line-width": 8
+                    }
+                }); //fin add layers
+            }); //Fin load mapa
+        }
+    </script>
+</head>
+<body onload="Init()">
+    <div id='map'></div>
+</body>
+</html>
+```
+
+!!! note
+    **Probamos**:Cambiar color carriles y estilo de fondo
+
+!!! warning
+    ### Práctica Cementrio. **Puntuable!!**
+
+    * Creamos nuevo estilo en Mapbox.com
+
+    * Cargamos capas [datos/constru_cementerio.geojson](datos/constru_cementerio.geojson) y [datos/cementerio.geojson](datos/cementerio.geojson)
+
+    * Añadimos como tileset en MapxBox
+
+    * Integramos el tileset dentro nuestro estilo creado `Menu`  `Add Tileset to Style`
+
+    * Editamos capas
+
+    * Creamos visor ejemplo **mapbox-cementerio.html**
 
 
-
-### Práctica Cementrio. Puntuable
-
-* Creamos nuevo estilo en Mapbox.com
-
-* Cargamos capas [datos/constru_cementerio.geojson](datos/constru_cementerio.geojson) y [datos/cementerio.geojson](datos/cementerio.geojson)
-
-* Añadimos como tileset en MapxBox
-
-* Integramos el tileset dentro nuestro estilo creado `Menu`  `Add Tileset to Style`
-
-* Editamos capas
-
-* Creamos visor ejemplo **MapBox-cementerio**.html
-
-
-### Extra: Visualizar stilo mapbox en Leaflet
+### Extra: Visualizar estilo Mapbox en Leaflet
 
 ```html
   <html lang="es">
@@ -388,7 +483,7 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
             });
             // subtituir por vuestra layer
             capa1 = L.tileLayer(
-                'https://api.mapbox.com/styles/v1/gismasterm2/cjcumodeg0i4p2rpaihqxx96w/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2pjamdzbHZlMjg5YjMzbzBvMjRpazc3eSJ9.6L0nrPLbjWxZCMdBit-z8g', {
+                'https://api.mapbox.com/styles/v1/gismasterm2/cjcumodeg0i4p2rpaihqxx96w/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2plZHhubTQxMTNoYzMza3Rqa3kxYTdrOCJ9.53B1E6mKD_EQOVb2Y0-SsA', {
                     maxZoom: 19,
                     minZoom: 1,
                     attribution: 'Mapbox'
