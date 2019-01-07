@@ -49,7 +49,7 @@
 
 > Abrimos navegador y probamos [http://localhost/geoweb/index.html](http://localhost/geoweb/index.html)
 
-Abrimos nuestro editor de texto y creamos la página **Ejemplo0.html** dentro directorio geoweb
+Abrimos nuestro editor de texto y creamos la página **leaflet-basico.html** dentro directorio geoweb
 
 Añadiremos el siguiente código que es la estructura básica de una página :
 
@@ -57,7 +57,7 @@ Añadiremos el siguiente código que es la estructura básica de una página :
 
   <html lang="es">
   <head>
-  <title>Ejemplo 0 Leaflet</title>
+  <title>Leaflet básico</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="autor"/>
@@ -68,25 +68,29 @@ Añadiremos el siguiente código que es la estructura básica de una página :
   </body>
   </html>
 ```
-		Vamos a crear un mapa con Leaflet, para ello incluiremos en la cabecera
-  **<head>** de una página web la librería JavaScript leaflet.js (que contiene el código de la libería)
+Vamos a crear un mapa con Leaflet, para ello incluiremos en la cabecera
+  `<head>` de una página web la librería JavaScript leaflet.js (que contiene el código de la libería)
   y la hoja de estilo leaflet.css (con la hoja de estilos de la librería):
+  
 ```html
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
 ``` 
 
-Dentro de la etiqueta
-  **<body>** encontramos el marcado para el mapa, que genera un único elemento de documento. También
-  damos al contenedor un atributo id para que podamos hacer referencia a él en nuestro código:
+Dentro de la etiqueta `<body>` encontramos el marcado para el mapa, que genera un único elemento de documento. También damos al contenedor un atributo id para que podamos hacer referencia a él en nuestro código:
 
 ```html
 <body>
 <div id="map"></div>
 </body>
+```
+
+Nuestra página tendria este aspecto
+
+```html
 <html lang="es">
 <head>
-<title>Ejemplo 0 Leaflet</title>
+<title>Leaflet básico</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="autor"/>
@@ -100,7 +104,7 @@ Dentro de la etiqueta
 </body>
 </html>
 ``` 
-Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiqueta
+Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiqueta ``` <style/>``` dentro del ```<head>```
 
 ```html
 <style>
@@ -117,23 +121,82 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
 ``` 
  
 
-Ahora empezaremos a programas dentro del tag ``` <script> ``` 
+
+Ahora nuestra página tendria este aspecto
+
+```html
+<html lang="es">
+<head>
+<title>Leaflet básico</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="autor"/>
+  <meta name="description" content="descripción página">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+ </style>
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>
+``` 
+
+Ahora crearemos y empezaremos a programar dentro del tag ``` <script> ```  justo encima de ```</head>```
    Crearemos la función **Init** para crear un Mapa
   y añadir una capa de OSM **L.map** es la clase central de la API.
    Se usa para crear y manipular el mapa. 
    El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.
 
-### Ejemplo 0 Básico
+```html
+ <script>
+  var map,capa1;
+  function init(){
+      map = L.map("map",{
+      center:[41.6863, 1.8382],
+      zoom:8
+      });
+      capa1= L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+      maxZoom : 19,
+      minZoom : 1,
+      attribution : "OSM"
+      });
+      capa1.addTo(map);
+  }
+  </script>
+```
+
+Llamaremos ala función des de el evento onload del ```<body>```
+
+```html
+ <body onLoad="init()">
+```
+
+
+### Leaflet básico
 ```html
   <html lang="es">
   <head>
-  <title>Ejemplo 0 Leaflet</title>
+  <title>Leaflet básico</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="autor"/>
     <meta name="description" content="descripción página">
     <meta name="robots" content="index,follow">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
   <style>
   body {
     margin: 0;
@@ -145,7 +208,6 @@ Ahora empezaremos a programas dentro del tag ``` <script> ```
     width: 100%;
   }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
   <script>
   var map,capa1;
   function init(){
