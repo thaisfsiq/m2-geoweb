@@ -73,8 +73,8 @@ Vamos a crear un mapa con Leaflet, para ello incluiremos en la cabecera
   y la hoja de estilo leaflet.css (con la hoja de estilos de la librería):
   
 ```html
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 ``` 
 
 Dentro de la etiqueta `<body>` encontramos el marcado para el mapa, que genera un único elemento de documento. También damos al contenedor un atributo id para que podamos hacer referencia a él en nuestro código:
@@ -96,8 +96,8 @@ Nuestra página tendria este aspecto
   <meta name="author" content="autor"/>
   <meta name="description" content="descripción página">
   <meta name="robots" content="index,follow">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 </head>
 <body>
 <div id="map"></div>
@@ -133,8 +133,8 @@ Ahora nuestra página tendria este aspecto
   <meta name="author" content="autor"/>
   <meta name="description" content="descripción página">
   <meta name="robots" content="index,follow">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
   <style>
   body {
     margin: 0;
@@ -195,8 +195,8 @@ Llamaremos ala función des de el evento onload del ```<body>```
     <meta name="author" content="autor"/>
     <meta name="description" content="descripción página">
     <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
   <style>
   body {
     margin: 0;
@@ -275,7 +275,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
     <meta name="author" content="autor" />
     <meta name="description" content="descripción página" />
     <meta name="robots" content="index,follow" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
     <style>
         body {
             margin: 0;
@@ -288,7 +288,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
             width: 100%;
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script>
         var map, osm, esri, terreno;
         var controlCapas;
@@ -353,7 +353,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
     <meta name="author" content="autor" />
     <meta name="description" content="descripción página" />
     <meta name="robots" content="index,follow" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
     <style>
         body {
             margin: 0;
@@ -365,7 +365,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
             background-color: #ffffff
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script>
         var map, osm, controlCapas;
 

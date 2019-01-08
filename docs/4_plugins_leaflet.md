@@ -16,13 +16,14 @@
 >Plugin que permite buscar dentro los atributios de un GeoJson
       
  *  Creamos archivo **farmacias.html**
- *  Visualizamos geojson en **/web/datos/farmacias.geojson**
- *  Utilizaremos directaments pluguin GeoJSON AJAX [https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js](https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js) 
- *  Descargaremos plugin [https://github.com/stefanocudini/leaflet-search"](leaflet-Search) 
+ *  Visualizamos geojson en **[/geoweb/datos/farmacias.geojson](datos/farmacias.geojson)**
+ *  Utilizaremos directamente los  plugins:
+     ** GeoJSON AJAX [https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js](https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js) 
+     ** Leaflet-Search [https://github.com/stefanocudini/leaflet-search"](https://github.com/stefanocudini/leaflet-search) 
  
 
 ```html
-  <html lang="es">
+<html lang="es">
 
 <head>
     <title>Farmacias</title>
@@ -31,17 +32,17 @@
     <meta name="author" content="autor" />
     <meta name="description" content="descripción página">
     <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
     <script>
         L_PREFER_CANVAS = true;
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
     <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
-    <!--
-      <script src="js/leaflet-search.src.js"></script>
-      <link rel="stylesheet" href="css/leaflet-search.min.css" />
-    -->
+<!-- Paso 2
+    <script src="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.js"></script>
+    <link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.css" />
+-->
+
     <style>
         body {
             margin: 0;
@@ -59,7 +60,8 @@
         var geojson, farmacias;
         var controlCapas;
         var controlEscala;
-        $(document).ready(function () {
+       
+       function Init() {
 
             map = L.map('map', {
                 center: [41.3954, 2.16859],
@@ -78,56 +80,61 @@
                 attribution: 'OSM'
             });
 
-            /*
-farmacias = new L.GeoJSON.AJAX('datos/farmacias.geojson', {
-  maxZoom: 19,
-  minZoom: 14,
-  onEachFeature: function(feature, layer) {
-    popupContent = "<b>" + feature.properties.NOM + "</b><br>" + feature.properties.CARRCADAST + " " + feature.properties.DOORNUM + "</b>";
-    layer.bindPopup(popupContent);
-  },
-  pointToLayer: function(feature, latlng) {
-    return L.circleMarker(latlng, {
-      radius: 6,
-      fillColor: "#00ff00",
-      color: "#ffffff",
-      weight: 3,
-      opacity: 1,
-      fillOpacity: 0.8
-    });
-  }
-}).addTo(map);
-    */
+/* Pas1
+            farmacias = new L.GeoJSON.AJAX('datos/farmacias.geojson', {
+                maxZoom: 19,
+                minZoom: 14,
+                onEachFeature: function (feature, layer) {
+                    popupContent = "<b>" + feature.properties.NOM + "</b><br>" + feature.properties
+                        .CARRCADAST + " " + feature.properties.DOORNUM + "</b>";
+                    layer.bindPopup(popupContent);
+                },
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#00ff00",
+                        color: "#ffffff",
+                        weight: 3,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+                }
+            }).addTo(map);
+*/
             var baseMaps = {
                 "Orto_esri": esri,
                 "Mapa_osm": osm
             };
-            /*
-                  		var overlayMaps = {
-                  "locales": locales
-                  		};
-                  */
+/*Pas 1
+            var overlayMaps = {
+                "farmacias": farmacias
+            };
+*/
             controlCapas = L.control.layers(baseMaps, null);
             controlCapas.addTo(map);
             controlEscala = L.control.scale();
             controlEscala.addTo(map);
 
-            /*
 
-var searchControl = new L.Control.Search({
-  layer: farmacias,
-  propertyName: 'NOM',
-  circleLocation: true
-});
+/*Pas 2
+            var searchControl = new L.Control.Search({
+                layer: farmacias,
+                propertyName: 'NOM',
+                circleLocation: true,
+                moveToLocation: function (latlng) {
 
-map.addControl(searchControl);
-    */
+                    map.setView(latlng, 17);
+                }
+            });
 
-        });
+            map.addControl(searchControl);
+*/
+
+        };
     </script>
 </head>
 
-<body>
+<body onload="Init()">
     <div id="map"></div>
 </body>
 
@@ -135,17 +142,15 @@ map.addControl(searchControl);
 
 ``` 
  
-   Se usa para crear y manipular el mapa. 
-   El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.
 
 ### Plugin Geosearch: Ejemplo buscador de Callejero
   > Plugin que permite connectar con servicios de Geocodificación
- *  Creamos archivo **calles.html**
+ *  Creamos archivo **leaflet-calles.html**
  *  Descargaremos plugin [https://github.com/MuellerMatthew/L.GeoSearch](GeoSearch) 
  
 
 ```html
-   <html lang="es">
+  <html lang="es">
 
 <head>
     <title>Calles</title>
@@ -154,19 +159,15 @@ map.addControl(searchControl);
     <meta name="author" content="autor" />
     <meta name="description" content="descripción página">
     <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@2.7.0/assets/css/leaflet.css" />
+   
     <script>
         L_PREFER_CANVAS = true;
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-geosearch@2.7.0/dist/bundle.min.js"></script>
 
-    <!--
-
-      <script src="js/l.control.geosearch.js"></script>
-      <script src="js/l.geosearch.provider.openstreetmap.js"></script>
-      <link rel="stylesheet" href="css/l.geosearch.css" />
-    -->
 
     <style>
         body {
@@ -179,6 +180,10 @@ map.addControl(searchControl);
             height: 100%;
             width: 100%;
         }
+        .leaflet-control-geosearch .results > * {
+            
+         cursor: pointer
+        }
     </style>
     <script>
         var map, osm, esri;
@@ -187,7 +192,7 @@ map.addControl(searchControl);
         var controlEscala;
 
 
-        $(document).ready(function () {
+        function Init() {
 
             map = L.map('map', {
                 center: [41.3954, 2.16859],
@@ -217,17 +222,19 @@ map.addControl(searchControl);
             controlCapas = L.control.layers(baseMaps, null);
             controlCapas.addTo(map);
 
-            /*
-                  new L.Control.GeoSearch({
-            provider: new L.GeoSearch.Provider.OpenStreetMap()
-                  }).addTo(map);
-            */
 
-        });
+
+            new GeoSearch.GeoSearchControl({
+                //  provider: new  GeoSearch.OpenStreetMapProvider()
+                provider: new GeoSearch.EsriProvider()
+            }).addTo(map);
+
+
+        };
     </script>
 </head>
 
-<body>
+<body onload="Init()">
     <div id="map"></div>
 </body>
 
