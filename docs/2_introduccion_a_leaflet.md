@@ -266,7 +266,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
 ### Ejemplo 1 Controles
   Añadimos controles de capas y escala.
 ```html
-   <html lang="es">
+  <html lang="es">
 
 <head>
     <title>Ejemplo 1 Leaflet-controles</title>
@@ -290,7 +290,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
     <script>
-        var map, osm, esri, nubes;
+        var map, osm, esri, terreno;
         var controlCapas;
         var controlEscala;
 
@@ -308,10 +308,10 @@ Llamaremos ala función des de el evento onload del ```<body>```
                 minZoom: 1,
                 attribution: 'OSM'
             });
-            nubes =
-                L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+            terreno =
+                L.tileLayer('http://{s}.tile.stamen.com/terrain-background/{z}/{x}/{y}.png', {
                     maxZoom: 19,
-                    attribution: 'OpenWeatherMap',
+                    attribution: 'Stamen terrain',
                     opacity: 0.5
                 });
             var baseMaps = {
@@ -319,7 +319,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
                 "Mapa_osm": osm
             };
             var overlayMaps = {
-                "Mapagris": nubes
+                "Terrain": terreno
             };
             controlCapas = L.control.layers(baseMaps, overlayMaps);
             controlCapas.addTo(map);
@@ -347,7 +347,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
    <html lang="es">
 
 <head>
-    <title>Ejemplo 2 Leaflet provider</title>
+    <title>Ejemplo Leaflet provider</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="autor" />
@@ -379,9 +379,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
                 minZoom: 1,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a>'
             }).addTo(map);
-            var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bwmapnik/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a>'
-            });
+
             var OpenStreetMap_DE =
                 L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a>'
@@ -389,14 +387,14 @@ Llamaremos ala función des de el evento onload del ```<body>```
             var OpenStreetMap_HOT = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank"/>Humanitarian OpenStreetMapTeam</a>'
             });
-          
-            
+
+
             var Hydda_Base = L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
                 minZoom: 0,
                 maxZoom: 18,
                 attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank"/>OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a>'
             });
-           
+
             var Stamen_Toner = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
                 attribution: 'Map tiles by <a href="http://stamen.com"/>Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0"/>CC BY 3.0</a> &mdash; Map data &copy;<a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a>',
                 subdomains: 'abcd',
@@ -437,19 +435,11 @@ Llamaremos ala función des de el evento onload del ```<body>```
                         attribution: 'Tiles &copy; Esri &mdash; Sources: GEBCO, NOAA, CHS, OSU, UNH,CSUMB, National Geographic, DeLorme, NAVTEQ, and Esri',
                         maxZoom: 13
                     });
-            var Acetate_all = L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetatehillshading/{z}/{x}/{y}.png', {
-                attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
-                subdomains: '0123',
-                minZoom: 2,
-                maxZoom: 18
-            });
-            var MtbMap = L.tileLayer('http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a> &amp; USGS'
-            });
+
+
 
             var mapaBase = {
                 'OSM': osm,
-                'OpenStreetMap_BlackAndWhite': OpenStreetMap_BlackAndWhite,
                 'OpenStreetMap_DE': OpenStreetMap_DE,
                 'OpenStreetMap_HOT': OpenStreetMap_HOT,
                 'Hydda_Base': Hydda_Base,
@@ -459,8 +449,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
                 'Esri_WorldTopoMap': Esri_WorldTopoMap,
                 'Esri_WorldImagery': Esri_WorldImagery,
                 'Esri_WorldShadedRelief': Esri_WorldShadedRelief,
-                'Esri_OceanBasemap': Esri_OceanBasemap,
-                'Acetate_all': Acetate_all
+                'Esri_OceanBasemap': Esri_OceanBasemap
             };
             controlCapas = L.control.layers(mapaBase, null);
             controlCapas.addTo(map)
@@ -474,6 +463,26 @@ Llamaremos ala función des de el evento onload del ```<body>```
 
 </html>
 ```
+
+!!! info
+    #### Truco
+    Podemos agrupar capas utilizando L.LayerGroup [https://leafletjs.com/examples/layers-control/](https://leafletjs.com/examples/layers-control/)
+
+    ```javascript
+                var hibrid =L.layerGroup();
+
+                var Esri_WorldImagery =
+                L.tileLayer(
+                    'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX,GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+                    }).addTo(hibrid);
+
+                    var SafeCast = L.tileLayer('https://s3.amazonaws.com/te512.safecast.org/{z}/{x}/{y}.png', {
+                    maxZoom: 16,
+                    attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | Map style: &copy; <a href="https://blog.safecast.org/about/">SafeCast</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                }).addTo(hibrid);
+    ```
+
        
 !!! note
     #### Práctica
