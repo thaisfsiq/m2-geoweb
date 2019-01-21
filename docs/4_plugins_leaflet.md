@@ -243,13 +243,15 @@
        
 ### Servicio GeoNames y Leaflet
 >[Geonames.org](https://www.geonames.org/) es una web que nos ofrece hasta 34 servicios geográficos 
+>Nos damos de Alta en GeoNanmes
       
- * Crearemos el archivo **geonames.html**
+ * Crearemos el archivo **geonames-terremotos.html**
 
  
 
 ```html
-   <html>
+ 
+<html>
 
 <head lang="es">
     <title>GeoNames</title>
@@ -343,7 +345,7 @@
                             opacity: 1,
                             fillOpacity: 0.8
                         });
-                        terremotoPunto.bindPopup("Mg:" + terremoto.magnitude);
+                        terremotoPunto.bindPopup("Mg:" + terremoto.magnitude + "<br>" + terremoto.datetime);
                         terremotoPunto.addTo(map);
 
                     }
@@ -362,8 +364,6 @@
 </body>
 
 </html>
-
-
 ```
 
 
