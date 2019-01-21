@@ -8,7 +8,7 @@ Materiales para el módulo 2: Mapas y OpenData, Localización, Visualización y 
 #### Temario
 
 * [1. Introducción a las tecnologías GeoWeb](1_introduccion_a_las_tecnologias_geoweb)
-* [2. Introducción a Leaflet](2_introduccion_a_la_leaflet)
+* [2. Introducción a Leaflet](2_introduccion_a_leaflet)
 * [3. Recursos OpenData](3_recursos_open_data)
 * [4. Plugins Leaflet](4_plugins_leaflet)
 * [5. Taller GitHub](5_taller_github)
