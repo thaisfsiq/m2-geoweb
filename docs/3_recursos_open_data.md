@@ -71,7 +71,8 @@ http://demo.ckan.org/api/3/action/resource_search?
 
       <select id="url_ckan">
         <option value="http://demo.ckan.org/api/3/action/resource_search?">ckan.org</option>
-        <option value="http://old.datahub.io/api/3/action/resource_search?">old.datahub.io</option>
+				<option value="http://old.datahub.io/api/3/action/resource_search?">old.datahub.io</option>
+				 <option value="http://dadesobertes.seu-e.cat/api/action/resource_search?">Dades Obertes aoc</option>
 				<!-- añadimos BCN opendata -->
       </select>
     </div>
@@ -695,15 +696,14 @@ $('#results').html("An error occured: " + xhr.status + " " + xhr.statusText);
     **Ejercicio 2**: ¿Cambiamos colores y estilos de los puntos del mapa?
 
 
-!!! tip
-
-		Ejemplos creados [downloads/utilizacion-servicio-opendata.zip](/files/utilizacion-servicio-opendata/utilizacion-servicio-opendata.zip) en nuestro espacio de trabajo.
-
 
 
 Referencias
   
-http://docs.ckan.org/en/latest/api/
-http://ckan.org
-https://www.socrata.com
-http://docs.socratadiscovery.apiary.io
+> http://docs.ckan.org/en/latest/api/
+
+> http://ckan.org
+
+> https://www.socrata.com
+
+> http://docs.socratadiscovery.apiary.io

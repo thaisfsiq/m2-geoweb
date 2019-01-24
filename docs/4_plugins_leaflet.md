@@ -11,6 +11,7 @@
   [http://leafletjs.com/plugins.html](http://leafletjs.com/plugins.html)
 
 
+
 ### Plugin Leaflet-search: Ejemplo buscador de Farmacias
 
 >Plugin que permite buscar dentro los atributios de un GeoJson
@@ -141,6 +142,151 @@
 </html>
 
 ``` 
+### Práctica para cargar GeoJSONs con plugin GeoJSON AJAX
+
+> Abre **mapabase.html** 
+
+> Añade el plugin de GeoJSON AJAX
+
+> Prueba las diferentes formas de trabajar con GeoJSONs y añádelas como **overlayMaps** en el control de capas
+
+!!! info
+    #### GeoJson por defecto
+
+    ```javascript
+
+      var comarcasPoligonoDefault = new L.GeoJSON.AJAX('datos/comarcas.geojson').addTo(map);
+
+      var farmaciasPuntoDefault = new L.GeoJSON.AJAX('datos/farmacias.geojson').addTo(map);
+
+      var carrilsBiciLineaDefault = new L.GeoJSON.AJAX('datos/carrils-bici.geojson').addTo(map);
+
+    
+            
+    ```
+
+!!! info
+    #### GeoJson con estilos
+
+    ```javascript
+
+    var comarcasPoligonoStyle = new L.GeoJSON.AJAX('datos/comarcas.geojson', {
+                    style: function (feature) {
+                        return {
+
+                            fillColor: "#fab81e",
+                            color: "#ffffff",
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 0.5
+                        }
+                    }
+                }).addTo(map);
+      var farmaciasPuntoStyle = new L.GeoJSON.AJAX('datos/farmacias.geojson', {
+
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#00ff00",
+                        color: "#ffffff",
+                        weight: 3,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    })
+                }
+            }).addTo(map);
+
+            var carrilsBiciLineaStyle = new L.GeoJSON.AJAX('datos/carrils-bici.geojson', {
+                style: function (feature) {
+                    return {
+                        color: "#d607f2",
+                        weight: 6
+                    }
+                }
+            }).addTo(map);
+
+            
+            
+    ```   
+
+
+!!! info
+    #### GeoJson con estilos y Popups
+
+    ```javascript
+
+    var comarcasPoligonoStylePop = new L.GeoJSON.AJAX('datos/comarcas.geojson', {
+                style: function (feature) {
+                    return {
+
+                        fillColor: "#fab81e",
+                        color: "#ffffff",
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.5
+                    }
+                },
+                    onEachFeature: function (feature, layer) {
+                        popupContentPol = "<b>" + feature.properties.NOM + "</b>";
+                        layer.bindPopup(popupContentPol);
+                    },
+                
+            }).addTo(map);
+
+
+            var farmaciasPuntoStylePop = new L.GeoJSON.AJAX('datos/farmacias.geojson', {
+
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        radius: 6,
+                        fillColor: "#00ff00",
+                        color: "#ffffff",
+                        weight: 3,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    })
+                },
+                onEachFeature: function (feature, layer) {
+                    popupContentP = "<b>" + feature.properties.NOM + "</b><br>" + feature.properties
+                        .CARRCADAST + " " + feature.properties.DOORNUM + "</b>";
+                    layer.bindPopup(popupContentP);
+                },
+            }).addTo(map);
+
+            var carrilsBiciLineaStylePop = new L.GeoJSON.AJAX('datos/carrils-bici.geojson', {
+                style: function (feature) {
+                    return {
+                        color: "#d607f2",
+                        weight: 6
+                    }
+                },
+                onEachFeature: function (feature, layer) {
+                    popupContentL = "<b>" + feature.properties.TOOLTIP + "</b>";
+                    layer.bindPopup(popupContentL);
+                },
+            }).addTo(map);
+            
+    ```   
+ 
+!!! info
+    #### GeoJson remoto
+
+    ```javascript
+
+      var rivers = new L.GeoJSON.AJAX(
+        'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_rivers_europe.geojson', {
+            
+            style: function (feature) {
+                return {
+                    color: "#00ffe1",
+                    weight: 6
+                }
+            },
+        }).addTo(map);
+
+             
+    ```
+
  
 
 ### Plugin Geosearch: Ejemplo buscador de Callejero
