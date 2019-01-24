@@ -20,6 +20,7 @@
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
     <script>
         var map, osm, controlCapas;
 
@@ -58,15 +59,36 @@
                     ext: 'png'
                 }).addTo(hibrid);
 
-                hibrid.addTo(map);
+            hibrid.addTo(map);
 
             var mapaBase = {
                 'Mapa': osm,
                 'Foto': Esri_WorldImagery,
                 'Hibrid': hibrid
             };
-            controlCapas = L.control.layers(mapaBase, null,{collapsed:true});
-            controlCapas.addTo(map)
+
+
+
+            var rivers = new L.GeoJSON.AJAX(
+                'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_rivers_europe.geojson', {
+                   
+                    style: function (feature) {
+                        return {
+                            color: "#00ffe1",
+                            weight: 6
+                        }
+                    },
+                }).addTo(map);
+
+
+
+
+            controlCapas = L.control.layers(mapaBase, null, {
+                collapsed: true
+            });
+            controlCapas.addTo(map);
+
+
         }
     </script>
 </head>
