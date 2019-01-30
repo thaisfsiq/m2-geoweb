@@ -1,0 +1,105 @@
+<html>
+
+<head lang="es">
+    <title>Google Drive</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        #ventana {
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        var embalsePunto = null;
+        var map;
+        $(document).ready(function () {
+
+            map = L.map("map", {
+                attributionControl: false,
+                zoom: 8,
+                center: [42, 2]
+            });
+
+            L.tileLayer('//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+                attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> — Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                subdomains: 'abcd',
+                maxZoom: 17,
+                minZoom: 2
+            }).addTo(map);
+
+
+            function peticionembalses() {
+                var peticion =
+                    'https://docs.google.com/spreadsheets/d/e/2PACX-1vSujMs3ib7DOVA7cH6eGXYqjXNnPS2cCC5oqtCVqf5vW7cd9AYzrXpj5wRPfHX7e819R7EIqk2dpqq6/pub?gid=951124431&single=true&output=csv';
+                $.ajax({
+                    url: peticion,
+                    method: "GET",
+                    dataType: "text",
+                    success: function (respuesta) {
+                        // respuestaembalses(respuesta);
+                       
+                       var embalsesArray= $.csv.toArrays(respuesta);
+                      respuestaembalses(embalsesArray);
+                       console.info(embalsesArray);
+
+                    }
+                }); //fin ajax
+
+            } //fin peticion
+
+            function respuestaembalses(respuestaEmbalses) {
+
+                console.info(respuestaEmbalses);
+                if (respuestaEmbalses == null) {
+                    return;
+                } else {
+
+                    
+                   
+                    for (var i = 1; i < respuestaEmbalses.length; i++) {
+                        var embalse = respuestaEmbalses[i];
+                        embalsePunto = new L.circleMarker([embalse[3], embalse[4]], {
+                            radius: 6,
+                            fillColor: "#0000FF",
+                            color: "#ffffff",
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 0.8
+                        });
+                        embalsePunto.bindPopup( + embalse[7]);
+                        embalsePunto.addTo(map);
+
+                    }
+                }
+            } //Fin respuesta embalses
+
+            peticionembalses();
+           
+
+        }); //fin document ready
+    </script>
+</body>
+
+</html>

@@ -381,6 +381,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejemplo-extra-google-drive" title="Ejemplo extra: Google Drive" class="md-nav__link">
+    Ejemplo extra: Google Drive
+  </a>
+  
+</li>
+      
       
       
       
@@ -535,6 +542,13 @@
         <li class="md-nav__item">
   <a href="#servicio-geonames-y-leaflet" title="Servicio GeoNames y Leaflet" class="md-nav__link">
     Servicio GeoNames y Leaflet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-extra-google-drive" title="Ejemplo extra: Google Drive" class="md-nav__link">
+    Ejemplo extra: Google Drive
   </a>
   
 </li>
@@ -1457,6 +1471,224 @@ Nos damos de Alta en GeoNanmes</p>
             <span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;moveend&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="nx">peticionTerremotos</span><span class="p">();</span>
             <span class="p">});</span>
+
+        <span class="p">});</span> <span class="c1">//fin document ready</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="ejemplo-extra-google-drive">Ejemplo extra: Google Drive</h3>
+<blockquote>
+<ul>
+<li>Creamos archivo <strong>drive.html</strong></li>
+</ul>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Google Drive<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="nt">body</span> <span class="p">{</span>
+            <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="p">#</span><span class="nn">map</span> <span class="p">{</span>
+            <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="p">#</span><span class="nn">ventana</span> <span class="p">{</span>
+            <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+            <span class="k">top</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">left</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">z-index</span><span class="p">:</span> <span class="mi">1000</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="kd">var</span> <span class="nx">embalsePunto</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">map</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+            <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s2">&quot;map&quot;</span><span class="p">,</span> <span class="p">{</span>
+                <span class="nx">attributionControl</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">zoom</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+                <span class="nx">center</span><span class="o">:</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+            <span class="p">});</span>
+
+            <span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png&#39;</span><span class="p">,</span> <span class="p">{</span>
+                <span class="nx">attribution</span><span class="o">:</span> <span class="s1">&#39;Map tiles by &lt;a href=&quot;http://stamen.com&quot;&gt;Stamen Design&lt;/a&gt;, &lt;a href=&quot;http://creativecommons.org/licenses/by/3.0&quot;&gt;CC BY 3.0&lt;/a&gt; — Map data © &lt;a href=&quot;http://openstreetmap.org&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/2.0/&quot;&gt;CC-BY-SA&lt;/a&gt;&#39;</span><span class="p">,</span>
+                <span class="nx">subdomains</span><span class="o">:</span> <span class="s1">&#39;abcd&#39;</span><span class="p">,</span>
+                <span class="nx">maxZoom</span><span class="o">:</span> <span class="mi">17</span><span class="p">,</span>
+                <span class="nx">minZoom</span><span class="o">:</span> <span class="mi">2</span>
+            <span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+
+
+            <span class="kd">function</span> <span class="nx">peticionembalses</span><span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">peticion</span> <span class="o">=</span>
+                    <span class="s1">&#39;https://docs.google.com/spreadsheets/d/e/2PACX-1vSujMs3ib7DOVA7cH6eGXYqjXNnPS2cCC5oqtCVqf5vW7cd9AYzrXpj5wRPfHX7e819R7EIqk2dpqq6/pub?gid=951124431&amp;single=true&amp;output=csv&#39;</span><span class="p">;</span>
+                <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+                    <span class="nx">url</span><span class="o">:</span> <span class="nx">peticion</span><span class="p">,</span>
+                    <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+                    <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+                    <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">respuesta</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c1">// respuestaembalses(respuesta);</span>
+
+                       <span class="kd">var</span> <span class="nx">embalsesArray</span><span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">csv</span><span class="p">.</span><span class="nx">toArrays</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+                      <span class="nx">respuestaembalses</span><span class="p">(</span><span class="nx">embalsesArray</span><span class="p">);</span>
+                       <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">embalsesArray</span><span class="p">);</span>
+
+                    <span class="p">}</span>
+                <span class="p">});</span> <span class="c1">//fin ajax</span>
+
+            <span class="p">}</span> <span class="c1">//fin peticion</span>
+
+            <span class="kd">function</span> <span class="nx">respuestaembalses</span><span class="p">(</span><span class="nx">respuestaEmbalses</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">respuestaEmbalses</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">respuestaEmbalses</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+
+
+
+                    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">respuestaEmbalses</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">var</span> <span class="nx">embalse</span> <span class="o">=</span> <span class="nx">respuestaEmbalses</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+                        <span class="nx">embalsePunto</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">circleMarker</span><span class="p">([</span><span class="nx">embalse</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nx">embalse</span><span class="p">[</span><span class="mi">4</span><span class="p">]],</span> <span class="p">{</span>
+                            <span class="nx">radius</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+                            <span class="nx">fillColor</span><span class="o">:</span> <span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span>
+                            <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;#ffffff&quot;</span><span class="p">,</span>
+                            <span class="nx">weight</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+                            <span class="nx">opacity</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="nx">fillOpacity</span><span class="o">:</span> <span class="mf">0.8</span>
+                        <span class="p">});</span>
+                        <span class="nx">embalsePunto</span><span class="p">.</span><span class="nx">bindPopup</span><span class="p">(</span> <span class="o">+</span> <span class="nx">embalse</span><span class="p">[</span><span class="mi">7</span><span class="p">]);</span>
+                        <span class="nx">embalsePunto</span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="c1">//Fin respuesta embalses</span>
+
+            <span class="nx">peticionembalses</span><span class="p">();</span>
+
 
         <span class="p">});</span> <span class="c1">//fin document ready</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
