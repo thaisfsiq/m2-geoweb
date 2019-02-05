@@ -377,6 +377,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creamos-un-embed-html" title="Creamos un embed HTML" class="md-nav__link">
+    Creamos un embed HTML
+  </a>
+  
+</li>
+      
       
       
       
@@ -428,6 +435,13 @@
         <li class="md-nav__item">
   <a href="#ejercicio-de-visualizacion-con-keplergl" title="Ejercicio de visualización con Kepler.gl" class="md-nav__link">
     Ejercicio de visualización con Kepler.gl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creamos-un-embed-html" title="Creamos un embed HTML" class="md-nav__link">
+    Creamos un embed HTML
   </a>
   
 </li>
@@ -486,6 +500,89 @@
 <p class="admonition-title">Info</p>
 <p>Continuamos añadiendo más capas y mapas bases</p>
 </div>
+<p>Exportamos el proyecto y lo subimos a GitHub</p>
+<h3 id="creamos-un-embed-html">Creamos un embed HTML</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Mis mapas
+    <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/x-icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;favicon.ico&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css&quot;</span>
+        <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+        <span class="nt">html</span> <span class="p">{</span>
+            <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span>
+        <span class="p">}</span>
+
+        <span class="nt">iframe</span> <span class="p">{</span>
+            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+            <span class="k">height</span><span class="p">:</span> <span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar navbar-light bg-light&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Ejemplo visualización accidentes tráfico 2017 <span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://kepler.gl/#/demo?mapUrl=https://gis-master-m2.github.io/geoweb/accidentes-kepler.json&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
