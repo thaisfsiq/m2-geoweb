@@ -15,9 +15,9 @@ Materiales para el módulo 2: Mapas y OpenData, Localización, Visualización y 
 * [6. Plataformas GitHub y Medium.Lenguaje Git.](6_taller_github)
 * [7. Mapas personalizados con MapBox Studio y Maputnik.](7_introduccion_a_vector_tiles)
 * [8. Introducción a MapBox GL JS](8_introduccion_a_mapbox)
-* [9. MapBox GL JS avanzado](7_introduccion_a_mapbox)
-* [10. Mallas discretas y algoritmos en JS](7_introduccion_a_mapbox)
-* [11. Visualización y publicación con Kepler GL](8_visualizacion_con_kepler_gl)
+* [9. MapBox GL JS avanzado](8_introduccion_a_mapbox)
+* [10. Mallas discretas y algoritmos en JS](8_introduccion_a_mapbox)
+* [11. Visualización y publicación con Kepler GL](11_visualizacion_con_kepler_gl)
 
 
 
