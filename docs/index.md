@@ -7,17 +7,17 @@ Materiales para el módulo 2: Mapas y OpenData, Localización, Visualización y 
 
 #### Temario
 
-* [1. Introducción a la GeoWeb : Herramientas, Servicios y Conceptos](1_introduccion_a_las_tecnologias_geoweb)
-* [2. Introducción a Leaflet](2_introduccion_a_leaflet)
-* [3. Recursos OpenData](3_recursos_open_data)
-* [4. Plugins Leaflet](4_plugins_leaflet)
-* [5. Introducción a Cesium](5_introduccion_a_cesium)
-* [6. Plataformas GitHub y Medium.Lenguaje Git.](6_taller_github)
-* [7. Mapas personalizados con MapBox Studio y Maputnik.](7_introduccion_a_vector_tiles)
-* [8. Introducción a MapBox GL JS](8_introduccion_a_mapbox)
-* [9. MapBox GL JS avanzado](8_introduccion_a_mapbox)
-* [10. Mallas discretas y algoritmos en JS](8_introduccion_a_mapbox)
-* [11. Visualización y publicación con Kepler GL](11_visualizacion_con_kepler_gl)
+* [1. Introducción a la GeoWeb : Herramientas, Servicios y Conceptos](introduccion_a_las_tecnologias_geoweb)
+* [2. Plataformas GitHub y Medium.Lenguaje Git.](taller_github)
+* [3. Introducción a Leaflet](introduccion_a_leaflet)
+* [4. Recursos OpenData](recursos_open_data)
+* [5. Plugins Leaflet](plugins_leaflet)
+* [6. Introducción a Cesium](introduccion_a_cesium)
+* [7. Mapas personalizados con MapBox Studio y Maputnik.](introduccion_a_vector_tiles)
+* [8. Introducción a MapBox GL JS](introduccion_a_mapbox)
+* [9. MapBox GL JS avanzado](introduccion_a_mapbox)
+* [10. Mallas discretas y algoritmos en JS](introduccion_a_mapbox)
+* [11. Visualización y publicación con Kepler GL](visualizacion_con_kepler_gl)
 
 
 
