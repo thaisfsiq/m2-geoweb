@@ -20,15 +20,17 @@ repo_url: "https://github.com/gis-master-m2/m2-geoweb"
 
 nav:
 - Inicio: index.md
-- 1. Introducción a las tecnologías GeoWeb: 1_introduccion_a_las_tecnologias_geoweb.md
-- 2. Introducción a Leaflet: 2_introduccion_a_leaflet.md
-- 3. Recursos OpenData: 3_recursos_open_data.md
-- 4. Plugins Leaflet: 4_plugins_leaflet.md
-- 5. Taller GitHub: 5_taller_github.md
-- 6. Introducción a Vector Tiles: 6_introduccion_a_vector_tiles.md
-- 7. Introducción a MapBox: 7_introduccion_a_mapbox.md
-- 8. Visualización con Kepler GL: 8_visualizacion_con_kepler_gl.md
-- 9. Introducción a Cesium: 9_introduccion_a_cesium.md
+- 1. Introducción a la GeoWeb,Herramientas, Servicios y Conceptos: introduccion_a_las_tecnologias_geoweb.md
+- 2. Plataformas GitHub y Medium.Lenguaje Git.: taller_github.md
+- 3. Introducción a Leaflet: introduccion_a_leaflet.md
+- 4. Recursos OpenData: recursos_open_data.md
+- 5. Plugins Leaflet: plugins_leaflet.md
+- 6. Introducción a Cesium: introduccion_a_cesium.md
+- 7. Mapas personalizados con MapBox Studio y Maputnik.: introduccion_a_vector_tiles.md
+- 8. Introducción a MapBox GL JS: introduccion_a_mapbox.md
+- 9. MapBox GL JS avanzado: introduccion_a_mapbox.md
+- 10. Mallas discretas y algoritmos en JS: introduccion_a_mapbox.md
+- 11. Visualización y publicación con Kepler GL: visualizacion_con_kepler_gl.md
 
 
 plugins:
