@@ -26,11 +26,11 @@ nav:
 - 4. Recursos OpenData: recursos_open_data.md
 - 5. Plugins Leaflet: plugins_leaflet.md
 - 6. Introducción a Cesium: introduccion_a_cesium.md
-- 7. Mapas personalizados con MapBox Studio y Maputnik.: introduccion_a_vector_tiles.md
-- 8. Introducción a MapBox GL JS: introduccion_a_mapbox.md
-- 9. MapBox GL JS avanzado: introduccion_a_mapbox.md
-- 10. Mallas discretas y algoritmos en JS: introduccion_a_mapbox.md
-- 11. Visualización y publicación con Kepler GL: visualizacion_con_kepler_gl.md
+#- 7. Mapas personalizados con MapBox Studio y Maputnik.: introduccion_a_vector_tiles.md
+#- 8. Introducción a MapBox GL JS: introduccion_a_mapbox.md
+#- 9. MapBox GL JS avanzado: introduccion_a_mapbox.md
+#- 10. Mallas discretas y algoritmos en JS: introduccion_a_mapbox.md
+#- 11. Visualización y publicación con Kepler GL: visualizacion_con_kepler_gl.md
 
 
 plugins:

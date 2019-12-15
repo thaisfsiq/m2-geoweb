@@ -13,11 +13,11 @@ Materiales para el módulo 2: Mapas y OpenData, Localización, Visualización y 
 * [4. Recursos OpenData](recursos_open_data)
 * [5. Plugins Leaflet](plugins_leaflet)
 * [6. Introducción a Cesium](introduccion_a_cesium)
-* [7. Mapas personalizados con MapBox Studio y Maputnik.](introduccion_a_vector_tiles)
-* [8. Introducción a MapBox GL JS](introduccion_a_mapbox)
-* [9. MapBox GL JS avanzado](introduccion_a_mapbox)
-* [10. Mallas discretas y algoritmos en JS](introduccion_a_mapbox)
-* [11. Visualización y publicación con Kepler GL](visualizacion_con_kepler_gl)
+* [7. Mapas personalizados con MapBox Studio y Maputnik.](introduccion_a_vector_tiles_NONE)
+* [8. Introducción a MapBox GL JS](introduccion_a_mapbox_NONE)
+* [9. MapBox GL JS avanzado](introduccion_a_mapbox_NONE)
+* [10. Mallas discretas y algoritmos en JS](introduccion_a_mapbox_NONE)
+* [11. Visualización y publicación con Kepler GL](visualizacion_con_kepler_gl_NONE)
 
 
 
@@ -27,7 +27,7 @@ Materiales para el módulo 2: Mapas y OpenData, Localización, Visualización y 
 * Servidor web. Plugin VSCode [https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 * Cliente GIT [https://git-scm.com/download/win](https://git-scm.com/download/win)
 
-#### Crear usuario
+#### Crear cuenta de  usuario en:
 
 * GitHub [https://github.com/](https://github.com/)
 * Medium [https://medium.com/](https://medium.com/)

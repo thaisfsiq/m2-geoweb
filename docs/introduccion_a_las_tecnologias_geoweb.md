@@ -12,4 +12,11 @@ Temario
     * Conceptos linked Data
     * Tecnologías geoweb
 
-### [Ver presentación](presentacion/1_introduccion-geoweb.pptx)
+### [Ver presentación](presentacion/Introduccion-geoweb.pptx)
+
+* Herramientas,Librerías y JavaScript
+    * Porque estas herramientas
+    * Porque estas herramientas
+    * JavaScript
+
+### [Ver presentación](presentacion/Herramientas-y-javascript.pptx)

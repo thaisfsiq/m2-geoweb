@@ -1,5 +1,7 @@
 
-<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png" width="100"> 
+
+# GitHub
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" width="100"> 
        
 
  
@@ -41,11 +43,18 @@
 
 ![alt text](img/github-pas2.png "github")
 
+#### Paso 3 (opcion 1).Si el directorio (proyecto) no existe en mi PC
 
-#### Paso 3
+```sh
+
+git clone https://github.com/{tu usuario git}/geoweb.git
+
+```
+
+#### Paso 3 (opcion 2). Si ya existe el directorio (proyecto)
 * Crearemos repo des de nuestro pc [Tutorial](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
 
-* Nos situamos dentro del directori **geoweb** de nuestro servidor y abrimos termial git (botón derecho mouse y Git Bash here)
+* Nos situamos dentro del directorio **geoweb** de nuestro servidor y abrimos termial git (botón derecho mouse y Git Bash here)
 
 ```sh
 git init
@@ -102,3 +111,32 @@ git push -u origin master
 git clone  https://github.com/{tu usuario git}/geoweb.git
 
 ```
+
+
+
+# Medium
+<img src="https://miro.medium.com/max/484/1*F6SrJR7_s95r6oCF3ugMZw.png" width="100"> 
+       
+
+ 
+###  Recursos Medium
+
+* Web
+[https://medium.com//](https://medium.com/)
+
+* Tutorials
+[https://help.medium.com/hc/en-us/articles/225168768](https://help.medium.com/hc/en-us/articles/225168768)
+[https://help.medium.com/hc/en-us/articles/115004681607-Create-a-publication](https://help.medium.com/hc/en-us/articles/115004681607-Create-a-publication)
+
+* Tutorial
+[https://blog.hubspot.com/marketing/how-to-use-medium](https://blog.hubspot.com/marketing/how-to-use-medium)
+
+* Wikipedia
+[hhttps://es.wikipedia.org/wiki/Medium_(servicio)](https://es.wikipedia.org/wiki/Medium_(servicio))
+
+    
+
+
+    
+### Descripción 
+>Medium es un servicio de publicación de blogs fundado por los cofundadores de Twitter Evan Williams y Biz Stone en agosto de 2012.1​ La plataforma ha evolucionado hacia un híbrido de contribuciones no profesionales, profesionales y pagadas.
