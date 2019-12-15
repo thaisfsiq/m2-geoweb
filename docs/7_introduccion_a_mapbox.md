@@ -105,8 +105,29 @@ Creamos **Mapbox-estilo.html**
 </body>
 
 </html>    
-
 ```
+
+!!! note
+    **Los styles normalmente tienen**:
+    ```
+        source{
+        type: "vector"
+        url: 
+        id:id_source
+        }
+        layer{
+            source:id_source,
+            id:id_layer;
+            type:
+            data:
+            paint:{}
+            layout:{}
+            filter:{}
+
+        }
+    ```
+
+
 ### 2.Crear un Tileset o capa de datos própios
 
 
@@ -136,7 +157,7 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
 ```html
    <html>
 
-<head>
+ <head>
     <meta charset='utf-8' />
     <title>Accidentes BCN</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -335,8 +356,8 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
 </body>
 
 </html>
-
-``` 
+```
+ 
 !!! note
     **Probamos**:Añadir opción para ver todos los accidentes
 
