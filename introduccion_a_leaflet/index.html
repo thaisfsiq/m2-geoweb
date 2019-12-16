@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -51,7 +51,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -64,9 +64,6 @@
     
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
-    
-    
-      
     
     
   </head>
@@ -365,6 +362,26 @@
     ¿Cómo empezar?
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lmap" title="L.map" class="md-nav__link">
+    L.map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ltilelayer" title="L.tileLayer" class="md-nav__link">
+    L.tileLayer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -378,6 +395,19 @@
   <a href="#ejemplo-1-controles" title="Ejemplo 1 Controles" class="md-nav__link">
     Ejemplo 1 Controles
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lcontrollayers" title="L.control.layers" class="md-nav__link">
+    L.control.layers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -547,6 +577,26 @@
     ¿Cómo empezar?
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lmap" title="L.map" class="md-nav__link">
+    L.map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ltilelayer" title="L.tileLayer" class="md-nav__link">
+    L.tileLayer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -560,6 +610,19 @@
   <a href="#ejemplo-1-controles" title="Ejemplo 1 Controles" class="md-nav__link">
     Ejemplo 1 Controles
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lcontrollayers" title="L.control.layers" class="md-nav__link">
+    L.control.layers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -836,6 +899,20 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
   y añadir una capa de OSM <strong>L.map</strong> es la clase central de la API.
    Se usa para crear y manipular el mapa. 
    El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<h4 id="lmap"><strong>L.map</strong></h4>
+<p>Es el constructor principal de Leaflet</p>
+<p>Propiedades: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#map-factory"><a href="https://leafletjs.com/reference-1.6.0.html#map-factory">https://leafletjs.com/reference-1.6.0.html#map-factory</a></a></p>
+<p>Métodos: <a href="https://leafletjs.com/reference-1.6.0.html#map-methods-for-modifying-map-state">https://leafletjs.com/reference-1.6.0.html#map-methods-for-modifying-map-state</a></p>
+<p>Eventos: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#map-event"><a href="https://leafletjs.com/reference-1.6.0.html#map-event">https://leafletjs.com/reference-1.6.0.html#map-event</a></a></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<h4 id="ltilelayer"><strong>L.tileLayer</strong></h4>
+<p>Es un tipo de capa raster que se añade al objeto L.map</p>
+<p>Referencia: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#tilelayer"><a href="https://leafletjs.com/reference-1.6.0.html#tilelayer">https://leafletjs.com/reference-1.6.0.html#tilelayer</a></a></p>
+</div>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -963,8 +1040,16 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
 </td></tr></table>
 
 <p>¿Que acabamos de hacer? Miramos dentro del tag <code>&lt;script&gt;</code></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<ul>
+<li>Hemos creado la variable global <strong>map</strong></li>
+<li>Usamos <strong>L.map()</strong> para instanciar el objeto mapa, pasando el id del <code>&lt;div&gt;</code> dónde irá el mapa</li>
+<li>Utilizamos las opciones center y zoom iniciar el mapa También podríamos utilizar el método
+ <strong>setView map =L.map('map').setView([41.6863, 1.8382], 8);)</strong></li>
+<li>Usamos <strong>L.tileLayer()</strong> para crear una capa base en un servidor OSM de tiles. {z}/{x}/{y}. También pasamos algunas opciones Attribution : atribución de la capa maxZoom y minZoom :niveles de zoom.</li>
+<li>Usamos método <strong>addTo()</strong> para añadir la capa al mapa</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Si quisieramos añadir un punto:</br>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -974,8 +1059,8 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
 </pre></div>
 </td></tr></table></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Si quisieramos añadir un punto con estilo al hacer clic en el mapa(Evento):</br></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -1000,8 +1085,28 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
 </td></tr></table>
 
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>¿Subimos el ejemplo al GitHub?</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    git pull
+    git add .
+    git commit -m <span class="s2">&quot;primer ejemplo leaflet&quot;</span>
+    git push
+</pre></div>
+</td></tr></table>
+
+</div>
 <h3 id="ejemplo-1-controles">Ejemplo 1 Controles</h3>
-<p>Añadimos controles de capas y escala.
+<p>Añadimos controles de capas y escala.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<h4 id="lcontrollayers"><strong>L.control.layers</strong></h4>
+<p>Es un control que nos permite activar y desactivar capas base (baseLayers) y "overlays"</p>
+<p>Referencia: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#control-layers"><a href="https://leafletjs.com/reference-1.6.0.html#control-layers">https://leafletjs.com/reference-1.6.0.html#control-layers</a></a></p>
+</div>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1140,7 +1245,8 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
 
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
-</td></tr></table></p>
+</td></tr></table>
+
 <h3 id="ejemplo-2-provider">Ejemplo 2 Provider</h3>
 <blockquote>
 <p>¿Que mapas de fondo puedo añadir?
@@ -1655,7 +1761,7 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.b41f3d20.js"></script>
       
         
         
@@ -1673,6 +1779,9 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
         
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
       
     
   </body>
