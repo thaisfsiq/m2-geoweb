@@ -159,6 +159,27 @@ Ahora crearemos y empezaremos a programar dentro del tag ``` <script> ```  justo
    Se usa para crear y manipular el mapa. 
    El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.
 
+!!! info
+    #### **L.map**
+    Es el constructor principal de Leaflet
+
+    Propiedades: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#map-factory">https://leafletjs.com/reference-1.6.0.html#map-factory</a>
+
+    Métodos: [https://leafletjs.com/reference-1.6.0.html#map-methods-for-modifying-map-state](https://leafletjs.com/reference-1.6.0.html#map-methods-for-modifying-map-state )
+
+    Eventos: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#map-event">https://leafletjs.com/reference-1.6.0.html#map-event</a>
+
+
+!!! info
+    #### **L.tileLayer**
+    Es un tipo de capa raster que se añade al objeto L.map
+
+    Referencia: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#tilelayer">https://leafletjs.com/reference-1.6.0.html#tilelayer</a>
+
+   
+
+
+
 ```html
  <script>
   var map,capa1;
@@ -232,14 +253,17 @@ Llamaremos ala función des de el evento onload del ```<body>```
 ```
        
 ¿Que acabamos de hacer? Miramos dentro del tag ``` <script> ```
-      
+
+
  * Hemos creado la variable global **map**
  * Usamos **L.map()** para instanciar el objeto mapa, pasando el id del ```<div>``` dónde irá el mapa
  * Utilizamos las opciones center y zoom iniciar el mapa También podríamos utilizar el método
  **setView map =L.map('map').setView([41.6863, 1.8382], 8);)**
  *  Usamos **L.tileLayer()** para crear una capa base en un servidor OSM de tiles. {z}/{x}/{y}. También pasamos algunas opciones Attribution : atribución de la capa maxZoom y minZoom :niveles de zoom.
- * Usamos método addTo() para añadir la capa al mapa
-!!! note 
+ * Usamos método **addTo()** para añadir la capa al mapa
+
+
+!!! info 
 	Si quisieramos añadir un punto:</br>
 	```javascript
 		L.marker([41.3954, 2.16859]).addTo(map)
@@ -247,7 +271,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
 		.openPopup();
 	```
 
-!!! note
+!!! info
 	Si quisieramos añadir un punto con estilo al hacer clic en el mapa(Evento):</br>
 
 	```javascript
@@ -263,8 +287,36 @@ Llamaremos ala función des de el evento onload del ```<body>```
 		  });
 	```
 
+
+
+!!! note 
+	¿Subimos el ejemplo al GitHub?
+
+	```bash
+
+		git pull
+        git add .
+        git commit -m "primer ejemplo leaflet"
+        git push
+
+	```
+
+
+
 ### Ejemplo 1 Controles
   Añadimos controles de capas y escala.
+
+
+!!! info
+    #### **L.control.layers**
+    Es un control que nos permite activar y desactivar capas base (baseLayers) y "overlays"
+
+    Referencia: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#control-layers">https://leafletjs.com/reference-1.6.0.html#control-layers</a>
+
+   
+
+
+
 ```html
   <html lang="es">
 
