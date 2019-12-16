@@ -7,9 +7,17 @@
 [https://gis-master-m2.github.io/m2-geoweb/](https://gis-master-m2.github.io/m2-geoweb/)
 
 
+#### Para obtener documentación en HTML
 
 
-### Entorno para generar documentación
+```bash
+git clone https://github.com/gis-master-m2/m2-geoweb.git
+git checkout gh-pages
+
+```
+
+
+#### Para generar documentación
 
 Se puede crear un entorno para generar la documentación instalando [Anaconda](https://www.anaconda.com/)
 
