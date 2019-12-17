@@ -1,9 +1,6 @@
 
 
 # GitHub
-<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" width="100"> 
-       
-
  
 ###  Recursos GitHub
 
@@ -33,17 +30,17 @@
 
 * Requisitos Instalar cliente GIT para windows [https://git-scm.com/download/win](https://git-scm.com/download/win)
  
-#### Paso 1
+### Paso 1
 
 * Crear usuario en: [https://github.com/](https://github.com/)
 
-#### Paso 2
+### Paso 2
 
 * Creamos nuevo repo llamado **geoweb**
 
 ![alt text](img/github-pas2.png "github")
 
-#### Paso 3 (opcion 1).Si el directorio (proyecto) no existe en mi PC
+### Paso 3 (opcion 1).Si el directorio (proyecto) no existe en mi PC
 
 ```sh
 
@@ -51,7 +48,7 @@ git clone https://github.com/{tu usuario git}/geoweb.git
 
 ```
 
-#### Paso 3 (opcion 2). Si ya existe el directorio (proyecto)
+### Paso 3 (opcion 2). Si ya existe el directorio (proyecto)
 * Crearemos repo des de nuestro pc [Tutorial](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
 
 * Nos situamos dentro del directorio **geoweb** de nuestro servidor y abrimos termial git (botón derecho mouse y Git Bash here)
@@ -67,27 +64,65 @@ git push -u origin master
 ```
 Atentificamos con usuario y password  
 
-#### Paso 4
+### Paso 4
 
-* Verificamos en github.com que se ha subido toda la documentación y creamos arcihivo readme **add Readme**
+* Abrimos VSCode  y añadimos directorio **geoweb**  **File -->Add folder to workspace**
 
-#### Paso 5
+![alt text](img/vscode1.png "vscode")
 
-* Vamos a la terminal de git y escribimos
+### Paso 5
+
+* Creamos y/o editamos archivo **readme.md**
 
 ```sh 
 
-git pull
+### Proyector Geoweb 
+
+### Documentación del curso
+
+[https://gis-master-m2.github.io/m2-geoweb/](https://gis-master-m2.github.io/m2-geoweb/)
+
 ``` 
  
-     
-#### Paso 6
+### Paso 6
 
- * Abrimos archivo readme con editor VSCode y añadimos text descriptivo de nuestro proyecto
- * Guardamos y desde la terminal git
+* Añadimos y/o editamos archivo **hola.html**
+
+```html 
+
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>Hola</h3>
+    </body>
+</html>
+
+``` 
+     
+### Paso 7
+
+ * Abrimos una terminal en VSCode  **View --> Terminal** y dentro de la terminal escribimos (linea + tecla Enter)
+
+![alt text](img/vscode2.png "vscode")
 
 ```sh
+git pull
+```
+```sh
+git add .
+```
+```sh
+git commit -m "change readme"
+```
+```sh
+git push -u origin master
+```
 
+En total habríamos escrito estas 4 lineas
+
+```sh
+git pull
 git add .
 git commit -m "change readme"
 git push -u origin master
@@ -98,24 +133,47 @@ git push -u origin master
     Cada vez que editamos debemos hacer esta operación para subir código
 
 
-#### Paso 7
+### Paso 8
 
-* Para convertir el repo en una página web, vamos al proyecto en github.com
-* Seleccionamos optión Settings
+* Para convertir el repo en una página web, vamos al proyecto geoweb en github.com
+* Seleccionamos opción Settings
 * GitHub Pages  opción **master branch**
 
 
-#### Para recuperar nuestro trabajo en casa, por ejemplo
+### Para recuperar (clonar) nuestro trabajo en casa, por ejemplo
+
+Nos situamos en un directorio de nuestor PC.
+Botón derecho del mouse -->"Git bash here"
 
 ```sh
 git clone  https://github.com/{tu usuario git}/geoweb.git
+```
+!!! note
+    Si no aparece "Git bash here", tienes que instalar el cliente GIT
+    [https://git-scm.com/download/win](https://git-scm.com/download/win)
 
+#### Para (clonar) clonar la doumentación del curso
+
+Nos situamos en un directorio de nuestor PC.
+Botón derecho del mouse -->"Git bash here"
+
+```sh
+git clone  https://github.com/gis-master-m2/m2-geoweb.git
 ```
 
 
+#### Para actualizar-sincronizar documentacion
+
+Nos situamos *dentro* del directorio del proyecto, por ejemplo geoweb o m2-geoweb.
+Botón derecho del mouse -->"Git bash here"
+
+```sh
+git pull
+```
+
 
 # Medium
-<img src="https://miro.medium.com/max/484/1*F6SrJR7_s95r6oCF3ugMZw.png" width="100"> 
+
        
 
  
