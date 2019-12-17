@@ -1,6 +1,10 @@
-    
-
   <img src="http://leafletjs.com/docs/images/logo.png" width="100">     
+
+# Introducción
+
+### [Ver presentación](presentacion/Herramientas-y-javascript.pptx)   
+
+
  
 ## Recursos Leaflet JS
 
@@ -45,11 +49,13 @@
 
  Si utlizamos VSCODE , instalamos extensión Live Server
 
-> Descargamos [geoweb.zip](datos/geoweb.zip) y descomprimir dentro de nuestro directorio **html** del servidor web 
+> Descargamos [geoweb.zip](datos/geoweb.zip) y descomprimir dentro de nuestro directorio **geoweb** del servidor web 
 
-> Abrimos navegador y probamos [http://localhost/geoweb/index.html](http://localhost/geoweb/index.html)
+ >Dentro de VSCODE seleccionamos **index.html** -->**Botón derecho mouse** --> **Open with Live Server**
 
-Abrimos nuestro editor de texto y creamos la página **leaflet-basico.html** dentro directorio geoweb
+> Abrimos navegador y probamos [http://localhost:5500/geoweb/index.html](http://localhost:5500/geoweb/index.html)
+
+En VSCODE  creamos la página **leaflet-basico.html** dentro directorio geoweb
 
 Añadiremos el siguiente código que es la estructura básica de una página :
 
@@ -258,33 +264,71 @@ Llamaremos ala función des de el evento onload del ```<body>```
  * Hemos creado la variable global **map**
  * Usamos **L.map()** para instanciar el objeto mapa, pasando el id del ```<div>``` dónde irá el mapa
  * Utilizamos las opciones center y zoom iniciar el mapa También podríamos utilizar el método
- **setView map =L.map('map').setView([41.6863, 1.8382], 8);)**
+ **setView **
+
+```
+ map =L.map('map').setView([41.6863, 1.8382], 8);)
+```
+
  *  Usamos **L.tileLayer()** para crear una capa base en un servidor OSM de tiles. {z}/{x}/{y}. También pasamos algunas opciones Attribution : atribución de la capa maxZoom y minZoom :niveles de zoom.
  * Usamos método **addTo()** para añadir la capa al mapa
 
 
 !!! info 
-	Si quisieramos añadir un punto:</br>
+	Si quisieramos añadir un punto al mapa:</br>
 	```javascript
-		L.marker([41.3954, 2.16859]).addTo(map)
-		.bindPopup('Hola punto')
-		.openPopup();
+		L.marker([41.3954, 2.16859]).addTo(map);
+		
 	```
+
+!!! info 
+	Si quisieramos añadir un popup al punto:</br>
+	```javascript
+		L.marker([41.3954, 2.16859]).addTo(map).bindPopup('Hola punto');
+	```    
+
+!!! info 
+	Si quisieramos que el popup estuviera abierto por defecto:</br>
+	```javascript
+		L.marker([41.3954, 2.16859]).addTo(map).bindPopup('Hola punto').openPopup();
+	```  
+!!! info 
+	Lo mismo pero programando diferente:</br>
+	```javascript
+	var punto = L.marker([41.3954, 2.16859]);
+        punto.addTo(map);
+        punto.bindPopup('Hola punto');
+        punto.openPopup();
+	```      
+
+!! info 
+	Si quiero añadir un punto de tipo círculo, con opciones (vector):</br>
+	```javascript
+	var punto = L.circleMarker([41.3954, 2.16859],{
+                color: '#ffffff',
+                fillColor: '#00ff00',
+                fillOpacity: 0.9,
+                radius: 8
+                 });
+        punto.addTo(map);
+        punto.bindPopup('Hola punto');
+        punto.openPopup();
+	```  
 
 !!! info
 	Si quisieramos añadir un punto con estilo al hacer clic en el mapa(Evento):</br>
 
 	```javascript
-		  map.on('click',function(e){
-	new L.circleMarker(e.latlng, {
-	 color: '#ffffff',
-	 fillColor: '#00ff00',
-	 fillOpacity: 0.9,
-	 radius: 8
-		   }).addTo(map)
-	  .bindPopup(e.latlng.lat+","+ e.latlng.lng)
-	  .openPopup();
-		  });
+		  map.on('click', function (e) {
+      new L.circleMarker(e.latlng, {
+        color: '#ffffff',
+        fillColor: '#00ff00',
+        fillOpacity: 0.9,
+        radius: 8
+      }).addTo(map)
+        .bindPopup(e.latlng.lat + "," + e.latlng.lng)
+        .openPopup();
+    });
 	```
 
 
@@ -313,13 +357,15 @@ Llamaremos ala función des de el evento onload del ```<body>```
 
     Referencia: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#control-layers">https://leafletjs.com/reference-1.6.0.html#control-layers</a>
 
-   
+    #### **L.control.scale**
+    Es un control añade un escala gráfica del mapa
+
+    Referencia: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#control-scale">https://leafletjs.com/reference-1.6.0.html#control-scale</a>
 
 
 
 ```html
   <html lang="es">
-
 <head>
     <title>Ejemplo 1 Leaflet-controles</title>
     <meta charset="utf-8" />
@@ -328,6 +374,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
     <meta name="description" content="descripción página" />
     <meta name="robots" content="index,follow" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <style>
         body {
             margin: 0;
@@ -340,7 +387,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
             width: 100%;
         }
     </style>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    
     <script>
         var map, osm, esri, terreno;
         var controlCapas;
@@ -348,18 +395,20 @@ Llamaremos ala función des de el evento onload del ```<body>```
 
         function init() {
             map = L.map('map').setView([41.6863, 1.8382], 8);
+
             esri = L.tileLayer(
                 'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                    maxZoom: 17,
-                    minZoom: 1,
-                    attribution: 'Tiles © Esri',
-                }).addTo(map);
+                maxZoom: 17,
+                minZoom: 1,
+                attribution: 'Tiles © Esri',
+            }).addTo(map);
+
             osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
-
                 minZoom: 1,
                 attribution: 'OSM'
             });
+
             terreno =
                 L.tileLayer('http://{s}.tile.stamen.com/terrain-background/{z}/{x}/{y}.png', {
                     maxZoom: 19,
@@ -373,8 +422,10 @@ Llamaremos ala función des de el evento onload del ```<body>```
             var overlayMaps = {
                 "Terrain": terreno
             };
+
             controlCapas = L.control.layers(baseMaps, overlayMaps);
             controlCapas.addTo(map);
+
             controlEscala = L.control.scale();
             controlEscala.addTo(map);
         }
@@ -389,6 +440,12 @@ Llamaremos ala función des de el evento onload del ```<body>```
 </html>
 
 ```
+
+
+!!! Pregunta 
+	¿Como lo haríamos para ver el control de capas abierto por defecto?
+
+
 
 ### Ejemplo 2 Provider
 
@@ -504,7 +561,9 @@ Llamaremos ala función des de el evento onload del ```<body>```
                 'Esri_OceanBasemap': Esri_OceanBasemap
             };
             controlCapas = L.control.layers(mapaBase, null);
-            controlCapas.addTo(map)
+            controlCapas.addTo(map);
+            controlEscala = L.control.scale();
+            controlEscala.addTo(map);
         }
     </script>
 </head>
@@ -516,7 +575,10 @@ Llamaremos ala función des de el evento onload del ```<body>```
 </html>
 ```
 
-
+!!! note
+    #### Pregunta
+    ¿Cómo añadiriamos una capa de tipo "overlay"?
+ 
        
 !!! note
     #### Práctica
@@ -536,94 +598,109 @@ Llamaremos ala función des de el evento onload del ```<body>```
                     attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX,GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
                 }).addTo(hibrid);
 
-                var Stamen_TonerHybrid = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.{ext}', {
-                attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-                subdomains: 'abcd',
-                minZoom: 0,
-                maxZoom: 20,
-                ext: 'png'
-            }).addTo(hibrid);
+            var Stamen_TonerHybrid = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            subdomains: 'abcd',
+            minZoom: 0,
+            maxZoom: 20,
+            ext: 'png'
+        }).addTo(hibrid);
     ```
 
 
 !!! info
     #### Solución práctica
-
     ```html
-        <html lang="es">
+    <html lang="es">
+    <head>
+        <title>Ejemplo Leaflet mapa base</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="autor" />
+        <meta name="description" content="descripción página" />
+        <meta name="robots" content="index,follow" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+        <style>
+            body {
+                margin: 0;
+            }
 
-        <head>
-            <title>Ejemplo Leaflet provider</title>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <meta name="author" content="autor" />
-            <meta name="description" content="descripción página" />
-            <meta name="robots" content="index,follow" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
-            <style>
-                body {
-                    margin: 0;
-                }
+            #map {
+                height: 100%;
+                width: 100%;
+                background-color: #ffffff
+            }
+        </style>
 
-                #map {
-                    height: 100%;
-                    width: 100%;
-                    background-color: #ffffff
-                }
-            </style>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-            <script>
-                var map, osm, controlCapas;
+        <script>
+            var map, osm, controlCapas;
 
-                function init() {
-                    map = L.map('map', {
-                        center: [42.6863, 2.8382],
-                        zoom: 7
+            function init() {
+                map = L.map('map', {
+                    center: [42.6863, 2.8382],
+                    zoom: 7
+                });
+                osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    minZoom: 1,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a>'
+                });
+
+                var Esri_WorldImagery =
+                    L.tileLayer(
+                        'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX,GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
                     });
-                    osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        maxZoom: 19,
-                        minZoom: 1,
-                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"/>OpenStreetMap</a>'
-                    });
-
-                    var Esri_WorldImagery =
-                        L.tileLayer(
-                            'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX,GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-                            });
 
 
-                    var hibrid = L.layerGroup();
+                var hibrid = L.layerGroup();
 
-                    var Esri_WorldImagery2 =
-                        L.tileLayer(
-                            'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX,GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-                            }).addTo(hibrid);
+                var Esri_WorldImagery2 =
+                    L.tileLayer(
+                        'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX,GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+                    }).addTo(hibrid);
 
-                    var Stamen_TonerHybrid = L.tileLayer(
-                        'https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.{ext}', {
-                            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-                            subdomains: 'abcd',
-                            minZoom: 0,
-                            maxZoom: 20,
-                            ext: 'png'
-                        }).addTo(hibrid);
+                var Stamen_TonerHybrid = L.tileLayer(
+                    'https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.{ext}', {
+                    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                    subdomains: 'abcd',
+                    minZoom: 0,
+                    maxZoom: 20,
+                    ext: 'png'
+                }).addTo(hibrid);
 
-                        hibrid.addTo(map);
+                hibrid.addTo(map);
 
-                    var mapaBase = {
-                        'Mapa': osm,
-                        'Foto': Esri_WorldImagery,
-                        'Hibrid': hibrid
-                    };
-                    controlCapas = L.control.layers(mapaBase, null,{collapsed:true});
-                    controlCapas.addTo(map)
-                }
-            </script>
-        </head>
-        <body onLoad="init()">
-            <div id="map"> </div>
-        </body>
-        </html>
+                var mapaBase = {
+                    'Mapa': osm,
+                    'Foto': Esri_WorldImagery,
+                    'Hibrid': hibrid
+                };
+                controlCapas = L.control.layers(mapaBase, null, { collapsed: true });
+                controlCapas.addTo(map);
+                controlEscala = L.control.scale();
+                controlEscala.addTo(map);
+            }
+        </script>
+    </head>
+
+    <body onLoad="init()">
+        <div id="map"> </div>
+    </body>
+
+    </html>
     ```
+
+!!! note 
+	¿Subimos el ejemplos al GitHub?
+
+	```bash
+
+		git pull
+        git add .
+        git commit -m "mas ejemplos leaflet"
+        git push
+
+	```    

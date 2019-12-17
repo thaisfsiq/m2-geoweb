@@ -40,7 +40,13 @@
 
 ![alt text](img/github-pas2.png "github")
 
-### Paso 3 (opcion 1).Si el directorio (proyecto) no existe en mi PC
+
+* Copiamos URL del proyecto
+
+![alt text](img/github-pas3.png "github")
+
+### Paso 3 (opcion 1 nuestro caso).Si el directorio (proyecto) no existe en mi PC. Voy a mi espacio de trabajo
+botón derecho del mouse -->"git bash here" y escribo en la consola giy clone y pego la URL + Enter
 
 ```sh
 
