@@ -138,7 +138,8 @@ git push -u origin master
 * Para convertir el repo en una página web, vamos al proyecto geoweb en github.com
 * Seleccionamos opción Settings
 * GitHub Pages  opción **master branch**
-
+![alt text](img/github.png "github")
+![alt text](img/github1.png "github")
 
 ### Para recuperar (clonar) nuestro trabajo en casa, por ejemplo
 
