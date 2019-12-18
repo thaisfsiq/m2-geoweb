@@ -47,7 +47,10 @@
  
 ###  ¿Cómo empezar?
 
- Si utlizamos VSCODE , instalamos extensión Live Server
+ Si utlizamos VSCODE , instalamos extensión Live Server **View -->Extensions**
+
+ ![alt text](img/github-pas0.png "github")
+
 
 > Descargamos [geoweb.zip](datos/geoweb.zip) y descomprimir dentro de nuestro directorio **geoweb** del servidor web 
 
