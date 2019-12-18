@@ -81,7 +81,7 @@ Vamos a crear un mapa con Leaflet, para ello incluiremos en la cabecera
   `<head>` de una página web la librería JavaScript leaflet.js (que contiene el código de la libería)
   y la hoja de estilo leaflet.css (con la hoja de estilos de la librería):
   
-```html
+```html  hl_lines="1 2"
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
       <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 ``` 
@@ -133,7 +133,7 @@ Añadiremos un estilo al mapa para que ocupe toda la página web, dentro la etiq
 
 Ahora nuestra página tendria este aspecto
 
-```html
+```html 
 <html lang="es">
 <head>
 <title>Leaflet básico</title>
