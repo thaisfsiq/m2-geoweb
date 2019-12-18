@@ -205,6 +205,15 @@ git pull
 >Medium es un servicio de publicación de blogs fundado por los cofundadores de Twitter Evan Williams y Biz Stone en agosto de 2012.1​ La plataforma ha evolucionado hacia un híbrido de contribuciones no profesionales, profesionales y pagadas.
 
 
+### Algunos artículos de Medium sobre Leaflet
+
+[https://medium.com/@Marseltov/how-good-is-leaflet-js-671b1bfe5505](https://medium.com/@Marseltov/how-good-is-leaflet-js-671b1bfe5505)
+
+[https://medium.com/@michaelcoleman19/getting-started-with-leaflet-a0c859a5f80](https://medium.com/@michaelcoleman19/getting-started-with-leaflet-a0c859a5f80)
+
+[https://medium.com/@dominicleung/first-try-with-leaflet-js-908bb04b5d95](https://medium.com/@dominicleung/first-try-with-leaflet-js-908bb04b5d95)
+
+
 !!! note
     Nos damos de alta com usuarios en Medium
     [https://medium.com/](https://medium.com/)
