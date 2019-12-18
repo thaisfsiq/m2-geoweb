@@ -46,7 +46,7 @@
 ![alt text](img/github-pas3.png "github")
 
 ### Paso 3 (opcion 1 nuestro caso).Si el directorio (proyecto) no existe en mi PC. Voy a mi espacio de trabajo
-botón derecho del mouse -->"git bash here" y escribo en la consola giy clone y pego la URL + Enter
+botón derecho del mouse -->"git bash here" y escribo en la consola ```git clone``` y pego la URL + Enter
 
 ```sh
 
@@ -178,12 +178,10 @@ Botón derecho del mouse -->"Git bash here"
 git pull
 ```
 
+<hr>
 
 # Medium
-
-       
-
- 
+        
 ###  Recursos Medium
 
 * Web
@@ -205,3 +203,8 @@ git pull
     
 ### Descripción 
 >Medium es un servicio de publicación de blogs fundado por los cofundadores de Twitter Evan Williams y Biz Stone en agosto de 2012.1​ La plataforma ha evolucionado hacia un híbrido de contribuciones no profesionales, profesionales y pagadas.
+
+
+!!! note
+    Nos damos de alta com usuarios en Medium
+    [https://medium.com/](https://medium.com/)
