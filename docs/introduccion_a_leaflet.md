@@ -3,11 +3,8 @@
 # Introducción
 
 ### [Ver presentación](presentacion/Herramientas-y-javascript.pptx)   
-
-
  
 ## Recursos Leaflet JS
-
 
 #### Web
 * [http://leafletjs.com/](http://leafletjs.com/)
@@ -168,8 +165,9 @@ Ahora crearemos y empezaremos a programar dentro del tag ``` <script> ```  justo
    Se usa para crear y manipular el mapa. 
    El mapa por defecto tiene dos controles: uno de zoom y uno de atribución.
 
-!!! info
-    #### **L.map**
+!!! summary "L.map"
+   
+    #### **L.map** 
     Es el constructor principal de Leaflet
 
     Propiedades: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#map-factory">https://leafletjs.com/reference-1.6.0.html#map-factory</a>
@@ -179,7 +177,7 @@ Ahora crearemos y empezaremos a programar dentro del tag ``` <script> ```  justo
     Eventos: <a target="_blank"  rel="noopener"  href="https://leafletjs.com/reference-1.6.0.html#map-event">https://leafletjs.com/reference-1.6.0.html#map-event</a>
 
 
-!!! info
+!!! summary "L.tileLayer"
     #### **L.tileLayer**
     Es un tipo de capa raster que se añade al objeto L.map
 
@@ -208,14 +206,14 @@ Ahora crearemos y empezaremos a programar dentro del tag ``` <script> ```  justo
   </script>
 ```
 
-Llamaremos ala función des de el evento onload del ```<body>```
+Llamaremos a la función desde el evento onload del ```<body>```
 
 ```html
  <body onLoad="init()">
 ```
 
 
-### Leaflet básico
+### **Leaflet básico**
 ```html
   <html lang="es">
   <head>
@@ -277,26 +275,27 @@ Llamaremos ala función des de el evento onload del ```<body>```
  * Usamos método **addTo()** para añadir la capa al mapa
 
 
-!!! info 
-	Si quisieramos añadir un punto al mapa:</br>
+!!! tip "Si quisieramos añadir un punto al mapa"
+	
 	```javascript
 		L.marker([41.3954, 2.16859]).addTo(map);
 		
 	```
 
-!!! info 
-	Si quisieramos añadir un popup al punto:</br>
+!!! tip "Si quisieramos añadir un popup al punto"
+	
 	```javascript
 		L.marker([41.3954, 2.16859]).addTo(map).bindPopup('Hola punto');
 	```    
 
-!!! info 
-	Si quisieramos que el popup estuviera abierto por defecto:</br>
+!!! tip "Si quisieramos que el popup estuviera abierto por defecto"
+	
 	```javascript
 		L.marker([41.3954, 2.16859]).addTo(map).bindPopup('Hola punto').openPopup();
 	```  
-!!! info 
-	Lo mismo pero programando diferente:</br>
+
+!!! tip "Lo mismo pero programando diferente"
+	
 	```javascript
 	var punto = L.marker([41.3954, 2.16859]);
         punto.addTo(map);
@@ -304,8 +303,8 @@ Llamaremos ala función des de el evento onload del ```<body>```
         punto.openPopup();
 	```      
 
-!! info 
-	Si quiero añadir un punto de tipo círculo, con opciones (vector):</br>
+!!! tip "Si quiero añadir un punto de tipo círculo, con opciones (vector)"
+	
 	```javascript
 	var punto = L.circleMarker([41.3954, 2.16859],{
                 color: '#ffffff',
@@ -318,26 +317,25 @@ Llamaremos ala función des de el evento onload del ```<body>```
         punto.openPopup();
 	```  
 
-!!! info
-	Si quisieramos añadir un punto con estilo al hacer clic en el mapa(Evento):</br>
+!!! tip "Si quisieramos añadir un punto con estilo al hacer clic en el mapa(Evento)"
 
 	```javascript
 		  map.on('click', function (e) {
-      new L.circleMarker(e.latlng, {
-        color: '#ffffff',
-        fillColor: '#00ff00',
-        fillOpacity: 0.9,
-        radius: 8
-      }).addTo(map)
-        .bindPopup(e.latlng.lat + "," + e.latlng.lng)
-        .openPopup();
-    });
+            new L.circleMarker(e.latlng, {
+                color: '#ffffff',
+                fillColor: '#00ff00',
+                fillOpacity: 0.9,
+                radius: 8
+            }).addTo(map)
+                .bindPopup(e.latlng.lat + "," + e.latlng.lng)
+                .openPopup();
+         });
 	```
 
 
 
-!!! note 
-	¿Subimos el ejemplo al GitHub?
+!!! success "¿Subimos el ejemplo al GitHub?"
+	
 
 	```bash
 
@@ -350,11 +348,11 @@ Llamaremos ala función des de el evento onload del ```<body>```
 
 
 
-### Ejemplo 1 Controles
+### **Ejemplo 1 Controles**
   Añadimos controles de capas y escala.
 
 
-!!! info
+!!! abstract "L.control.layers"
     #### **L.control.layers**
     Es un control que nos permite activar y desactivar capas base (baseLayers) y "overlays"
 
@@ -445,12 +443,12 @@ Llamaremos ala función des de el evento onload del ```<body>```
 ```
 
 
-!!! Pregunta 
-	¿Como lo haríamos para ver el control de capas abierto por defecto?
+!!! question "Pregunta" 
+	<h3>¿Como lo haríamos para ver el control de capas abierto por defecto?</h3>
 
 
 
-### Ejemplo 2 Provider
+### **Ejemplo 2 Provider**
 
 > ¿Que mapas de fondo puedo añadir?
   [http://leaflet-extras.github.io/leaflet-providers/preview/](http://leaflet-extras.github.io/leaflet-providers/preview/)
@@ -578,19 +576,23 @@ Llamaremos ala función des de el evento onload del ```<body>```
 </html>
 ```
 
-!!! note
-    #### Pregunta
-    ¿Cómo añadiriamos una capa de tipo "overlay"?
+!!! question "Pregunta"
+
+    <h3>¿Cómo añadiriamos una capa de tipo "overlay"?</h3>
  
        
-!!! note
-    #### Práctica
-    Creamos un nuevo ejemplo llamado **mapabase.html** con tres capas de fondo: Mapa, Orto, Híbrido
+
+### **Práctica**
+
+>Creamos un nuevo ejemplo llamado **mapabase.html** con tres capas "baseLayers" de fondo: 
+    
+>Mapa, Orto, Híbrido
  
 
-!!! info
-    #### Truco
+!!! tip "Truco"
+    <h4>
     Podemos agrupar capas utilizando L.LayerGroup [https://leafletjs.com/examples/layers-control/](https://leafletjs.com/examples/layers-control/)
+    </h4>
 
     ```javascript
             var hibrid =L.layerGroup();
@@ -611,8 +613,7 @@ Llamaremos ala función des de el evento onload del ```<body>```
     ```
 
 
-!!! info
-    #### Solución práctica
+!!! success "Solución práctica"
     ```html
     <html lang="es">
     <head>
@@ -696,14 +697,66 @@ Llamaremos ala función des de el evento onload del ```<body>```
     </html>
     ```
 
-!!! note 
-	¿Subimos el ejemplos al GitHub?
+### **Reutilizar código**
 
+Cuando programamos debemos intentar **NO** escribir el mismo código dos veces y siempre que podamos debemos reutilizarlo.
+Algunas técnicas serían:
+
+* Crear pequeñas funciones lo más atómicas posibles
+* Encapsular las funciones en clases o archivos  *JS
+* Encapsular los estilos en archivos  *CSS
+
+
+> Vamos a crear dentro de los directorios
+
+>* */geoweb/js/* el archivo **mapabase.js**
+>* */geoweb/css/* el archivo **estilobase.css**
+
+
+
+Cortamos y copiamos dentro de **mapabase.js** el código JavaScript, está dentro de los tag ```<script></script>``` de nuestro **mapabase.html**
+
+Cortamos y copiamos dentro de **estilobase.css** el código CSS, está dentro de los tag ```<style></style>``` de nuestro **mapabase.html**
+
+
+!!! warning "No hay que copiar los tag, solo borrarlos"
+
+
+Añadimos los archivos creados a nuestro **mapabase.html** de la siguiente forma.
+
+```html hl_lines="12 13"
+    <html lang="es">
+    <head>
+        <title>Ejemplo Leaflet mapa base</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="autor" />
+        <meta name="description" content="descripción página" />
+        <meta name="robots" content="index,follow" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+
+        <link rel="stylesheet" href="css/estilobase.css" />
+        <script src="js/mapabase.js"></script>
+        
+    </head>
+
+    <body onLoad="init()">
+        <div id="map"> </div>
+    </body>
+
+    </html>
+```
+
+
+
+!!! success "¿Subimos el ejemplo al GitHub?"
+	
 	```bash
 
 		git pull
         git add .
-        git commit -m "mas ejemplos leaflet"
+        git commit -m "mapa base leaflet"
         git push
 
 	```    

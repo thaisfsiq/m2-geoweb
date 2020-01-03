@@ -1,157 +1,293 @@
 
 
-<img src="http://leafletjs.com/docs/images/logo.png" width="100">     
-       
-
  
-### Lealfet Plugins
-  > 
+### Leaflet Plugins
+
+Gracias a ser un proyecto de código abierto y de las aportaciones de los usuarios,
+Leaflet tiene más de 250 plugins o "pequeñas aplicaciones" que añaden funcionalidades a la libreria.
+ 
 * 
  Plugins
   [http://leafletjs.com/plugins.html](http://leafletjs.com/plugins.html)
 
+#### ¿Cómo utilizar un Plugin?
+
+ * 1-Primero debemos en la página de pligins si existe alguno que nos ayude a solucionar nuestro problema o necessidad
+
+ * 2-Entraremos en la página GIT del plugin y leeremos su documentación. Atencion !! A veces la documentación pueder ser poca y confusa
+
+ * 3.1- Si existe una versión on-line del plugin (URL en CDN), la invocaremos en nuestra aplicación
+
+ * 3.2- Si no existe, descargaremos los archivos del plugin - son *.js, pero tambień pueden ser *.css i imagenes - normalmente se encuentran en los directorios **/dist** o **/src** y los guardaremos en nuestro proyecto.
 
 
-### Plugin Leaflet-search: Ejemplo buscador de Farmacias
+!!! warning "Atencion!!"
+    <h4>
+    *Buscador de Farmacias de Barcelona*
 
->Plugin que permite buscar dentro los atributios de un GeoJson
+    Nos han encargado realizar un mapa para poder localizar y buscar las farmacias de Barcelona
+
+    * Los datos de farmacias estan el web de Datos Abiertos de Barcelona
+
+    [https://opendata-ajuntament.barcelona.cat/data/es/dataset/sanitat-farmacies](https://opendata-ajuntament.barcelona.cat/data/es/dataset/sanitat-farmacies)
+
+    * Existe un plugin de Leaflet llamado Leaflet-ajax que permite cargar capas GeoJSON ya sea en local o en remoto
+
+    Leaflet-ajax [https://github.com/calvinmetcalf/leaflet-ajax](https://github.com/calvinmetcalf/leaflet-ajax) 
+
+
+    * Existe un plugin de Leaflet llamado Leaflet-search que permite buscar dentro de atributos de un GeoJSON
+
+    Leaflet-Search [https://github.com/stefanocudini/leaflet-search](https://github.com/stefanocudini/leaflet-search) 
+
+    </h4>
+
+### Ejemplo buscador de Farmacias
+
+#### Paso 1: 
       
- *  Creamos archivo **farmacias.html**
- *  Visualizamos geojson en **[/geoweb/datos/farmacias.geojson](datos/farmacias.geojson)**
- *  Utilizaremos directamente los  plugins:
-     ** GeoJSON AJAX [https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js](https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js) 
-     ** Leaflet-Search [https://github.com/stefanocudini/leaflet-search"](https://github.com/stefanocudini/leaflet-search) 
+ *  Descargamos archivo de [farmacias](https://opendata-ajuntament.barcelona.cat/data/es/dataset/sanitat-farmacies)
+ *  Convertimos el archivo a GeoJson utilizando QGIS
+ *  Guardamos el archivo en **/geoweb/datos/farmacias.geojson**
  
+#### Paso 2:
 
-```html
+ * Abrimos archivo **mapabase.html** y guardamos como *File-->Save as* **farmacias.html**
+ * Añadimos un titulo y la función  inical **initMapaFarmacias()** de nuestro proyecto
+
+ ``` html hl_lines="3 14 15 16 17 18 22"
+
+    <html lang="es">
+    <head>
+        <title>Farmacias</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="autor" />
+        <meta name="description" content="descripción página" />
+        <meta name="robots" content="index,follow" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+
+        <link rel="stylesheet" href="css/estilobase.css" />
+        <script src="js/mapabase.js"></script>
+        <script>       
+            function initMapaFarmacias(){
+                init();              
+            }         
+        </script>
+
+    </head>
+
+    <body onLoad="initMapaFarmacias()">
+        <div id="map"> </div>
+    </body>
+
+    </html>
+
+ ```
+#### Paso 3:
+
+ * Añadimos Plugins al proyecto
+
+   >Podemos descargar plugins del directorio **/dist** y guardarlos en nuestros directorios **/js** o **/css**
+
+   >También podemos utilizar la URL directamente (nuestro caso)
+
+``` html hl_lines="12 13 14"
+
 <html lang="es">
+    <head>
+        <title>Farmacias</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="autor" />
+        <meta name="description" content="descripción página" />
+        <meta name="robots" content="index,follow" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
 
-<head>
-    <title>Farmacias</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="autor" />
-    <meta name="description" content="descripción página">
-    <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
-    <script>
-        L_PREFER_CANVAS = true;
-    </script>
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
-    <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
-<!-- Paso 2
-    <script src="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.js"></script>
-    <link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.css" />
--->
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        #map {
-            height: 100%;
-            width: 100%;
-        }
-    </style>
-    <script>
-        var map, osm, esri;
-        var geojson, farmacias;
-        var controlCapas;
-        var controlEscala;
-       
-       function Init() {
-
-            map = L.map('map', {
-                center: [41.3954, 2.16859],
-                zoom: 14
-            });
-            esri = L.tileLayer(
-                'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                    maxZoom: 17,
-                    minZoom: 1,
-                    attribution: 'Tiles © Esri',
-                }).addTo(map);
-
-            osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                minZoom: 1,
-                attribution: 'OSM'
-            });
-
-/* Pas1
-            farmacias = new L.GeoJSON.AJAX('datos/farmacias.geojson', {
-                maxZoom: 19,
-                minZoom: 14,
-                onEachFeature: function (feature, layer) {
-                    popupContent = "<b>" + feature.properties.NOM + "</b><br>" + feature.properties
-                        .CARRCADAST + " " + feature.properties.DOORNUM + "</b>";
-                    layer.bindPopup(popupContent);
-                },
-                pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, {
-                        radius: 6,
-                        fillColor: "#00ff00",
-                        color: "#ffffff",
-                        weight: 3,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                    });
-                }
-            }).addTo(map);
-*/
-            var baseMaps = {
-                "Orto_esri": esri,
-                "Mapa_osm": osm
-            };
-/*Pas 1
-            var overlayMaps = {
-                "farmacias": farmacias
-            };
-*/
-            controlCapas = L.control.layers(baseMaps, null);
-            controlCapas.addTo(map);
-            controlEscala = L.control.scale();
-            controlEscala.addTo(map);
+        <script src="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.js"></script>
+        <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+        <link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.css" />
 
 
-/*Pas 2
-            var searchControl = new L.Control.Search({
-                layer: farmacias,
-                propertyName: 'NOM',
-                circleLocation: true,
-                moveToLocation: function (latlng) {
+        <link rel="stylesheet" href="css/estilobase.css" />
+        <script src="js/mapabase.js"></script>
+        <script>       
+            function initMapaFarmacias(){
+                init();              
+            }         
+        </script>
 
-                    map.setView(latlng, 17);
-                }
-            });
+    </head>
 
-            map.addControl(searchControl);
-*/
+    <body onLoad="initMapaFarmacias()">
+        <div id="map"> </div>
+    </body>
 
-        };
-    </script>
-</head>
-
-<body onload="Init()">
-    <div id="map"></div>
-</body>
-
-</html>
+    </html>
 
 ``` 
-### Práctica para cargar GeoJSONs con plugin GeoJSON AJAX
 
-> Abre **mapabase.html** 
+
+#### Paso 4:Cargamos GeoJson Farmacias
+
+ * Miramos documentación Leaflet-Ajax plugin https://github.com/calvinmetcalf/leaflet-ajax
+ * Miramos referencia L.Geojson https://leafletjs.com/reference-1.6.0.html#geojson
+ * Dentro de nuestro directorio **/geoweb/js/** creamos el archivo **farmacias.js**    
+
+``` javascript
+var layerFarmacias;
+var urlFarmacias = "datos/farmacias.geojson";
+
+function addDatosFarmacias() {
+
+        layerFarmacias  = new L.GeoJSON.AJAX(urlFarmacias, {
+            onEachFeature: function (feature, layer) {
+                popupContent = "<b>" + feature.properties.EQUIPAMENT + "</b>"+
+                "<br>" + feature.properties.TIPUS_VIA +
+                ". " + feature.properties.NOM_CARRER +
+                " " + feature.properties.NUM_CARRER_1 + "</b>";
+                layer.bindPopup(popupContent);
+            },
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, {
+                    radius: 6,
+                    fillColor: "#00ff00",
+                    color: "#ffffff",
+                    weight: 3,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                });
+            }
+        }).addTo(map);
+
+        map.setView([41.399733,2.168598],13);
+        // controlCapas.addOverlay(layerFarmacias,"Farmacias");
+
+}
+
+```
+
+
+#### Paso 5:
+
+* Añadimos **farmacias.js** al archivo **farmacias.html**
+* Llamamos funcion **addDatosFarmacias()**
+
+``` html hl_lines="19 23"
+<html lang="es">
+    <head>
+        <title>Farmacias</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="autor" />
+        <meta name="description" content="descripción página" />
+        <meta name="robots" content="index,follow" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
+
+        <script src="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.js"></script>
+        <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+        <link rel="stylesheet" href="https://labs.easyblog.it/maps/leaflet-search/src/leaflet-search.css" />
+
+
+        <link rel="stylesheet" href="css/estilobase.css" />
+        <script src="js/mapabase.js"></script>
+        <script src="js/farmacias.js"></script>
+        <script>       
+            function initMapaFarmacias(){
+                init();  
+                addDatosFarmacias();            
+            }         
+        </script>
+
+    </head>
+
+    <body onLoad="initMapaFarmacias()">
+        <div id="map"> </div>
+    </body>
+
+    </html>
+```
+
+* Miramos que funcione
+
+
+#### Paso 6:Buscar Farmacias
+
+ * Miramos documentación Leaflet-Search plugin https://github.com/stefanocudini/leaflet-search
+ * Añadimos el control dentro de la función **addDatosFarmacias()** de  **farmacias.js** 
+
+
+``` javascript hl_lines="29 30 31 32 33 34 35 36 37 38 39 40 41 42"
+var layerFarmacias;
+var urlFarmacias = "datos/farmacias.geojson";
+
+function addDatosFarmacias() {
+
+        layerFarmacias  = new L.GeoJSON.AJAX(urlFarmacias, {
+            onEachFeature: function (feature, layer) {
+                popupContent = "<b>" + feature.properties.EQUIPAMENT + "</b>"+
+                "<br>" + feature.properties.TIPUS_VIA +
+                ". " + feature.properties.NOM_CARRER +
+                " " + feature.properties.NUM_CARRER_1 + "</b>";
+                layer.bindPopup(popupContent);
+            },
+            pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, {
+                    radius: 6,
+                    fillColor: "#00ff00",
+                    color: "#ffffff",
+                    weight: 3,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                });
+            }
+        }).addTo(map);
+
+        map.setView([41.399733,2.168598],13);
+        // controlCapas.addOverlay(layerFarmacias,"Farmacias");
+
+        var searchControl = new L.Control.Search({
+            layer: layerFarmacias,
+            initial:false,
+            propertyName: 'EQUIPAMENT',
+            circleLocation: true,
+            moveToLocation: function (latlng) {
+                map.setView(latlng, 17);
+            }
+        });
+
+        searchControl.on('search:locationfound', function(e) {
+            e.layer.openPopup();
+        });
+        map.addControl(searchControl);
+
+}
+
+```
+
+!!! success "¿Subimos el ejemplo al GitHub?"
+	
+	```bash
+
+		git pull
+        git add .
+        git commit -m "mapa base leaflet"
+        git push
+
+	```    
+
+### Práctica libre no puntuable para cargar GeoJSONs con plugin GeoJSON AJAX
+
+> Abre **mapabase.html** --> guardar cómo **mapatest.html**
 
 > Añade el plugin de GeoJSON AJAX
 
 > Prueba las diferentes formas de trabajar con GeoJSONs y añádelas como **overlayMaps** en el control de capas
 
-!!! info
-    #### GeoJson por defecto
+!!! example "GeoJson por defecto"
 
     ```javascript
 
@@ -165,10 +301,9 @@
             
     ```
 
-!!! info
-    #### GeoJson con estilos
+!!! example "GeoJson con estilos"
 
-    ```javascript
+```javascript
 
     var comarcasPoligonoStyle = new L.GeoJSON.AJAX('datos/comarcas.geojson', {
                     style: function (feature) {
@@ -205,13 +340,8 @@
                 }
             }).addTo(map);
 
-            
-            
-    ```   
-
-
-!!! info
-    #### GeoJson con estilos y Popups
+```   
+!!! example "GeoJson con estilos y Popups"
 
     ```javascript
 
@@ -268,8 +398,7 @@
             
     ```   
  
-!!! info
-    #### GeoJson remoto
+!!! example "GeoJson remoto"
 
     ```javascript
 
@@ -289,228 +418,47 @@
 
  
 
-### Plugin Geosearch: Ejemplo buscador de Callejero
+### Plugin Geosearch: Ejemplo extra  buscador de Callejero
   > Plugin que permite connectar con servicios de Geocodificación
- *  Creamos archivo **leaflet-calles.html**
- *  Descargaremos plugin [https://github.com/MuellerMatthew/L.GeoSearch](GeoSearch) 
+ *  Plugin [https://github.com/MuellerMatthew/L.GeoSearch](GeoSearch) 
  
 
 ```html
   <html lang="es">
 
 <head>
-    <title>Calles</title>
+    <title>Callejero</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="autor" />
-    <meta name="description" content="descripción página">
-    <meta name="robots" content="index,follow">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+    <meta name="description" content="descripción página" />
+    <meta name="robots" content="index,follow" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@2.7.0/assets/css/leaflet.css" />
-   
-    <script>
-        L_PREFER_CANVAS = true;
-    </script>
-    <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-geosearch@2.7.0/dist/bundle.min.js"></script>
-
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        #map {
-            height: 100%;
-            width: 100%;
-        }
-        .leaflet-control-geosearch .results > * {
-            
-         cursor: pointer
-        }
-    </style>
+    <link rel="stylesheet" href="css/estilobase.css" />
+    <script src="js/mapabase.js"></script>
     <script>
-        var map, osm, esri;
-        var geojson, farmacias;
-        var controlCapas;
-        var controlEscala;
-
-
-        function Init() {
-
-            map = L.map('map', {
-                center: [41.3954, 2.16859],
-                zoom: 14
-            });
-
-
-            esri = L.tileLayer(
-                'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                    maxZoom: 17,
-                    minZoom: 1,
-                    attribution: 'Tiles © Esri',
-                }).addTo(map);
-
-            osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                minZoom: 1,
-                attribution: 'OSM'
-            });
-
-
-            var baseMaps = {
-                "Orto_esri": esri,
-                "Mapa_osm": osm
-            };
-
-            controlCapas = L.control.layers(baseMaps, null);
-            controlCapas.addTo(map);
-
-
-
+        function initMapaCalles() {
+            init();
             new GeoSearch.GeoSearchControl({
                 //  provider: new  GeoSearch.OpenStreetMapProvider()
                 provider: new GeoSearch.EsriProvider()
             }).addTo(map);
-
-
-        };
+        }         
     </script>
+
 </head>
 
-<body onload="Init()">
-    <div id="map"></div>
+<body onLoad="initMapaCalles()">
+    <div id="map"> </div>
 </body>
 
 </html>
 ```
        
-### Servicio GeoNames y Leaflet
->[Geonames.org](https://www.geonames.org/) es una web que nos ofrece hasta 34 servicios geográficos 
->Nos damos de Alta en GeoNanmes
-      
- * Crearemos el archivo **geonames-terremotos.html**
 
- 
-
-```html
- 
-<html>
-
-<head lang="es">
-    <title>GeoNames</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        #map {
-            height: 100%;
-            width: 100%;
-        }
-
-        #ventana {
-            position: absolute;
-            top: 100px;
-            left: 10px;
-            z-index: 1000;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="map"></div>
-    <script>
-        var terremotoPunto = null;
-        var map;
-        $(document).ready(function () {
-
-            map = L.map("map", {
-                attributionControl: false,
-                zoom: 8,
-                center: [42, 2]
-            });
-
-            L.tileLayer('//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
-                attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> — Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-                subdomains: 'abcd',
-                maxZoom: 17,
-                minZoom: 2
-            }).addTo(map);
-
-
-            function peticionTerremotos() {
-                var peticion = 'http://api.geonames.org/earthquakesJSON?' +
-                    'north=' + map.getBounds()._northEast.lat + '&' +
-                    'south=' + map.getBounds()._southWest.lat + '&' +
-                    'east=' + map.getBounds()._northEast.lng + '&' +
-                    'west=' + map.getBounds()._southWest.lng + '&' +
-                    'maxRows=50&' +
-                    'username=masterupc&';
-                $.ajax({
-                    url: peticion,
-                    method: "GET",
-                    dataType: "jsonp",
-                    success: function (respuesta) {
-                        respuestaTerremotos(respuesta);
-
-                    }
-                }); //fin ajax
-
-            } //fin peticion
-
-            function respuestaTerremotos(respuesta) {
-                if (respuesta == null) {
-                    return;
-                } else {
-
-                    if (terremotoPunto) {
-                        map.eachLayer(function (layer) {
-                            if (layer._radius) {
-                                map.removeLayer(layer);
-                            }
-                        });
-                    }
-                    var total_terremotos = respuesta.earthquakes;
-                    for (var i = 0; i < total_terremotos.length; i++) {
-                        var terremoto = total_terremotos[i];
-                        terremotoPunto = new L.circleMarker([terremoto.lat, terremoto.lng], {
-                            radius: parseInt(terremoto.magnitude * 2),
-                            fillColor: "#aa0808",
-                            color: "#ffffff",
-                            weight: 2,
-                            opacity: 1,
-                            fillOpacity: 0.8
-                        });
-                        terremotoPunto.bindPopup("Mg:" + terremoto.magnitude + "<br>" + terremoto.datetime);
-                        terremotoPunto.addTo(map);
-
-                    }
-                }
-            } //Fin respuesta terremotos
-
-
-            peticionTerremotos();
-
-            map.on('moveend', function () {
-                peticionTerremotos();
-            });
-
-        }); //fin document ready
-    </script>
-</body>
-
-</html>
-```
 
 
  
