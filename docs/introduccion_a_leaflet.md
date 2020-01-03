@@ -351,6 +351,7 @@ Llamaremos a la función desde el evento onload del ```<body>```
 ### **Ejemplo 1 Controles**
   Añadimos controles de capas y escala.
 
+* Creamos la página **leaflet-controles.html** dentro directorio geoweb
 
 !!! abstract "L.control.layers"
     #### **L.control.layers**
@@ -444,13 +445,15 @@ Llamaremos a la función desde el evento onload del ```<body>```
 
 
 !!! question "Pregunta" 
-	<h3>¿Como lo haríamos para ver el control de capas abierto por defecto?</h3>
+	<h4>¿Como lo haríamos para ver el control de capas abierto por defecto?</h4>
 
 
 
 ### **Ejemplo 2 Provider**
 
+* Creamos la página **leaflet-provider.html** dentro directorio geoweb
 > ¿Que mapas de fondo puedo añadir?
+
   [http://leaflet-extras.github.io/leaflet-providers/preview/](http://leaflet-extras.github.io/leaflet-providers/preview/)
 
 ```html
