@@ -31,49 +31,86 @@
   
 ### Descripción 
 > MapxBox es una empresa privada que ofrece una plataforma para la publicacón de mapas. Mapbox destaca por creado de forma abierta
+> MBTiles
+> Vector Tiles
+> MapBox GL
 
-*  MBTiles
-*  Vector Tiles
-*  MapBox GL
-
+* MapBox Studio es una herramienta para personalizar y publicar estilos de mapa vector
+* Maputnik es un editor libre (no de Mapbox) que también sirve para editar estilos de mapas vector
      
 ###  ¿Cómo empezar?
 
-> Vamos a realizar un ejercicio dóne veremos como funciona MapBox Studio, Vector Tiles y Mapbox GL
-> Crearemos un mapa personalizado
 > Nos damos de alta en [MapBox](https://www.mapbox.com/signup/)
 
-### 1.Mapa personalizado
+### MapBox Studio
 
-#### Creamos nuestor propio estilo
+### 1-Creamos nuestor propio estilo
 
-* Entramos en MapBox.com `Studio` --`Styles` -- `New style`
+* Entramos en MapBox.com  seleccionamos nuestro avatar `Studio` 
 
-* Seleccionamos un estilo como base y cambiamos colores `Publish your style`
+* Dentro de Studio tenemos tres opciones básicas
 
-* Share, develop, and use your style -- Copiamos `Style URL` y `Access token`  
+    * **Styles**: Para crear nuestros estilos pròpios
+    * **Tilesets**: Para subir nuestros datos y convertirlos en Vector Tiles y/o integrarlos con nuestros estilos
+    * **Dataset**: Para subir capas GeoJson que pueden ser convertidas a Tilesets
+
+* Seleccionamos -->`Styles` --> `New style`
 
 ![alt text](img/mapbox1.png "mapbox")
 
-#### Visualizar estilo propio con Mapbox gl
+* Seleccionamos un estilo como base y cambiamos colores `Customize`
 
-Creamos **Mapbox-estilo.html**
+![alt text](img/mapbox11.png "mapbox")
 
+* Cambiamos nombre del estilo
+
+![alt text](img/mapbox10.png "mapbox")
+
+* Una vez hemos acabado -->`Publish your style` --> `Publish as new`
+
+* Share, develop, and use your style -- Copiamos `Style URL` y `Access token`  
+
+![alt text](img/mapbox12.png "mapbox")
+
+### 2-Visualizar estilo propio con Mapbox Gl JS
+
+MapBox tiene una libreria JavaScript llamada *MapBox GL JS* para visualizar estilos entre otras muchas otras funcionalidades
+
+!!! warning
+    <h4>
+    Siempre que utilizemos algún estilo de Mapbox studio o algún servicio de Mapbox deberemos añadir nuestro Access Token
+    </h4>
+
+
+
+!!! tip "mapboxgl.Map"
+
+        Es el constructor principal del mapa [https://docs.mapbox.com/mapbox-gl-js/api/#map](https://docs.mapbox.com/mapbox-gl-js/api/#map)
+
+        ```javascript
+            var map = new mapboxgl.Map({
+                container: 'map', // container id
+                style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+                center: [-74.5, 40], // starting position [lng, lat]
+                zoom: 9 // starting zoom
+                });
+        ```
+
+Creamos **Mapbox-basico.html**
 
 ```html
- <html>
+<html>
 <head>
     <meta charset='utf-8' />
     <title>Mapbox estilo</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
     <style>
         body {
             margin: 0;
             padding: 0;
         }
-
         #map {
             position: absolute;
             top: 0;
@@ -89,11 +126,59 @@ Creamos **Mapbox-estilo.html**
                 'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2plZHhubTQxMTNoYzMza3Rqa3kxYTdrOCJ9.53B1E6mKD_EQOVb2Y0-SsA';
             var map = new mapboxgl.Map({
                 container: 'map',
-                style: 'mapbox://styles/gismasterm2/cjqg9p2lm00442rqm4vlk89rt',
+                style: 'mapbox://styles/gismasterm2/ck4zvjxxs2b8m1cmjumqlru5i',
                 center: [2.16859, 41.3954],
                 zoom: 13,
                 attributionControl: false
-                });
+            });
+
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div id="map"></div>
+</body>
+
+</html>  
+
+```
+
+Podemos añadir algunos controles
+
+```html hl_lines="33 34"
+ <html>
+<head>
+    <meta charset='utf-8' />
+    <title>Mapbox estilo</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%
+        }
+    </style>
+    <script>
+        //Añadir vuestor token y vuestro estilo
+        function init() {
+            mapboxgl.accessToken =
+                'pk.eyJ1IjoiZ2lzbWFzdGVybTIiLCJhIjoiY2plZHhubTQxMTNoYzMza3Rqa3kxYTdrOCJ9.53B1E6mKD_EQOVb2Y0-SsA';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/gismasterm2/ck4zvjxxs2b8m1cmjumqlru5i',
+                center: [2.16859, 41.3954],
+                zoom: 13,
+                attributionControl: false
+            });
             map.addControl(new mapboxgl.AttributionControl({compact: true}));
             map.addControl(new mapboxgl.NavigationControl());
         }
@@ -104,22 +189,28 @@ Creamos **Mapbox-estilo.html**
     <div id="map"></div>
 </body>
 
-</html>    
-
+</html>
 ```
-### 2.Crear un Tileset o capa de datos própios
+
+
+
+### 3-Añadir una capa nueva propia a un estilo
+
+Nos gustaria que en nuestro estilo estuvieran los carriles bici de Barcelona
+
+
+[https://opendata-ajuntament.barcelona.cat/data/es/dataset/carril-bici](https://opendata-ajuntament.barcelona.cat/data/es/dataset/carril-bici)
 
 
 #### Paso 1
 
-* Descargamos en formato **CSV** los [accidentes](datos/accidentes2017.geojson) en [http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn">
-    http://opendata-ajuntament.barcelona.cat/data/es/dataset/accidents-tipus-gu-bcn)
+* Descargamos en formato **GeoJson** los carriles bicicleta de barcelona en [https://opendata-ajuntament.barcelona.cat/data/es/dataset/carril-bici](https://opendata-ajuntament.barcelona.cat/data/es/dataset/carril-bici)
   
 
 * Utilizamos QGIS para visualizar y convertir a formato GeoJSON en EPSG:4326 --accidentes2017.geojson
 
      
-#### Paso 2 -Añadimos accidentes2017.geojson a Mapbox.com 
+#### Paso 2 -Añadimos la capa a Mapbox.com 
 
 * Entramos en MapBox.com `Studio`  `Tilesets` `New tileset` Arrastramos **accidentes2017.geojson**
 
@@ -140,8 +231,8 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
     <meta charset='utf-8' />
     <title>Accidentes BCN</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
    
     <style>
         body {
@@ -337,6 +428,7 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
 </html>
 
 ``` 
+
 !!! note
     **Probamos**:Añadir opción para ver todos los accidentes
 
@@ -364,8 +456,8 @@ Creamos **Mapbox-accidentes.html** Ejemplo Accidentes Barcelona
     <meta charset='utf-8' />
     <title>Carriles bici BCN</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
     <style>
         body {
             margin: 0;
